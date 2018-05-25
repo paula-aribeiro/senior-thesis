@@ -1,0 +1,1112 @@
+go data
+def-el fe c mn si cr ni
+rej ph *
+rest ph fcc bcc cem
+get
+go p-3
+
+ent-sy tab blab
+t x(*,*) np(*);
+
+s-a-v 1 t 673 1473 10
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.000000e-06 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02400.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.000000e-06 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02401.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.000000e-06 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02402.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.000000e-06 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02403.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.000000e-06 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02404.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.250075e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02405.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.250075e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02406.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.250075e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02407.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.250075e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02408.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=1.250075e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02409.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=2.500050e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02410.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=2.500050e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02411.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=2.500050e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02412.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=2.500050e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02413.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=2.500050e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02414.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=3.750025e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02415.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=3.750025e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02416.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=3.750025e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02417.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=3.750025e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02418.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=3.750025e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02419.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=5.000000e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02420.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=5.000000e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02421.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=5.000000e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02422.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=5.000000e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02423.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=7.500750e-03
+s-c w(cr)=5.000000e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02424.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02425.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02426.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.000000e-06 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02427.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.000000e-06 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02428.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.000000e-06 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02429.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.250075e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02430.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.250075e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02431.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.250075e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02432.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.250075e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02433.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=1.250075e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02434.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=2.500050e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02435.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=2.500050e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02436.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=2.500050e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02437.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=2.500050e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02438.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=2.500050e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02439.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=3.750025e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02440.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=3.750025e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02441.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=3.750025e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02442.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=3.750025e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02443.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=3.750025e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02444.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=5.000000e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02445.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=5.000000e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02446.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=5.000000e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02447.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=5.000000e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02448.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=1.500050e-02
+s-c w(cr)=5.000000e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02449.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02450.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02451.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.000000e-06 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02452.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.000000e-06 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02453.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.000000e-06 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02454.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.250075e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02455.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.250075e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02456.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.250075e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02457.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.250075e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02458.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=1.250075e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02459.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=2.500050e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02460.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=2.500050e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02461.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=2.500050e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02462.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=2.500050e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02463.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=2.500050e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02464.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=3.750025e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02465.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=3.750025e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02466.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=3.750025e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02467.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=3.750025e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02468.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=3.750025e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02469.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=5.000000e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02470.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=5.000000e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02471.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=5.000000e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02472.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=5.000000e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02473.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=2.250025e-02
+s-c w(cr)=5.000000e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02474.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02475.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02476.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.000000e-06 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02477.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.000000e-06 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02478.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.000000e-06 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02479.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.250075e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02480.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.250075e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02481.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.250075e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02482.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.250075e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02483.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=1.250075e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02484.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=2.500050e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02485.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=2.500050e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02486.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=2.500050e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02487.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=2.500050e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02488.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=2.500050e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02489.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=3.750025e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02490.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=3.750025e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02491.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=3.750025e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02492.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=3.750025e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02493.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=3.750025e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02494.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=5.000000e-02 w(ni)=1.000000e-06
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02495.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=5.000000e-02 w(ni)=1.250075e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02496.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=5.000000e-02 w(ni)=2.500050e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02497.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=5.000000e-02 w(ni)=3.750025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02498.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=4.500000e-03 w(mn)=3.000000e-02 w(si)=3.000000e-02
+s-c w(cr)=5.000000e-02 w(ni)=5.000000e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+results/02499.DAT
+save RESULT.POLY3 y
+

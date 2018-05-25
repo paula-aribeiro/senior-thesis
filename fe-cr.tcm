@@ -1,0 +1,61 @@
+go data
+
+@@ swiches to pbin database
+sw pbin
+
+@@ define elements
+def-el fe cr
+
+@@ retrieve system data
+get
+
+@@ go to poly_3 module
+go p-3
+
+@@ set conditions
+s-c n=1 p=101325
+s-c t=1400 x(cr)=.01
+
+@@ compute equilibrium
+c-e
+c-e
+c-e
+
+@@ set axes
+s-a-v 1 x(cr) 0 1 1e-2
+s-a-v 2 t 600 2400,,
+
+@@ map phase diagram
+map
+
+@@ repeat mapping for different critial conditions
+s-c t=2000 x(cr)=.5
+c-e
+c-e
+c-e
+map
+
+@@ repeat mapping for different icrtial conditions
+s-c t=1200 x(cr)=.9
+c-e
+c-e
+c-e
+map
+
+post
+
+@@ set label type f
+@@ s-l f
+
+@@ set-diagram-axis
+s-d-a y t-c
+
+@@ set-scaling-status
+s-s-s y n 600 2000
+
+@@ save plot in a exp file
+m-e-d fe-cr.exp
+
+@@ plot
+
+@@ set-int
