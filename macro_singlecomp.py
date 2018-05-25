@@ -16,8 +16,9 @@ if __name__ == '__main__':
             fig, ax = plt.subplots()
             result = load_table(fname, sort='T', fill=0)
             plot_table(df=result, xaxis='T', ax=ax, colpattern='NP(*)')
-            plt.pause(.05)
+            plt.pause(.1)
             fig.show()
+            plt.pause(.1)
             
             idx, = np.where(fname == df['file'].values)
             if len(idx) > 0:

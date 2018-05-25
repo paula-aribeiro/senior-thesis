@@ -1,4 +1,4 @@
-file,hasbcc,hasfcc,hascem
+file,BCC_A2,FCC_A1,CEMENTITE
 results/00000.DAT,True,True,False
 results/00001.DAT,True,True,False
 results/00002.DAT,True,True,False

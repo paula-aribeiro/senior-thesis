@@ -9,11 +9,17 @@ files = pd.read_csv('files_list.csv')
 fig, ax = plt.subplots()
 
 for i, fname in enumerate(files['file']):
-    if i%100 == 0:
+    if i%10 == 0:
         try:
             df = load_table(fname, 'T', fill=0)
-            plot_table(df, 'T', ax=ax, colpattern='NP(*)', legend=False)
-        except:
-            print(fname)
+            x = df['T']
+            if 'NP(FCC_A1#1)' in df.columns:
+                y = df['NP(FCC_A1#1)']
+            if 'NP(FCC_A1#2)' in df.columns:
+                y = df['NP(FCC_A1#2)']
+            ax.plot(x, y, label=fname)
+        except Exception as ex:
+            print(fname, ex)
 
+# plt.legend()
 plt.show()

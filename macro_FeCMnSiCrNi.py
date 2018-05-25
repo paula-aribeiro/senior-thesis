@@ -24,16 +24,16 @@ Ni = Ni.ravel()
 T_min, T_max, T_step = 673, 1473, 10
 
 # Code shared to all macros
-# blab: table containing phases compoisitions (x(*,*)) and phase fraction (np(*))
+# blab: table containing phases compositions (x(*,*)) and phase fraction (np(*))
 common_snippet = ('go data\n'
-              'def-el fe c mn si cr ni\n'
-              'rej ph *\n'
-              'rest ph fcc bcc cem\n'
-              'get\n'
-              'go p-3\n\n'
-              'ent-sy tab blab\n'
-              't x(*,*) np(*);\n\n'
-              's-a-v 1 t {:d} {:d} {:d}\n\n').format(T_min, T_max, T_step)
+                  'def-el fe c mn si cr ni\n'
+                  'rej ph *\n'
+                  'rest ph fcc bcc cem\n'
+                  'get\n'
+                  'go p-3\n\n'
+                  'ent-sy tab blab\n'
+                  't x(*,*) np(*);\n\n'
+                  's-a-v 1 t {:d} {:d} {:d}\n\n').format(T_min, T_max, T_step)
 
 filelist = []
 currmacro = []
@@ -70,7 +70,7 @@ for idx, (wC, wMn, wSi, wCr, wNi) in enumerate(zip(C, Mn, Si, Cr, Ni)):
                   'blab,\n'
                   '{}\n').format(fout))
 
-    fmacro.write(('save RESULT.POLY3 y\n\n'))
+    fmacro.write('save RESULT.POLY3 y\n\n')
 
     chunksize += 1
 
