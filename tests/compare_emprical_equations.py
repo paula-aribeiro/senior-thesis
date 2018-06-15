@@ -27,8 +27,9 @@ fig, ax = plt.subplots()
 
 sel = database['C']*100 < .6
 
-ax.plot(database['A1'][sel] - 273.15, A1_empirical[sel], 'kx', label='A1')
-ax.plot(database['A3'][sel] - 273.15, A3_empirical[sel], 'rx', label='A3')
+K = 273.15
+ax.plot(database['A1'][sel] - K, A1_empirical[sel], 'kx', label='A1')
+ax.plot(database['A3'][sel] - K, A3_empirical[sel], 'rx', label='A3')
 
 x = list(ax.get_xlim())
 ax.plot(x, x, 'b-')
@@ -36,5 +37,7 @@ ax.plot(x, x, 'b-')
 ax.set_xlabel(u'T Thermo-Calc (°C)')
 ax.set_ylabel(u'T empirical (°C)')
 ax.legend()
+
+fig.savefig('comparison_Andrews_TC.png', dpi=300)
 
 plt.show()
