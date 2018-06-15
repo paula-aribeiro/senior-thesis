@@ -1,5 +1,5 @@
 """
-Generates Thermo-Calc macros and run them all.
+Generates and Thermo-Calc macros
 """
 
 import os

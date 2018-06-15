@@ -1,3 +1,9 @@
+"""
+Check for each file RESULT_####.TXT if the expected columns were
+exported (NP(BCC_A2), NP(FCC_A1), and NP(CEMENTITE)) and get the
+actual temperature range
+"""
+
 import glob
 import sys
 import numpy as np
@@ -17,7 +23,7 @@ for i, fname in enumerate(files['file']):
     try:
         df = load_table(fname, sort='T', fill=0)
     except:
-        print(fname, 'failed!')
+        print('Failed to load {}'.format(fname))
     else:
         flist.append(fname)
         

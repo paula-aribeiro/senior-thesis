@@ -1,3 +1,7 @@
+"""
+Plot all RESULT_####.TXT files
+"""
+
 import glob
 import numpy as np
 import pandas as pd

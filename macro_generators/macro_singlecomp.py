@@ -1,3 +1,8 @@
+"""
+Given a simulation with index #, plot corresponding 
+RESULT_####.TXT and compare to Thermo-Calc macro simulation
+"""
+
 import os
 import sys
 import numpy as np
