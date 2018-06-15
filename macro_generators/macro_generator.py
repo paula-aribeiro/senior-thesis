@@ -37,7 +37,7 @@ common_snippet = ('go data\n'
                   'get\n'
                   'go p-3\n\n'
                   'ent-sy tab blab\n'
-                  't x(*,*) np(*);\n\n'
+                  't w(*,*) np(*);\n\n'
                   's-a-v 1 t {:d} {:d} {:d}\n\n').format(T_min, T_max, T_step)
 
 filelist = []
