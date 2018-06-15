@@ -6,7 +6,7 @@ get
 go p-3
 
 ent-sy tab blab
-t x(*,*) np(*);
+t w(*,*) np(*);
 
 s-a-v 1 t 673 1473 10
 
