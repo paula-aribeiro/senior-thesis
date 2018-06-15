@@ -1,9 +1,9 @@
 
  Phase Region for:
-     FCC_A1#1                      
- col-1=T, col-2=X(FCC_A1#1,C), col-3=X(FCC_A1#1,CR), col-4=X(FCC_A1#1,FE),
-   col-5=X(FCC_A1#1,MN), col-6=X(FCC_A1#1,NI), col-7=X(FCC_A1#1,SI),
-   col-8=NP(FCC_A1#1),
+     FCC_A1#2                      
+ col-1=T, col-2=X(FCC_A1#2,C), col-3=X(FCC_A1#2,CR), col-4=X(FCC_A1#2,FE),
+   col-5=X(FCC_A1#2,MN), col-6=X(FCC_A1#2,NI), col-7=X(FCC_A1#2,SI),
+   col-8=NP(FCC_A1#2),
    1.17300E+03   4.60174E-02   1.01238E-06   8.90251E-01   2.15589E-02 
     8.96907E-07   4.21705E-02   1.00000E+00
    1.18300E+03   4.60174E-02   1.01238E-06   8.90251E-01   2.15589E-02 
@@ -68,10 +68,10 @@
     8.96907E-07   4.21705E-02   1.00000E+00
 
  Phase Region for:
-     FCC_A1#1                      
- col-1=T, col-2=X(FCC_A1#1,C), col-3=X(FCC_A1#1,CR), col-4=X(FCC_A1#1,FE),
-   col-5=X(FCC_A1#1,MN), col-6=X(FCC_A1#1,NI), col-7=X(FCC_A1#1,SI),
-   col-8=NP(FCC_A1#1),
+     FCC_A1#2                      
+ col-1=T, col-2=X(FCC_A1#2,C), col-3=X(FCC_A1#2,CR), col-4=X(FCC_A1#2,FE),
+   col-5=X(FCC_A1#2,MN), col-6=X(FCC_A1#2,NI), col-7=X(FCC_A1#2,SI),
+   col-8=NP(FCC_A1#2),
    1.17300E+03   4.60174E-02   1.01238E-06   8.90251E-01   2.15589E-02 
     8.96907E-07   4.21705E-02   1.00000E+00
    1.17290E+03   4.60174E-02   1.01238E-06   8.90251E-01   2.15589E-02 
@@ -81,12 +81,12 @@
 
  Phase Region for:
      CEMENTITE                     
-     FCC_A1#1                      
+     FCC_A1#2                      
  col-1=T, col-2=X(CEMENTITE,C), col-3=X(CEMENTITE,CR), col-4=X(CEMENTITE,FE),
    col-5=X(CEMENTITE,MN), col-6=X(CEMENTITE,NI), col-7=X(CEMENTITE,SI),
-   col-8=X(FCC_A1#1,C), col-9=X(FCC_A1#1,CR), col-10=X(FCC_A1#1,FE),
-   col-11=X(FCC_A1#1,MN), col-12=X(FCC_A1#1,NI), col-13=X(FCC_A1#1,SI),
-   col-14=NP(CEMENTITE), col-15=NP(FCC_A1#1),
+   col-8=X(FCC_A1#2,C), col-9=X(FCC_A1#2,CR), col-10=X(FCC_A1#2,FE),
+   col-11=X(FCC_A1#2,MN), col-12=X(FCC_A1#2,NI), col-13=X(FCC_A1#2,SI),
+   col-14=NP(CEMENTITE), col-15=NP(FCC_A1#2),
    1.16790E+03   2.50000E-01   5.26892E-06   7.20257E-01   2.97380E-02 
     1.42297E-07   0.00000E+00   4.60174E-02   1.01238E-06   8.90251E-01 
     2.15589E-02   8.96907E-07   4.21705E-02   6.35535E-08   1.00000E+00
@@ -139,14 +139,14 @@
  Phase Region for:
      BCC_A2                        
      CEMENTITE                     
-     FCC_A1#1                      
+     FCC_A1#2                      
  col-1=T, col-2=X(BCC_A2,C), col-3=X(BCC_A2,CR), col-4=X(BCC_A2,FE),
    col-5=X(BCC_A2,MN), col-6=X(BCC_A2,NI), col-7=X(BCC_A2,SI),
    col-8=X(CEMENTITE,C), col-9=X(CEMENTITE,CR), col-10=X(CEMENTITE,FE),
    col-11=X(CEMENTITE,MN), col-12=X(CEMENTITE,NI), col-13=X(CEMENTITE,SI),
-   col-14=X(FCC_A1#1,C), col-15=X(FCC_A1#1,CR), col-16=X(FCC_A1#1,FE),
-   col-17=X(FCC_A1#1,MN), col-18=X(FCC_A1#1,NI), col-19=X(FCC_A1#1,SI),
-   col-20=NP(BCC_A2), col-21=NP(CEMENTITE), col-22=NP(FCC_A1#1),
+   col-14=X(FCC_A1#2,C), col-15=X(FCC_A1#2,CR), col-16=X(FCC_A1#2,FE),
+   col-17=X(FCC_A1#2,MN), col-18=X(FCC_A1#2,NI), col-19=X(FCC_A1#2,SI),
+   col-20=NP(BCC_A2), col-21=NP(CEMENTITE), col-22=NP(FCC_A1#2),
    1.02642E+03   7.74843E-04   3.73768E-07   9.31179E-01   8.21031E-03 
     4.61574E-07   5.98354E-02   2.50000E-01   5.40345E-06   7.16525E-01 
     3.34700E-02   1.05552E-07   0.00000E+00   2.92042E-02   6.50442E-07 

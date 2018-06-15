@@ -23,7 +23,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=1.000000e-06 w(ni)=1.250075e-02
+s-c w(cr)=1.000000e-06 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -34,7 +34,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=1.000000e-06 w(ni)=2.500050e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -45,7 +45,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=1.000000e-06 w(ni)=3.750025e-02
+s-c w(cr)=1.000000e-06 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -56,7 +56,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=1.000000e-06 w(ni)=5.000000e-02
+s-c w(cr)=1.000000e-06 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -67,7 +67,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=1.250075e-02 w(ni)=1.000000e-06
+s-c w(cr)=7.500750e-03 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -78,7 +78,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=1.250075e-02 w(ni)=1.250075e-02
+s-c w(cr)=7.500750e-03 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -89,7 +89,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=1.250075e-02 w(ni)=2.500050e-02
+s-c w(cr)=7.500750e-03 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -100,7 +100,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=1.250075e-02 w(ni)=3.750025e-02
+s-c w(cr)=7.500750e-03 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -111,7 +111,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=1.250075e-02 w(ni)=5.000000e-02
+s-c w(cr)=7.500750e-03 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -122,7 +122,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=2.500050e-02 w(ni)=1.000000e-06
+s-c w(cr)=1.500050e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -133,7 +133,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=2.500050e-02 w(ni)=1.250075e-02
+s-c w(cr)=1.500050e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -144,7 +144,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=2.500050e-02 w(ni)=2.500050e-02
+s-c w(cr)=1.500050e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -155,7 +155,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=2.500050e-02 w(ni)=3.750025e-02
+s-c w(cr)=1.500050e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -166,7 +166,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=2.500050e-02 w(ni)=5.000000e-02
+s-c w(cr)=1.500050e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -177,7 +177,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=3.750025e-02 w(ni)=1.000000e-06
+s-c w(cr)=2.250025e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -188,7 +188,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=3.750025e-02 w(ni)=1.250075e-02
+s-c w(cr)=2.250025e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -199,7 +199,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=3.750025e-02 w(ni)=2.500050e-02
+s-c w(cr)=2.250025e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -210,7 +210,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=3.750025e-02 w(ni)=3.750025e-02
+s-c w(cr)=2.250025e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -221,7 +221,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=3.750025e-02 w(ni)=5.000000e-02
+s-c w(cr)=2.250025e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -232,7 +232,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=5.000000e-02 w(ni)=1.000000e-06
+s-c w(cr)=3.000000e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -243,7 +243,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=5.000000e-02 w(ni)=1.250075e-02
+s-c w(cr)=3.000000e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -254,7 +254,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=5.000000e-02 w(ni)=2.500050e-02
+s-c w(cr)=3.000000e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -265,7 +265,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=5.000000e-02 w(ni)=3.750025e-02
+s-c w(cr)=3.000000e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -276,7 +276,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=7.500750e-03
-s-c w(cr)=5.000000e-02 w(ni)=5.000000e-02
+s-c w(cr)=3.000000e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -298,7 +298,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=1.000000e-06 w(ni)=1.250075e-02
+s-c w(cr)=1.000000e-06 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -309,7 +309,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=1.000000e-06 w(ni)=2.500050e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -320,7 +320,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=1.000000e-06 w(ni)=3.750025e-02
+s-c w(cr)=1.000000e-06 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -331,7 +331,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=1.000000e-06 w(ni)=5.000000e-02
+s-c w(cr)=1.000000e-06 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -342,7 +342,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=1.250075e-02 w(ni)=1.000000e-06
+s-c w(cr)=7.500750e-03 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -353,7 +353,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=1.250075e-02 w(ni)=1.250075e-02
+s-c w(cr)=7.500750e-03 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -364,7 +364,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=1.250075e-02 w(ni)=2.500050e-02
+s-c w(cr)=7.500750e-03 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -375,7 +375,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=1.250075e-02 w(ni)=3.750025e-02
+s-c w(cr)=7.500750e-03 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -386,7 +386,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=1.250075e-02 w(ni)=5.000000e-02
+s-c w(cr)=7.500750e-03 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -397,7 +397,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=2.500050e-02 w(ni)=1.000000e-06
+s-c w(cr)=1.500050e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -408,7 +408,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=2.500050e-02 w(ni)=1.250075e-02
+s-c w(cr)=1.500050e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -419,7 +419,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=2.500050e-02 w(ni)=2.500050e-02
+s-c w(cr)=1.500050e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -430,7 +430,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=2.500050e-02 w(ni)=3.750025e-02
+s-c w(cr)=1.500050e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -441,7 +441,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=2.500050e-02 w(ni)=5.000000e-02
+s-c w(cr)=1.500050e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -452,7 +452,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=3.750025e-02 w(ni)=1.000000e-06
+s-c w(cr)=2.250025e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -463,7 +463,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=3.750025e-02 w(ni)=1.250075e-02
+s-c w(cr)=2.250025e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -474,7 +474,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=3.750025e-02 w(ni)=2.500050e-02
+s-c w(cr)=2.250025e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -485,7 +485,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=3.750025e-02 w(ni)=3.750025e-02
+s-c w(cr)=2.250025e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -496,7 +496,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=3.750025e-02 w(ni)=5.000000e-02
+s-c w(cr)=2.250025e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -507,7 +507,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=5.000000e-02 w(ni)=1.000000e-06
+s-c w(cr)=3.000000e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -518,7 +518,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=5.000000e-02 w(ni)=1.250075e-02
+s-c w(cr)=3.000000e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -529,7 +529,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=5.000000e-02 w(ni)=2.500050e-02
+s-c w(cr)=3.000000e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -540,7 +540,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=5.000000e-02 w(ni)=3.750025e-02
+s-c w(cr)=3.000000e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -551,7 +551,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=1.500050e-02
-s-c w(cr)=5.000000e-02 w(ni)=5.000000e-02
+s-c w(cr)=3.000000e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -573,7 +573,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=1.000000e-06 w(ni)=1.250075e-02
+s-c w(cr)=1.000000e-06 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -584,7 +584,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=1.000000e-06 w(ni)=2.500050e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -595,7 +595,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=1.000000e-06 w(ni)=3.750025e-02
+s-c w(cr)=1.000000e-06 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -606,7 +606,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=1.000000e-06 w(ni)=5.000000e-02
+s-c w(cr)=1.000000e-06 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -617,7 +617,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=1.250075e-02 w(ni)=1.000000e-06
+s-c w(cr)=7.500750e-03 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -628,7 +628,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=1.250075e-02 w(ni)=1.250075e-02
+s-c w(cr)=7.500750e-03 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -639,7 +639,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=1.250075e-02 w(ni)=2.500050e-02
+s-c w(cr)=7.500750e-03 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -650,7 +650,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=1.250075e-02 w(ni)=3.750025e-02
+s-c w(cr)=7.500750e-03 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -661,7 +661,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=1.250075e-02 w(ni)=5.000000e-02
+s-c w(cr)=7.500750e-03 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -672,7 +672,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=2.500050e-02 w(ni)=1.000000e-06
+s-c w(cr)=1.500050e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -683,7 +683,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=2.500050e-02 w(ni)=1.250075e-02
+s-c w(cr)=1.500050e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -694,7 +694,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=2.500050e-02 w(ni)=2.500050e-02
+s-c w(cr)=1.500050e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -705,7 +705,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=2.500050e-02 w(ni)=3.750025e-02
+s-c w(cr)=1.500050e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -716,7 +716,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=2.500050e-02 w(ni)=5.000000e-02
+s-c w(cr)=1.500050e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -727,7 +727,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=3.750025e-02 w(ni)=1.000000e-06
+s-c w(cr)=2.250025e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -738,7 +738,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=3.750025e-02 w(ni)=1.250075e-02
+s-c w(cr)=2.250025e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -749,7 +749,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=3.750025e-02 w(ni)=2.500050e-02
+s-c w(cr)=2.250025e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -760,7 +760,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=3.750025e-02 w(ni)=3.750025e-02
+s-c w(cr)=2.250025e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -771,7 +771,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=3.750025e-02 w(ni)=5.000000e-02
+s-c w(cr)=2.250025e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -782,7 +782,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=5.000000e-02 w(ni)=1.000000e-06
+s-c w(cr)=3.000000e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -793,7 +793,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=5.000000e-02 w(ni)=1.250075e-02
+s-c w(cr)=3.000000e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -804,7 +804,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=5.000000e-02 w(ni)=2.500050e-02
+s-c w(cr)=3.000000e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -815,7 +815,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=5.000000e-02 w(ni)=3.750025e-02
+s-c w(cr)=3.000000e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -826,7 +826,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=2.250025e-02
-s-c w(cr)=5.000000e-02 w(ni)=5.000000e-02
+s-c w(cr)=3.000000e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -848,7 +848,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=1.000000e-06 w(ni)=1.250075e-02
+s-c w(cr)=1.000000e-06 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -859,7 +859,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=1.000000e-06 w(ni)=2.500050e-02
+s-c w(cr)=1.000000e-06 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -870,7 +870,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=1.000000e-06 w(ni)=3.750025e-02
+s-c w(cr)=1.000000e-06 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -881,7 +881,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=1.000000e-06 w(ni)=5.000000e-02
+s-c w(cr)=1.000000e-06 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -892,7 +892,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=1.250075e-02 w(ni)=1.000000e-06
+s-c w(cr)=7.500750e-03 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -903,7 +903,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=1.250075e-02 w(ni)=1.250075e-02
+s-c w(cr)=7.500750e-03 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -914,7 +914,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=1.250075e-02 w(ni)=2.500050e-02
+s-c w(cr)=7.500750e-03 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -925,7 +925,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=1.250075e-02 w(ni)=3.750025e-02
+s-c w(cr)=7.500750e-03 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -936,7 +936,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=1.250075e-02 w(ni)=5.000000e-02
+s-c w(cr)=7.500750e-03 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -947,7 +947,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=2.500050e-02 w(ni)=1.000000e-06
+s-c w(cr)=1.500050e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -958,7 +958,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=2.500050e-02 w(ni)=1.250075e-02
+s-c w(cr)=1.500050e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -969,7 +969,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=2.500050e-02 w(ni)=2.500050e-02
+s-c w(cr)=1.500050e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -980,7 +980,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=2.500050e-02 w(ni)=3.750025e-02
+s-c w(cr)=1.500050e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -991,7 +991,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=2.500050e-02 w(ni)=5.000000e-02
+s-c w(cr)=1.500050e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -1002,7 +1002,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=3.750025e-02 w(ni)=1.000000e-06
+s-c w(cr)=2.250025e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -1013,7 +1013,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=3.750025e-02 w(ni)=1.250075e-02
+s-c w(cr)=2.250025e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -1024,7 +1024,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=3.750025e-02 w(ni)=2.500050e-02
+s-c w(cr)=2.250025e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -1035,7 +1035,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=3.750025e-02 w(ni)=3.750025e-02
+s-c w(cr)=2.250025e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -1046,7 +1046,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=3.750025e-02 w(ni)=5.000000e-02
+s-c w(cr)=2.250025e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,
@@ -1057,7 +1057,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=5.000000e-02 w(ni)=1.000000e-06
+s-c w(cr)=3.000000e-02 w(ni)=1.000000e-06
 c-e
 c-e
 step,,
@@ -1068,7 +1068,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=5.000000e-02 w(ni)=1.250075e-02
+s-c w(cr)=3.000000e-02 w(ni)=7.500750e-03
 c-e
 c-e
 step,,
@@ -1079,7 +1079,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=5.000000e-02 w(ni)=2.500050e-02
+s-c w(cr)=3.000000e-02 w(ni)=1.500050e-02
 c-e
 c-e
 step,,
@@ -1090,7 +1090,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=5.000000e-02 w(ni)=3.750025e-02
+s-c w(cr)=3.000000e-02 w(ni)=2.250025e-02
 c-e
 c-e
 step,,
@@ -1101,7 +1101,7 @@ save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
 s-c w(c)=9.000000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
-s-c w(cr)=5.000000e-02 w(ni)=5.000000e-02
+s-c w(cr)=3.000000e-02 w(ni)=3.000000e-02
 c-e
 c-e
 step,,

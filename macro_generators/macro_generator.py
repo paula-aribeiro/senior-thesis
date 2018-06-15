@@ -11,7 +11,7 @@ os.system('rm ../macros_thermocalc/macro*tcm')
 
 # Compositions
 C_min, Mn_min, Si_min, Cr_min, Ni_min = 0, 1e-6, 1e-6, 1e-6, 1e-6
-C_max, Mn_max, Si_max, Cr_max, Ni_max = 1.5e-2, 3e-2, 3e-2, 5e-2, 5e-2
+C_max, Mn_max, Si_max, Cr_max, Ni_max = 1.5e-2, 3e-2, 3e-2, 3e-2, 3e-2
 C_lvls, Mn_lvls, Si_lvls, Cr_lvls, Ni_lvls = 11, 5, 5, 5, 5
 C, Mn, Si, Cr, Ni = np.mgrid[C_min:C_max:C_lvls*1j,
                              Mn_min:Mn_max:Mn_lvls*1j,
@@ -95,8 +95,8 @@ df = pd.DataFrame(dict(file=filelist, macro=currmacro, C=C, Mn=Mn, Si=Si, Cr=Cr,
 df.to_csv('../databases/compositions_files.csv', index=False)
 
 # Clear results
-# os.system('rm results/*DAT')
+os.system('rm ../results/*DAT')
 
 for fname in macrolist:
     os.system('thermocalc {}'.format(fname))
-    break
+    # break
