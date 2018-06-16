@@ -18,35 +18,35 @@ def A3_Andrews(C=0, Ni=0, Mn=0, Si=0, Cr=0):
     return 910 - 203*C**.5 + 44.7*Si - 15.2*Ni - 30.0*Mn + 11.0*Cr
 
 
-database = pd.read_csv('../databases/Tcritical.csv')
-
+# load database
+db = pd.read_csv('../databases/Tcritical.csv')
 
 A1_empirical = A1_Andrews(
-    100*database['Ni'], 100*database['Mn'], 100*database['Si'], 100*database['Cr'])
-A3_empirical = A3_Andrews(100*database['C'], 100*database['Ni'],
-                          100*database['Mn'], 100*database['Si'], 100*database['Cr'])
+    100*db['Ni'], 100*db['Mn'], 100*db['Si'], 100*db['Cr'])
+A3_empirical = A3_Andrews(100*db['C'], 100*db['Ni'],
+                          100*db['Mn'], 100*db['Si'], 100*db['Cr'])
 
 fig, ax = plt.subplots()
 
-sel = (database['eutectoid'] == 'hipo') & (database['C'] > 0)
+sel = (db['eutectoid'] == 'hipo') & (db['C'] > 0)
 
 K = 273.15
-ax.plot(database['A1'][sel] - K, A1_empirical[sel], 'kx', label='A1')
-ax.plot(database['A3'][sel] - K, A3_empirical[sel], 'rx', label='A3')
+ax.plot(db['A1'][sel] - K, A1_empirical[sel], 'kx', label='A1')
+ax.plot(db['A3'][sel] - K, A3_empirical[sel], 'rx', label='A3')
 
 x = list(ax.get_xlim())
 ax.plot(x, x, 'b-')
 
 ax.set_xlabel(u'T database Thermo-Calc (°C)')
-ax.set_ylabel(u'T empirical (°C)')
+ax.set_ylabel(u'T empirical equations (°C)')
 ax.legend()
 
 fig.savefig('comparison_Andrews_TC.png', dpi=300)
 
 # add anotations and zoom in
-sel = sel & (A1_empirical < database['A1'] - K)
-for i in database[sel].index:
-    ax.annotate(str(i), (database['A1'][sel][i] - K, A1_empirical[sel][i]), size=10)
+sel = sel & (A1_empirical < db['A1'] - K)
+for i in db[sel].index:
+    ax.annotate(str(i), (db['A1'][sel][i] - K, A1_empirical[sel][i]), size=10)
 
 ax.set_xlim(880, 2100)
 ax.set_ylim(700, 850)
