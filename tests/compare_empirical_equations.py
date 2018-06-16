@@ -34,6 +34,9 @@ K = 273.15
 ax.plot(database['A1'][sel] - K, A1_empirical[sel], 'kx', label='A1')
 ax.plot(database['A3'][sel] - K, A3_empirical[sel], 'rx', label='A3')
 
+x = list(ax.get_xlim())
+ax.plot(x, x, 'b-')
+
 ax.set_xlabel(u'T database Thermo-Calc (°C)')
 ax.set_ylabel(u'T empirical (°C)')
 ax.legend()
@@ -41,17 +44,13 @@ ax.legend()
 fig.savefig('comparison_Andrews_TC.png', dpi=300)
 
 # add anotations and zoom in
-
-sel = sel & (A3_empirical < database['A3'] - K) & (database['A3'] - K > 800)
+sel = sel & (A1_empirical < database['A1'] - K)
 for i in database[sel].index:
-    ax.text(database['A3'][sel][i] - K, A3_empirical[sel][i], str(i), size=9)
+    ax.annotate(str(i), (database['A1'][sel][i] - K, A1_empirical[sel][i]), size=10)
 
-x = list(ax.get_xlim())
-ax.plot(x, x, 'b-')
+ax.set_xlim(880, 2100)
+ax.set_ylim(700, 850)
 
-ax.set_xlim(600, 1200)
-ax.set_ylim(600, 1200)
-
-fig.savefig('comparison_Andrews_TC_closeup.pdf', dpi=300)
+fig.savefig('comparison_Andrews_TC_detail.pdf')
 
 plt.show()
