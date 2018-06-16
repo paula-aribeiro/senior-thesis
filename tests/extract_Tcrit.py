@@ -61,29 +61,33 @@ for i, fname in enumerate(database['file']):
             idx_fer, = np.where(mf_fer == 0)
             idx_cem, = np.where(mf_cem == 0)
 
-            if len(idx_fer) > 0 and len(idx_cem) > 0:
-                # A1' and A3 are related to the temperatures where
-                # mf_fer and mf_cem are 0, namely T_fer and T_cem
-                # A1' equals to min(T_fer, T_cem)
-                # A3 equals to max(T_fer, T_cem)
-                T_fer = T[idx_fer[0]]
-                T_cem = T[idx_cem[0]]
+            if len(idx_fer) > 0:
+                if len(idx_cem) > 0:
+                    # A1' and A3 are related to the temperatures where
+                    # mf_fer and mf_cem are 0, namely T_fer and T_cem
+                    # A1' equals to min(T_fer, T_cem)
+                    # A3 equals to max(T_fer, T_cem)
+                    T_fer = T[idx_fer[0]]
+                    T_cem = T[idx_cem[0]]
 
-                if T_fer > T_cem:
-                    A1prime[i] = T_cem
-                    A3[i] = T_fer
-                    eutectoid[i] = 'hipo'
+                    if T_fer > T_cem:
+                        A1prime[i] = T_cem
+                        A3[i] = T_fer
+                        eutectoid[i] = 'hipo'
+                    else:
+                        A1prime[i] = T_fer
+                        A3[i] = T_cem
+                        eutectoid[i] = 'hiper'
                 else:
-                    A1prime[i] = T_fer
-                    A3[i] = T_cem
-                    eutectoid[i] = 'hiper'
+                    # If cementite is not defined, there's no intecritical
+                    # phases field (ferrite + austenite + cementite).
+                    # In this case, we assume A1 = A1' and A3 is the lowest
+                    # temperature where mf_fer is 0
+                    A1prime[i] = A1[i]
+                    eutectoid[i] = 'hipo'
             else:
-                # If cementite is not defined, there's no intecritical
-                # phases field (ferrite + austenite + cementite).
-                # In this case, we assume A1 = A1' and A3 is the lowest
-                # temperature where mf_fer is 0
-                A1prime[i] = A1[i]
-                eutectoid[i] = 'hipo'
+                if len(mf_cem) > 0:
+                    eutectoid[i] = 'hiper'
         else:
             print('{} has no austenite'.format(fname))
 
