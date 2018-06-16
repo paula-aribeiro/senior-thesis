@@ -33,11 +33,15 @@ for i, fname in enumerate(database['file']):
             # mole fraction of ferrite
             mf_fer = df['NP(BCC_A2)']
 
+        max_aus = 0 # 0 K
         if 'NP(FCC_A1#1)' in df.columns:
             # mole fraction of austenite
             mf_aus = df['NP(FCC_A1#1)']
-        elif 'NP(FCC_A1#2)' in df.columns:
-            mf_aus = df['NP(FCC_A1#2)']
+            max_aus = mf_aus.max()
+        if 'NP(FCC_A1#2)' in df.columns:
+            # Chooses the column with higher NP values
+            if df['NP(FCC_A1#2)'].max() > max_aus:
+                mf_aus = df['NP(FCC_A1#2)']
 
         if 'NP(CEMENTITE)' in df.columns:
             # mole fraction of cementite
