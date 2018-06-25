@@ -44,7 +44,7 @@ if __name__ == '__main__':
         row = df.iloc[[idx]]
 
         # Generates macro
-        fmacro = open('macro_singlecomp.tcm', 'w')
+        fmacro = open('/tmp/macro_singlecomp.tcm', 'w')
         fmacro.write(('go data\n'
                       'def-el fe c mn si cr ni\n'
                       'rej ph *\n'
@@ -89,7 +89,7 @@ if __name__ == '__main__':
         fmacro.close()
 
         # run Thermo-Calc
-        os.system('thermocalc macro_singlecomp.tcm')
+        os.system('thermocalc /tmp/macro_singlecomp.tcm')
 
         if args.replace:
             A1, A1prime, A3, eutectoid = extract_Tcrit(fname)
