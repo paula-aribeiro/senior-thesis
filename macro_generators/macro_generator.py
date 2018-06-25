@@ -97,15 +97,17 @@ df = pd.DataFrame(dict(file=filelist, macro=currmacro, C=C, Mn=Mn, Si=Si, Cr=Cr,
 # saving df to fname
 fname = '../databases/compositions_files.csv'
 file = open(fname, 'w')
-file.write(('# C {:g}:{:g}:{:d}\n'
-            '# Mn {:g}:{:g}:{:d}\n'
-            '# Si {:g}:{:g}:{:d}\n'
-            '# Cr {:g}:{:g}:{:d}\n'
-            '# Ni {:g}:{:g}:{:d}\n').format(C_min, C_max, C_lvls,
-                                           Mn_min, Mn_max, Mn_lvls,
-                                           Si_min, Si_max, Si_lvls,
-                                           Cr_min, Cr_max, Cr_lvls,
-                                           Ni_min, Ni_max, Ni_lvls))
+file.write(('# T {:g}:{:g}:{:g}\n'
+            '# C {:g}:{:g}:{:d}j\n'
+            '# Mn {:g}:{:g}:{:d}j\n'
+            '# Si {:g}:{:g}:{:d}j\n'
+            '# Cr {:g}:{:g}:{:d}j\n'
+            '# Ni {:g}:{:g}:{:d}j\n').format(T_min, T_max, T_step,
+                                             C_min, C_max, C_lvls,
+                                             Mn_min, Mn_max, Mn_lvls,
+                                             Si_min, Si_max, Si_lvls,
+                                             Cr_min, Cr_max, Cr_lvls,
+                                             Ni_min, Ni_max, Ni_lvls))
 file.close()
 df.to_csv(fname, index=False, mode='a')
 
