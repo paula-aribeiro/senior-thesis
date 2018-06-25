@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from tctools import load_table, plot_table
 import argparse
 # Local modules
-from parse_database import read_header_database
+from parse_database import read_header_database, parse_header_database
 from extract_Tcrit import extract_Tcrit
 
 if __name__ == '__main__':
@@ -20,20 +20,26 @@ if __name__ == '__main__':
     parser.add_argument('-s', '--silent', action='store_false')
     args = parser.parse_args()
 
-    T_min, T_max, T_step = 673, 1473, 10
     fdatabase = '../databases/Tcritical.csv'
     header = read_header_database(fdatabase)
+    trange, crange = parse_header_database(header)
+    T_min, T_max, T_step, _ = trange
+
     df = pd.read_csv(fdatabase, comment='#')
 
     for idx in args.indices:
         fname = '../results/{:05d}.DAT'.format(int(idx))
 
-        fig, ax = plt.subplots()
-        result = load_table(fname, sort='T', fill=0)
-        plot_table(df=result, xaxis='T', ax=ax, colpattern='NP(*)')
-        plt.pause(.1)
-        fig.show()
-        plt.pause(.1)
+        try:
+            fig, ax = plt.subplots()
+            result = load_table(fname, sort='T', fill=0)
+            plot_table(df=result, xaxis='T', ax=ax, colpattern='NP(*)')
+        except:
+            print('Failed to plot {}'.format(fname))
+        else:
+            plt.pause(.1)
+            fig.show()
+            plt.pause(.1)
 
         idx, = np.where(fname == df['file'].values)
         if len(idx) > 0:
@@ -44,7 +50,7 @@ if __name__ == '__main__':
         row = df.iloc[[idx]]
 
         # Generates macro
-        fmacro = open('/tmp/macro_singlecomp.tcm', 'w')
+        fmacro = open('macro_singlecomp.tcm', 'w')
         fmacro.write(('go data\n'
                       'def-el fe c mn si cr ni\n'
                       'rej ph *\n'
@@ -53,7 +59,7 @@ if __name__ == '__main__':
                       'go p-3\n\n'
                       'ent-sy tab blab\n'
                       't x(*,*) np(*);\n\n'
-                      's-a-v 1 t {:d} {:d} {:d}\n\n').format(T_min, T_max, T_step))
+                      's-a-v 1 t {:g} {:g} {:g}\n\n').format(T_min, T_max, T_step))
 
         wC = float(row['C'].values)
         wMn = float(row['Mn'].values)
@@ -62,8 +68,8 @@ if __name__ == '__main__':
         wNi = float(row['Ni'].values)
 
         fmacro.write(('s-c n=1 p=101325 t=1173\n'
-                      's-c w(c)={:e} w(mn)={:e} w(si)={:e}\n'
-                      's-c w(cr)={:e} w(ni)={:e}\n'
+                      's-c w(c)={:g} w(mn)={:g} w(si)={:g}\n'
+                      's-c w(cr)={:g} w(ni)={:g}\n'
                       'c-e\n'
                       'c-e\n').format(wC, wMn, wSi, wCr, wNi))
 
@@ -82,14 +88,14 @@ if __name__ == '__main__':
         if args.silent:
             fmacro.write(('post\n'
                           's-l f\n'
-                          's-d-a x t-c\n'
                           'plot,,\n'))
 
             fmacro.write('set-int')
         fmacro.close()
 
         # run Thermo-Calc
-        os.system('thermocalc /tmp/macro_singlecomp.tcm')
+        os.system('thermocalc macro_singlecomp.tcm')
+        os.system('rm macro_singlecomp.tcm')
 
         if args.replace:
             A1, A1prime, A3, eutectoid = extract_Tcrit(fname)
