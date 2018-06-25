@@ -1,8 +1,9 @@
-# C 0:0.015:11
-# Mn 1e-06:0.03:5
-# Si 1e-06:0.03:5
-# Cr 1e-06:0.03:5
-# Ni 1e-06:0.03:5
+# T 673:1473:10
+# C 0:0.015:11j
+# Mn 1e-06:0.03:5j
+# Si 1e-06:0.03:5j
+# Cr 1e-06:0.03:5j
+# Ni 1e-06:0.03:5j
 file,macro,C,Mn,Si,Cr,Ni
 ../results/00000.DAT,../macros_thermocalc/macro_1.tcm,0.0,1e-06,1e-06,1e-06,1e-06
 ../results/00001.DAT,../macros_thermocalc/macro_1.tcm,0.0,1e-06,1e-06,1e-06,0.00750075
