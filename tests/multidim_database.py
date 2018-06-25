@@ -68,12 +68,13 @@ if __name__ == '__main__':
                         ax.text(x[j], y[j], str(idx), size=10)
 
             line, = ax.plot(x, y, marker='x')
-            i += 1
 
             if args.free:
                 line.set_label('{} {}'.format(args.free, i))
             else:
                 break
+
+            i += 1
         except Exception as ex:
             break
 
