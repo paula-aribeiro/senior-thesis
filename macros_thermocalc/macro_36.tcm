@@ -11,1102 +11,552 @@ t w(*,*) np(*);
 s-a-v 1 t 673 1473 10
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.000000e-06 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=1e-06 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03500.DAT
+../results/01750.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.000000e-06 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=1e-06 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03501.DAT
+../results/01751.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.000000e-06 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=1e-06 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03502.DAT
+../results/01752.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.000000e-06 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=1e-06 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03503.DAT
+../results/01753.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.000000e-06 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=1e-06 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03504.DAT
+../results/01754.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=7.500750e-03 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.00750075 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03505.DAT
+../results/01755.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=7.500750e-03 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.00750075 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03506.DAT
+../results/01756.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=7.500750e-03 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.00750075 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03507.DAT
+../results/01757.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=7.500750e-03 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.00750075 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03508.DAT
+../results/01758.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=7.500750e-03 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.00750075 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03509.DAT
+../results/01759.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.500050e-02 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0150005 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03510.DAT
+../results/01760.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.500050e-02 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0150005 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03511.DAT
+../results/01761.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.500050e-02 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0150005 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03512.DAT
+../results/01762.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.500050e-02 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0150005 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03513.DAT
+../results/01763.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=1.500050e-02 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0150005 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03514.DAT
+../results/01764.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=2.250025e-02 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0225002 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03515.DAT
+../results/01765.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=2.250025e-02 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0225002 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03516.DAT
+../results/01766.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=2.250025e-02 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0225002 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03517.DAT
+../results/01767.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=2.250025e-02 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0225002 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03518.DAT
+../results/01768.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=2.250025e-02 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.0225002 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03519.DAT
+../results/01769.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=3.000000e-02 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.03 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03520.DAT
+../results/01770.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=3.000000e-02 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.03 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03521.DAT
+../results/01771.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=3.000000e-02 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.03 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03522.DAT
+../results/01772.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=3.000000e-02 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.03 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03523.DAT
+../results/01773.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.000000e-06
-s-c w(cr)=3.000000e-02 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=1e-06
+s-c w(cr)=0.03 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03524.DAT
+../results/01774.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.000000e-06 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=1e-06 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03525.DAT
+../results/01775.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.000000e-06 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=1e-06 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03526.DAT
+../results/01776.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.000000e-06 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=1e-06 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03527.DAT
+../results/01777.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.000000e-06 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=1e-06 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03528.DAT
+../results/01778.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.000000e-06 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=1e-06 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03529.DAT
+../results/01779.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=7.500750e-03 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.00750075 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03530.DAT
+../results/01780.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=7.500750e-03 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.00750075 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03531.DAT
+../results/01781.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=7.500750e-03 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.00750075 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03532.DAT
+../results/01782.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=7.500750e-03 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.00750075 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03533.DAT
+../results/01783.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=7.500750e-03 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.00750075 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03534.DAT
+../results/01784.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.500050e-02 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0150005 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03535.DAT
+../results/01785.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.500050e-02 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0150005 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03536.DAT
+../results/01786.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.500050e-02 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0150005 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03537.DAT
+../results/01787.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.500050e-02 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0150005 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03538.DAT
+../results/01788.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=1.500050e-02 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0150005 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03539.DAT
+../results/01789.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=2.250025e-02 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0225002 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03540.DAT
+../results/01790.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=2.250025e-02 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0225002 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03541.DAT
+../results/01791.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=2.250025e-02 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0225002 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03542.DAT
+../results/01792.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=2.250025e-02 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0225002 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03543.DAT
+../results/01793.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=2.250025e-02 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.0225002 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03544.DAT
+../results/01794.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=3.000000e-02 w(ni)=1.000000e-06
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.03 w(ni)=1e-06
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03545.DAT
+../results/01795.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=3.000000e-02 w(ni)=7.500750e-03
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.03 w(ni)=0.00750075
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03546.DAT
+../results/01796.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=3.000000e-02 w(ni)=1.500050e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.03 w(ni)=0.0150005
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03547.DAT
+../results/01797.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=3.000000e-02 w(ni)=2.250025e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.03 w(ni)=0.0225002
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03548.DAT
+../results/01798.DAT
 save RESULT.POLY3 y
 
 s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=7.500750e-03
-s-c w(cr)=3.000000e-02 w(ni)=3.000000e-02
+s-c w(c)=0.003 w(mn)=0.03 w(si)=0.00750075
+s-c w(cr)=0.03 w(ni)=0.03
 c-e
 c-e
 step,,
 tab,
 blab,
-../results/03549.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.000000e-06 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03550.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.000000e-06 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03551.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.000000e-06 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03552.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.000000e-06 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03553.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.000000e-06 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03554.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=7.500750e-03 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03555.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=7.500750e-03 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03556.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=7.500750e-03 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03557.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=7.500750e-03 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03558.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=7.500750e-03 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03559.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.500050e-02 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03560.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.500050e-02 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03561.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.500050e-02 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03562.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.500050e-02 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03563.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=1.500050e-02 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03564.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=2.250025e-02 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03565.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=2.250025e-02 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03566.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=2.250025e-02 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03567.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=2.250025e-02 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03568.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=2.250025e-02 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03569.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=3.000000e-02 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03570.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=3.000000e-02 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03571.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=3.000000e-02 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03572.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=3.000000e-02 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03573.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=1.500050e-02
-s-c w(cr)=3.000000e-02 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03574.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.000000e-06 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03575.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.000000e-06 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03576.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.000000e-06 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03577.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.000000e-06 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03578.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.000000e-06 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03579.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=7.500750e-03 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03580.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=7.500750e-03 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03581.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=7.500750e-03 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03582.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=7.500750e-03 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03583.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=7.500750e-03 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03584.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.500050e-02 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03585.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.500050e-02 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03586.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.500050e-02 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03587.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.500050e-02 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03588.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=1.500050e-02 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03589.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=2.250025e-02 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03590.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=2.250025e-02 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03591.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=2.250025e-02 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03592.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=2.250025e-02 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03593.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=2.250025e-02 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03594.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=3.000000e-02 w(ni)=1.000000e-06
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03595.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=3.000000e-02 w(ni)=7.500750e-03
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03596.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=3.000000e-02 w(ni)=1.500050e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03597.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=3.000000e-02 w(ni)=2.250025e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03598.DAT
-save RESULT.POLY3 y
-
-s-c n=1 p=101325 t=1173
-s-c w(c)=7.500000e-03 w(mn)=2.250025e-02 w(si)=2.250025e-02
-s-c w(cr)=3.000000e-02 w(ni)=3.000000e-02
-c-e
-c-e
-step,,
-tab,
-blab,
-../results/03599.DAT
+../results/01799.DAT
 save RESULT.POLY3 y
 
