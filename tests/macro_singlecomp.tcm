@@ -1,0 +1,21 @@
+go data
+def-el fe c mn si cr ni
+rej ph *
+rest ph fcc bcc cem
+get
+go p-3
+
+ent-sy tab blab
+t x(*,*) np(*);
+
+s-a-v 1 t 673 1473 10
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=7.500000e-03 w(mn)=7.500750e-03 w(si)=3.000000e-02
+s-c w(cr)=2.250025e-02 w(ni)=2.250025e-02
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/03368.DAT

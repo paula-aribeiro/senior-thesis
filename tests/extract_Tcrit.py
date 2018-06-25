@@ -11,18 +11,10 @@ from tctools import load_table, plot_table
 # local module
 from parse_database import read_header_database
 
-# database
-fname = '../databases/compositions_files.csv'
-header = read_header_database(fname)
-db = pd.read_csv(fname, comment='#')
 
-n = len(db)
-A1 = np.full(n, np.nan)
-A1prime = np.full(n, np.nan)
-A3 = np.full(n, np.nan)
-eutectoid = np.full(n, None)
+def extract_Tcrit(fname):
+    A1, A1prime, A3, eutectoid = np.nan, np.nan, np.nan, None
 
-for i, fname in enumerate(db['file']):
     try:
         df = load_table(fname, sort='T', fill=0)
     except:
@@ -58,13 +50,13 @@ for i, fname in enumerate(db['file']):
             # highest temperature where mf_aus is 0
             idx, = np.where(mf_aus == 0)
             if len(idx) > 0:
-                A1[i] = T[idx[-1]]
+                A1 = T[idx[-1]]
 
             # A3 temperature
             # lowest temperature where mf_aus is 1
             idx, = np.where(mf_aus == 1)
             if len(idx) > 0:
-                A3[i] = T[idx[0]]
+                A3 = T[idx[0]]
 
             # Determine A1'
             idx_fer, = np.where(mf_fer == 0)
@@ -80,34 +72,51 @@ for i, fname in enumerate(db['file']):
                     T_cem = T[idx_cem[0]]
 
                     if T_fer > T_cem:
-                        A1prime[i] = T_cem
-                        A3[i] = T_fer
-                        eutectoid[i] = 'hipo'
+                        A1prime = T_cem
+                        A3 = T_fer
+                        eutectoid = 'hipo'
                     else:
-                        A1prime[i] = T_fer
-                        A3[i] = T_cem
-                        eutectoid[i] = 'hiper'
+                        A1prime = T_fer
+                        A3 = T_cem
+                        eutectoid = 'hiper'
                 else:
                     # If cementite is not defined, there's no intecritical
                     # phases field (ferrite + austenite + cementite).
                     # In this case, we assume A1 = A1' and A3 is the lowest
                     # temperature where mf_fer is 0
-                    A1prime[i] = A1[i]
-                    eutectoid[i] = 'hipo'
+                    A1prime = A1
+                    eutectoid = 'hipo'
             else:
                 if len(mf_cem) > 0:
-                    eutectoid[i] = 'hiper'
+                    eutectoid = 'hiper'
         else:
             print('{} has no austenite'.format(fname))
 
+    return A1, A1prime, A3, eutectoid
 
-db['A1'] = A1
-db['A1prime'] = A1prime
-db['A3'] = A3
-db['eutectoid'] = eutectoid
 
-fname = '../databases/Tcritical.csv'
-file = open(fname, 'w')
-file.write(header)
-file.close()
-db.to_csv(fname, index=False, mode='a')
+if __name__ == '__main__':
+    # database
+    fname = '../databases/compositions_files.csv'
+    header = read_header_database(fname)
+    db = pd.read_csv(fname, comment='#')
+
+    n = len(db)
+    A1 = np.full(n, np.nan)
+    A1prime = np.full(n, np.nan)
+    A3 = np.full(n, np.nan)
+    eutectoid = np.full(n, None)
+
+    for i, fname in enumerate(db['file']):
+        A1[i], A1prime[i], A3[i], eutectoid[i] = extract_Tcrit(fname)
+
+    db['A1'] = A1
+    db['A1prime'] = A1prime
+    db['A3'] = A3
+    db['eutectoid'] = eutectoid
+
+    fname = '../databases/Tcritical.csv'
+    file = open(fname, 'w')
+    file.write(header)
+    file.close()
+    db.to_csv(fname, index=False, mode='a')
