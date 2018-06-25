@@ -8,16 +8,21 @@ import sys
 import numpy as np
 import pandas as pd
 from tctools import load_table, plot_table
+# local module
+from parse_database import read_header_database
 
-database = pd.read_csv('../databases/compositions_files.csv')
+# database
+fname = '../databases/compositions_files.csv'
+header = read_header_database(fname)
+db = pd.read_csv(fname, comment='#')
 
-n = len(database)
+n = len(db)
 A1 = np.full(n, np.nan)
 A1prime = np.full(n, np.nan)
 A3 = np.full(n, np.nan)
 eutectoid = np.full(n, None)
 
-for i, fname in enumerate(database['file']):
+for i, fname in enumerate(db['file']):
     try:
         df = load_table(fname, sort='T', fill=0)
     except:
@@ -33,7 +38,7 @@ for i, fname in enumerate(database['file']):
             # mole fraction of ferrite
             mf_fer = df['NP(BCC_A2)']
 
-        max_aus = 0 # 0 K
+        max_aus = 0  # 0 K
         if 'NP(FCC_A1#1)' in df.columns:
             # mole fraction of austenite
             mf_aus = df['NP(FCC_A1#1)']
@@ -96,9 +101,13 @@ for i, fname in enumerate(database['file']):
             print('{} has no austenite'.format(fname))
 
 
-database['A1'] = A1
-database['A1prime'] = A1prime
-database['A3'] = A3
-database['eutectoid'] = eutectoid
+db['A1'] = A1
+db['A1prime'] = A1prime
+db['A3'] = A3
+db['eutectoid'] = eutectoid
 
-database.to_csv('../databases/Tcritical.csv', index=False)
+fname = '../databases/Tcritical.csv'
+file = open(fname, 'w')
+file.write(header)
+file.close()
+db.to_csv(fname, index=False, mode='a')

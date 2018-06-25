@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from tctools import load_table, plot_table
 
-files = pd.read_csv('../databases/compositions_files.csv')
+files = pd.read_csv('../databases/compositions_files.csv', comment='#')
 
 flist = []
 hasbcc = []

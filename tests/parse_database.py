@@ -12,28 +12,43 @@ def read_header_database(fname):
     return header
 
 
-def parse_linspace(lspace):
-    try:
-        vmin, vmax, lvls = lspace.strip().split(':')
-    except:
-        raise Exception('Cannot parse {}'.format(lspace))
-    else:
-        vmin, vmax, lvls = float(vmin), float(vmax), int(lvls)
+class VarRange:
+    def __init__(self, rng):
+        self.min = rng[0]
+        self.max = rng[1]
+        self.step = rng[2]
+        self.lvls = rng[3]
 
-    return [vmin, vmax, lvls]
+
+def parse_range(rng):
+    try:
+        vmin, vmax, vstep = rng.strip().split(':')
+    except:
+        raise Exception('Cannot parse {}'.format(rng))
+    else:
+        vmin, vmax, vstep = float(vmin), float(vmax), complex(vstep)
+        vlvls = int(vstep.imag)
+        vstep = int(vstep.real)
+
+    return [vmin, vmax, vstep, vlvls]
 
 
 def parse_header_database(header):
     # composition range
+    trange = []
     crange = OrderedDict()
+
     for line in header.strip().split('\n'):
         line = line.strip('# ')
         try:
-            el, lspace = line.split()
-            lspace = parse_linspace(lspace)
+            el, rng = line.split()
+            rng = parse_range(rng)
         except:
             print('Cannot parse {}'.format(line))
         else:
-            crange[el] = lspace
+            if el == 'T':
+                trange = rng
+            else:
+                crange[el] = VarRange(rng)
 
-    return crange
+    return trange, crange

@@ -5,29 +5,31 @@ arrays
 
 import numpy as np
 import pandas as pd
-# local module
 from collections import OrderedDict
+# local module
 from parse_database import read_header_database, parse_header_database
 
 fname = '../databases/Tcritical.csv'
 
 # read database header to get data structure
 header = read_header_database(fname)
-crange = parse_header_database(header)
+# temperature range; composition range
+trange, crange = parse_header_database(header)
 db = pd.read_csv(fname, comment='#')
 
+# get shape of multidimensional array
 shape = []
-for el, lspace in crange.items():
-    shape.append(lspace[-1])
-
-print(crange)
+for el, rng in crange.items():
+    shape.append(rng.lvls)
 print(shape)
 
+# reshaple flattened dataframe
 dbmulti = OrderedDict()
 for key in db.columns:
     dbmulti[key] = db[key].values.reshape(shape)
 
 
+# plot
 import matplotlib.pyplot as plt
 
 
@@ -40,7 +42,7 @@ fig, ax = plt.subplots()
 for i in range(5):
     x = dbmulti['C'][:, 1, i, 3, 3]
     y = dbmulti['A3'][:, 1, i, 3, 3]
-    
+
     for j, fname in enumerate(dbmulti['file'][:, 1, i, 3, 3]):
         idx = parse_fname(fname)
         ax.annotate(str(idx), (x[j], y[j]), size=10)

@@ -19,14 +19,14 @@ def A3_Andrews(C=0, Ni=0, Mn=0, Si=0, Cr=0):
 
 
 # load database
-db = pd.read_csv('../databases/Tcritical.csv')
+db = pd.read_csv('../databases/Tcritical.csv', comment='#')
 
-A1_empirical = A1_Andrews(
-    100*db['Ni'], 100*db['Mn'], 100*db['Si'], 100*db['Cr'])
+A1_empirical = A1_Andrews(100*db['Ni'], 100*db['Mn'],
+                          100*db['Si'], 100*db['Cr'])
 A3_empirical = A3_Andrews(100*db['C'], 100*db['Ni'],
                           100*db['Mn'], 100*db['Si'], 100*db['Cr'])
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(12, 8))
 
 sel = (db['eutectoid'] == 'hipo') & (db['C'] > 0)
 
@@ -41,16 +41,16 @@ ax.set_xlabel(u'T database Thermo-Calc (°C)')
 ax.set_ylabel(u'T empirical equations (°C)')
 ax.legend()
 
-fig.savefig('comparison_Andrews_TC.png', dpi=300)
+# fig.savefig('comparison_Andrews_TC.pdf')
 
-# add anotations and zoom in
-sel = sel & (A1_empirical < db['A1'] - K)
-for i in db[sel].index:
-    ax.annotate(str(i), (db['A1'][sel][i] - K, A1_empirical[sel][i]), size=10)
+# # add anotations and zoom in
+# sel = sel & (A1_empirical < db['A1'] - K)
+# for i in db[sel].index:
+#     ax.annotate(str(i), (db['A1'][sel][i] - K, A1_empirical[sel][i]), size=10)
 
-ax.set_xlim(880, 2100)
-ax.set_ylim(700, 850)
+# ax.set_xlim(880, 2100)
+# ax.set_ylim(700, 850)
 
-fig.savefig('comparison_Andrews_TC_detail.pdf')
+# fig.savefig('comparison_Andrews_TC_detail.pdf')
 
 plt.show()
