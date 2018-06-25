@@ -13,6 +13,7 @@ os.system('rm ../macros_thermocalc/macro*tcm')
 C_min, Mn_min, Si_min, Cr_min, Ni_min = 0, 1e-6, 1e-6, 1e-6, 1e-6
 C_max, Mn_max, Si_max, Cr_max, Ni_max = 1.5e-2, 3e-2, 3e-2, 3e-2, 3e-2
 C_lvls, Mn_lvls, Si_lvls, Cr_lvls, Ni_lvls = 11, 5, 5, 5, 5
+
 C, Mn, Si, Cr, Ni = np.mgrid[C_min:C_max:C_lvls*1j,
                              Mn_min:Mn_max:Mn_lvls*1j,
                              Si_min:Si_max:Si_lvls*1j,
@@ -45,8 +46,8 @@ currmacro = []
 macrolist = []
 
 # splits macros into smaller macros
-chunksize = 0
-chunksizemax = 100
+chunkit = 0
+chunksize = 50
 macronumber = 1
 newmacro = True
 
@@ -61,8 +62,8 @@ for idx, (wC, wMn, wSi, wCr, wNi) in enumerate(zip(C, Mn, Si, Cr, Ni)):
 
     # set compositions
     fmacro.write(('s-c n=1 p=101325 t=1173\n'
-                  's-c w(c)={:e} w(mn)={:e} w(si)={:e}\n'
-                  's-c w(cr)={:e} w(ni)={:e}\n'
+                  's-c w(c)={:g} w(mn)={:g} w(si)={:g}\n'
+                  's-c w(cr)={:g} w(ni)={:g}\n'
                   'c-e\n'
                   'c-e\n').format(wC, wMn, wSi, wCr, wNi))
 
@@ -77,14 +78,14 @@ for idx, (wC, wMn, wSi, wCr, wNi) in enumerate(zip(C, Mn, Si, Cr, Ni)):
 
     fmacro.write('save RESULT.POLY3 y\n\n')
 
-    chunksize += 1
+    chunkit += 1
 
     filelist.append(fout)
     currmacro.append(macroname)
 
-    if chunksize >= chunksizemax:
+    if chunkit >= chunksize:
         macronumber += 1
-        chunksize = 0
+        chunkit = 0
         newmacro = True
         fmacro.close()
 
@@ -92,7 +93,21 @@ fmacro.close()
 
 df = pd.DataFrame(dict(file=filelist, macro=currmacro, C=C, Mn=Mn, Si=Si, Cr=Cr, Ni=Ni),
                   columns=['file', 'macro', 'C', 'Mn', 'Si', 'Cr', 'Ni'])
-df.to_csv('../databases/compositions_files.csv', index=False)
+
+# saving df to fname
+fname = '../databases/compositions_files.csv'
+file = open(fname, 'w')
+file.write(('# C {:g}:{:g}:{:d}\n'
+            '# Mn {:g}:{:g}:{:d}\n'
+            '# Si {:g}:{:g}:{:d}\n'
+            '# Cr {:g}:{:g}:{:d}\n'
+            '# Ni {:g}:{:g}:{:d}\n').format(C_min, C_max, C_lvls,
+                                           Mn_min, Mn_max, Mn_lvls,
+                                           Si_min, Si_max, Si_lvls,
+                                           Cr_min, Cr_max, Cr_lvls,
+                                           Ni_min, Ni_max, Ni_lvls))
+file.close()
+df.to_csv(fname, index=False, mode='a')
 
 # Clear results
 os.system('rm ../results/*DAT')

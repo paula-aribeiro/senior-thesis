@@ -13,7 +13,7 @@ from tctools import load_table, plot_table
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         T_min, T_max, T_step = 673, 1473, 10
-        df = pd.read_csv('../databases/compositions_files.csv')
+        df = pd.read_csv('../databases/compositions_files.csv', comment='#')
 
         for idx in sys.argv[1:]:
             fname = '../results/{:05d}.DAT'.format(int(idx))
@@ -44,6 +44,15 @@ if __name__ == '__main__':
                           'ent-sy tab blab\n'
                           't x(*,*) np(*);\n\n'
                           's-a-v 1 t {:d} {:d} {:d}\n\n').format(T_min, T_max, T_step))
+            
+            # output file
+            # replace fname with results of new simulation
+            # step: calculates equilibrium for each temperature
+            # tab blab: saves table 'blab' to fout
+            fmacro.write(('step,,\n'
+                          'tab,\n'
+                          'blab,\n'
+                          '{}\n').format(fname))
 
             wC = float(row['C'].values)
             wMn = float(row['Mn'].values)
