@@ -93,10 +93,10 @@ if __name__ == '__main__':
 
         if args.replace:
             A1, A1prime, A3, eutectoid = extract_Tcrit(fname)
-            df['A1'][idx] = A1
-            df['A1prime'][idx] = A1prime
-            df['A3'][idx] = A3
-            df['eutectoid'][idx] = eutectoid
+            df.loc[idx, 'A1'] = A1
+            df.loc[idx, 'A1prime'] = A1prime
+            df.loc[idx, 'A3'] = A3
+            df.loc[idx, 'eutectoid'] = eutectoid
 
             print('{} was replaced by new simulation results'.format(fname))
     

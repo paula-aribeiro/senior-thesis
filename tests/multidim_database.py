@@ -29,26 +29,56 @@ for key in db.columns:
     dbmulti[key] = db[key].values.reshape(shape)
 
 
-# plot
-import matplotlib.pyplot as plt
+if __name__ == '__main__':
+    import matplotlib.pyplot as plt
+    import argparse
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-a', '--annotate', action='store_true',
+                        help='annotate plot')
+    parser.add_argument('-f', '--free', default=None,
+                        help='free variable besides carbon (e.g, try setting -free mn)')
+    parser.add_argument('--mn', type=int, default=0)
+    parser.add_argument('--si', type=int, default=0)
+    parser.add_argument('--cr', type=int, default=0)
+    parser.add_argument('--ni', type=int, default=0)
+    args = parser.parse_args()
 
-def parse_fname(fname):
-    fname = fname.split('/')[-1]
-    return int(fname.split('.')[0])
+    def parse_fname(fname):
+        fname = fname.split('/')[-1]
+        return int(fname.split('.')[0])
 
+    # plot
+    fig, ax = plt.subplots()
 
-fig, ax = plt.subplots()
-for i in range(5):
-    x = dbmulti['C'][:, 1, i, 3, 3]
-    y = dbmulti['A3'][:, 1, i, 3, 3]
+    i = 0
+    while True:
+        try:
+            if args.free:
+                vars(args)[args.free] = i
 
-    for j, fname in enumerate(dbmulti['file'][:, 1, i, 3, 3]):
-        idx = parse_fname(fname)
-        ax.annotate(str(idx), (x[j], y[j]), size=10)
+            x = dbmulti['C'][:, args.mn, args.si, args.cr, args.ni]
+            y = dbmulti['A3'][:, args.mn, args.si, args.cr, args.ni]
+            files = dbmulti['file'][:, args.mn, args.si, args.cr, args.ni]
 
-    ax.plot(x, y, marker='x')
+            for j, fname in enumerate(files):
+                idx = parse_fname(fname)
+                if args.annotate:
+                    if not np.isnan(x[j]) and not np.isnan(y[j]):
+                        ax.text(x[j], y[j], str(idx), size=10)
 
-ax.set_xlabel('Carbon content (wt. fraction)')
-ax.set_ylabel('Temperature (K)')
-plt.show()
+            line, = ax.plot(x, y, marker='x')
+            i += 1
+
+            if args.free:
+                line.set_label('{} {}'.format(args.free, i))
+            else:
+                break
+        except Exception as ex:
+            break
+
+    if args.free:
+        ax.legend()
+    ax.set_xlabel('Carbon content (wt. fraction)')
+    ax.set_ylabel('Temperature (K)')
+    plt.show()
