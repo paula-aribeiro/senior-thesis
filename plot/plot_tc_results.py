@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from tctools import load_table, plot_table
 
-files = pd.read_csv('../databases/compositions_files.csv')
+files = pd.read_csv('../databases/compositions_files.csv', comment='#')
 
 fig, ax = plt.subplots()
 

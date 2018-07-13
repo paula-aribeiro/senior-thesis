@@ -1,5 +1,5 @@
 """
-Given a simulation with index #, plot corresponding 
+Given a simulation with index #, plot corresponding
 RESULT_####.TXT and compare to Thermo-Calc macro simulation
 """
 
@@ -13,7 +13,7 @@ from tctools import load_table, plot_table
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         T_min, T_max, T_step = 673, 1473, 10
-        df = pd.read_csv('../databases/compositions_files.csv')
+        df = pd.read_csv('../databases/compositions_files.csv', comment='#')
 
         for idx in sys.argv[1:]:
             fname = '../results/{:05d}.DAT'.format(int(idx))
@@ -25,7 +25,7 @@ if __name__ == '__main__':
             idx, = np.where(fname == df['file'].values)
             if len(idx) > 0:
                 idx = int(idx[0])
-            
+
             sel = df.iloc[idx]
             title = 'Fe-{:g}C-{:g}Mn-{:g}Si-{:g}Ni-{:g}Cr'.format(
                 100*sel['C'], 100*sel['Mn'], 100*sel['Si'], 100*sel['Ni'], 100*sel['Cr'])
