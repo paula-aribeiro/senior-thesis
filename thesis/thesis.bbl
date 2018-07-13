@@ -1,0 +1,44 @@
+\providecommand{\uspbibitem}[2][]{}
+\providecommand{\altdestaque}[1]{\textbf{#1}}
+\providecommand{\usareferenciaalfabetica}{}
+\providecommand{\href}[2]{#2}
+\usareferenciaalfabetica
+\begin{thebibliography}{}
+
+\uspbibitem[{ASM International} (1991)]{ASM1991}
+\bibitem[{ASM International}, 1991]{ASM1991}
+{{ASM International}. \altdestaque{{ASM Metals Handbook, Vol 4 - Heat
+  Treating}}. [S.l.: s.n.], 1991. 2173~p.}
+
+\uspbibitem[B{\'{e}}lisle et al. (2015)]{Belisle2015}
+\bibitem[B{\'{E}}LISLE et al., 2015]{Belisle2015}
+{B{\'{E}}LISLE, E. et al. Evaluation of machine learning interpolation
+  techniques for prediction of physical properties.
+\altdestaque{Computational Materials Science}, v.~98, p. 170--177, feb 2015.
+\href{http://dx.doi.org/10.1016/j.commatsci.2014.10.032}{DOI:
+  10.1016/j.commatsci.2014.10.032}.}
+
+\uspbibitem[Bhadeshia (1999)]{Bhadeshia1999}
+\bibitem[BHADESHIA, 1999]{Bhadeshia1999}
+{BHADESHIA, H. K. D.~H. Neural Networks in Materials Science.
+\altdestaque{ISIJ International}, v.~39, n.~10, p. 966--979, 1999.
+\href{http://dx.doi.org/10.2355/isijinternational.39.966}{DOI:
+  10.2355/isijinternational.39.966}.}
+
+\uspbibitem[Digges, Rosenberg e Geil (1960)]{Digges1960}
+\bibitem[DIGGES; ROSENBERG; GEIL, 1960]{Digges1960}
+{DIGGES, T.~G.; ROSENBERG, S.~J.; GEIL, G.~W. \altdestaque{{NB Monograph 18:
+  Heat Treatment and Properties of Iron and Steel}}. [S.l.: s.n.], 1960.}
+
+\uspbibitem[Dossett e Boyer (2006)]{Dossett2006}
+\bibitem[DOSSETT; BOYER, 2006]{Dossett2006}
+{DOSSETT, J.~L.; BOYER, H.~E. \altdestaque{{Practical Heat Treating: Second
+  Edition}}. [S.l.: s.n.], 2006. 296~p.
+\href{http://dx.doi.org/10.1361/pht2006}{DOI: 10.1361/pht2006}.}
+
+\uspbibitem[Totten (2006)]{Totten2006}
+\bibitem[TOTTEN, 2006]{Totten2006}
+{TOTTEN, G.~E.(Ed.). \altdestaque{{Steel Heat Treatment Handbook}}. 2nd. ed.
+  [S.l.]: CRC Press, 2006.}
+
+\end{thebibliography}

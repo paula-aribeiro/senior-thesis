@@ -1,14 +1,15 @@
 \select@language {brazil}
-\contentsline {chapter}{\numberline {1}\uppercase {Introdu\IeC {\c c}\IeC {\~a}o}}{4}{chapter.1}
-\contentsline {chapter}{\numberline {2}\uppercase {Objetivos}}{5}{chapter.2}
-\contentsline {chapter}{\numberline {3}\uppercase {Revis\IeC {\~a}o bibliogr\IeC {\'a}fica}}{6}{chapter.3}
-\contentsline {section}{\numberline {3.1}\uppercase {Os componentes do a\IeC {\c c}o}}{6}{section.3.1}
-\contentsline {section}{\numberline {3.2}\uppercase {Tratamento t\IeC {\'e}rmico de a\IeC {\c c}os}}{7}{section.3.2}
-\contentsline {section}{\numberline {3.3}\uppercase {Determina\IeC {\c c}\IeC {\~a}o das Temperaturas Cr\IeC {\'\i }ticas}}{8}{section.3.3}
-\contentsline {section}{\numberline {3.4}\uppercase {Machine Learning e a determina\IeC {\c c}\IeC {\~a}o de Temperaturas Cr\IeC {\'\i }ticas}}{8}{section.3.4}
-\contentsline {chapter}{\numberline {4}\uppercase {Metodologia}}{10}{chapter.4}
-\contentsline {section}{\numberline {4.1}\uppercase {O Banco de Dados}}{10}{section.4.1}
-\contentsline {section}{\numberline {4.2}\uppercase {Extra\IeC {\c c}\IeC {\~a}o de temperaturas cr\IeC {\'\i }ticas}}{11}{section.4.2}
-\contentsline {section}{\numberline {4.3}\uppercase {Experimentos}}{12}{section.4.3}
-\contentsline {chapter}{\numberline {5}\uppercase {Resultados e discuss\IeC {\~a}o}}{13}{chapter.5}
-\contentsline {chapter}{\numberline {6}\uppercase {Conclus\IeC {\~o}es parciais}}{15}{chapter.6}
+\contentsline {chapter}{\numberline {1}\uppercase {Introdu\IeC {\c c}\IeC {\~a}o}}{6}{chapter.1}
+\contentsline {chapter}{\numberline {2}\uppercase {Objetivos}}{7}{chapter.2}
+\contentsline {chapter}{\numberline {3}\uppercase {Revis\IeC {\~a}o bibliogr\IeC {\'a}fica}}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}\uppercase {Os componentes do a\IeC {\c c}o}}{8}{section.3.1}
+\contentsline {section}{\numberline {3.2}\uppercase {Tratamento t\IeC {\'e}rmico de a\IeC {\c c}os}}{10}{section.3.2}
+\contentsline {section}{\numberline {3.3}\uppercase {Determina\IeC {\c c}\IeC {\~a}o das Temperaturas Cr\IeC {\'\i }ticas}}{10}{section.3.3}
+\contentsline {section}{\numberline {3.4}\uppercase {Aprendizado de m\'aquina e a determina\IeC {\c c}\IeC {\~a}o de Temperaturas Cr\'iticas}}{10}{section.3.4}
+\contentsline {chapter}{\numberline {4}\uppercase {Metodologia}}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}\uppercase {O Banco de Dados}}{12}{section.4.1}
+\contentsline {section}{\numberline {4.2}\uppercase {Extra\c {c}\~ao de temperaturas cr{\'i}ticas}}{13}{section.4.2}
+\contentsline {section}{\numberline {4.3}\uppercase {Experimentos}}{14}{section.4.3}
+\contentsline {chapter}{\numberline {5}\uppercase {Resultados e discuss\IeC {\~a}o}}{15}{chapter.5}
+\contentsline {chapter}{\numberline {6}\uppercase {Conclus\IeC {\~o}es parciais}}{18}{chapter.6}
+\contentsline {chapter}{Refer\^encias}{19}{chapter.7}

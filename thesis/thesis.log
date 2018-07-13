@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  13 JUL 2018 15:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.13)  13 JUL 2018 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **thesis.tex
-(/home/arthur/repositories/tcc_paula/thesis/thesis.tex
+(./thesis.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texmf/tex/latex/usptex/usp.cls
 Document Class: usp 
-(/home/arthur/texmf/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
@@ -73,7 +73,7 @@ Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 \Hy@linkcounter=\count79
 \Hy@pagecounter=\count80
 
-(/home/arthur/texmf/tex/latex/hyperref/pd1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count81
@@ -90,7 +90,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count82
 
-(/home/arthur/texmf/tex/latex/url/url.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -115,7 +115,7 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/home/arthur/texmf/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count87
 \c@bookmark@seq@number=\count88
@@ -1239,12 +1239,7 @@ Package: translator 2010/06/12 ver 1.10
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/translator-language-
 mappings.tex))) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen172
-)
-
-LaTeX Warning: Unused global option(s):
-    [hidelinks].
-
-(/home/arthur/repositories/tcc_paula/thesis/thesis.aux
+) (./thesis.aux
 
 LaTeX Warning: Label `tab:faixas_composicao' multiply defined.
 
@@ -1279,7 +1274,7 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 \AtBeginShipoutBox=\box51
 Package hyperref Info: Link coloring OFF on input line 35.
 
-(/home/arthur/texmf/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1291,8 +1286,7 @@ LaTeX Info: Redefining \ref on input line 35.
 LaTeX Info: Redefining \pageref on input line 35.
 LaTeX Info: Redefining \nameref on input line 35.
 
-(/home/arthur/repositories/tcc_paula/thesis/thesis.out)
-(/home/arthur/repositories/tcc_paula/thesis/thesis.out)
+(./thesis.out) (./thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
 
@@ -1355,12 +1349,12 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 35.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (12.0pt too wide) in paragraph at lines 50--50
+Overfull \hbox (12.0pt too wide) in paragraph at lines 56--56
 []$[]$ 
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 50--50
+Overfull \hbox (12.0pt too wide) in paragraph at lines 56--56
 []$[]$ 
  []
 
@@ -1368,19 +1362,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.50 \elementospretextuais
+l.56 \elementospretextuais
                             %Comando do USPTeX para criaÃ§Ã£o dos elemenos p...
 [1
 
-]
+] [2
+
+] (./thesis.ldf
+Overfull \hbox (7.92824pt too wide) in paragraph at lines 4--4
+ [] [][]\T1/phv/m/n/12 Diagrama de fa-ses ferro-carbono  ([]DIG-GES; RO-SEN-BER
+G; GEIL, 
+ []
+
+)
 \tf@ldf=\write5
 \openout5 = `thesis.ldf'.
 
- (/home/arthur/repositories/tcc_paula/thesis/thesis.ldt)
+ [3
+
+] (./thesis.ldt)
 \tf@ldt=\write6
 \openout6 = `thesis.ldt'.
 
- [2
+ [4
 
 ]
 \tf@ldl=\write7
@@ -1392,125 +1396,159 @@ l.50 \elementospretextuais
 \tf@ldsb=\write9
 \openout9 = `thesis.ldsb'.
 
-
-(/home/arthur/repositories/tcc_paula/thesis/thesis.toc
+ (./thesis.toc
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 2.
 )
 \tf@toc=\write10
 \openout10 = `thesis.toc'.
 
- [3
+ [5
 
 ]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 54.
-
-[4
-
-
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 56.
-
-[5
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 58.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 60.
 
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 67.
+[6
+
+
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 62.
+
+[7
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 64.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 66.
+
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 72.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
-) [6
+)
+<img/ferrocarbono-digges.png, id=131, 877.2775pt x 470.75874pt>
+File: img/ferrocarbono-digges.png Graphic file (type png)
+
+<use img/ferrocarbono-digges.png>
+Package pdftex.def Info: img/ferrocarbono-digges.png used on input line 79.
+(pdftex.def)             Requested size: 409.71689pt x 219.8631pt.
+ [8
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 82.
+(hyperref)                removing `\uppercase' on input line 90.
 
-[7]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 94.
-
+[9 <./img/ferrocarbono-digges.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 103.
+(hyperref)                removing `\uppercase' on input line 102.
 
-[8] [9]
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 124.
+Overfull \hbox (3.16992pt too wide) in paragraph at lines 111--111
+[]\T1/phv/m/n/12 APRENDIZADO DE MÁ-QUINA E A DE-TER-MI-NA-ÇÃO DE TEM-PE-RA-TU-R
+AS CRÍ-
+ []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 126.
+(hyperref)                removing `\uppercase' on input line 111.
 
-[10
+[10] [11]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 132.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 134.
+
+[12
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 187.
+(hyperref)                removing `\uppercase' on input line 195.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 197.
+(hyperref)                removing `\uppercase' on input line 205.
 
 
-Overfull \hbox (9.94861pt too wide) in paragraph at lines 199--200
+Overfull \hbox (9.94861pt too wide) in paragraph at lines 207--208
 []\T1/phv/m/n/12 Foram re-a-li-za-dos tes-tes para ave-ri-guar a qua-li-dade do
 s da-dos ex-traí-dos do Thermo-
  []
 
-[11] [12]
+[13] [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 210.
+(hyperref)                removing `\uppercase' on input line 218.
 
+<img/714editado.png, id=178, 803.0pt x 444.66125pt>
+File: img/714editado.png Graphic file (type png)
+ <use img/714editado.png>
+Package pdftex.def Info: img/714editado.png used on input line 227.
+(pdftex.def)             Requested size: 409.71689pt x 226.88278pt.
 
-Overfull \hbox (4.87083pt too wide) in paragraph at lines 230--232
+<img/4321editado.png, id=179, 789.95125pt x 421.575pt>
+File: img/4321editado.png Graphic file (type png)
+
+<use img/4321editado.png>
+Package pdftex.def Info: img/4321editado.png used on input line 233.
+(pdftex.def)             Requested size: 409.71689pt x 218.65417pt.
+
+<img/418editado.png, id=180, 789.95125pt x 418.56375pt>
+File: img/418editado.png Graphic file (type png)
+
+<use img/418editado.png>
+Package pdftex.def Info: img/418editado.png used on input line 239.
+(pdftex.def)             Requested size: 409.71689pt x 217.09236pt.
+ [15
+
+ <./img/714editado.png>]
+Overfull \hbox (4.87083pt too wide) in paragraph at lines 248--250
 \T1/phv/m/n/12 Por exem-plo, al-gu-mas com-po-si-ções com baixo car-bono fi-ca-
 ram com va-lo-res em branco,
  []
 
-[13
-
-] [14]
+[16 <./img/4321editado.png> <./img/418editado.png>] [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 245.
+(hyperref)                removing `\uppercase' on input line 263.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 247.
-[15
+(./thesis.bbl [18
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 267.
+ [19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 247.
- (/home/arthur/repositories/tcc_paula/thesis/thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 247.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 247.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 267.
+ (./thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 267.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 267.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CB0E1A29CF9087242C484B138E6D0563;886.
+(rerunfilecheck)             Checksum: 6F0EAAB2CF68875A606873DF408B8C82;945.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 247.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 267.
  ) 
 Here is how much of TeX's memory you used:
- 19751 strings out of 493029
- 365493 string characters out of 6136234
- 401955 words of memory out of 5000000
- 23047 multiletter control sequences out of 15000+600000
+ 19810 strings out of 493029
+ 365915 string characters out of 6136234
+ 403104 words of memory out of 5000000
+ 23082 multiletter control sequences out of 15000+600000
  22054 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,11n,42p,10392b,761s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1519,11 +1557,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/s
 ymbol/usyr.pfb>
-Output written on /home/arthur/repositories/tcc_paula/thesis/thesis.pdf (16 pag
-es, 60102 bytes).
+Output written on thesis.pdf (20 pages, 238624 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 236 PDF objects out of 1000 (max. 8388607)
+ 203 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
