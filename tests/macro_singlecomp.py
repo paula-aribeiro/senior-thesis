@@ -1,6 +1,11 @@
 """
 Given a simulation with index #, plot corresponding
-RESULT_####.TXT and compare to Thermo-Calc macro simulation
+RESULT_####.TXT and compare to Thermo-Calc macro simulation.
+
+If option --replace is provided, replaces the critical temperatures
+in the database.
+
+If option --silent is provided, Thermo-Calc plot is not shown.
 """
 
 import os
@@ -105,7 +110,7 @@ if __name__ == '__main__':
             df.loc[idx, 'eutectoid'] = eutectoid
 
             print('{} was replaced by new simulation results'.format(fname))
-    
+
     if args.replace:
         file = open(fdatabase, 'w')
         file.write(header)
