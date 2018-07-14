@@ -9,7 +9,24 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Tctools
 tctools/
+
+#Tex temporary files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.ldf
+*.ldl
+*.ldsb
+*.ldsg
+*.ldt
+*.log
+*.out
+*.toc
 
 # C extensions
 *.so
