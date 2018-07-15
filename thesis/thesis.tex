@@ -23,6 +23,8 @@
 
 \usepackage{multirow}  %Multi colunas e multi linhas em tabelas
 
+\usepackage{chemformula}
+
 \makeatletter
 %%%Define linhas horizontais (\thickline) e verticais (') para tabelas
 \newcommand{\thickhline}{
@@ -64,28 +66,71 @@
 \chapter{Revisão bibliográfica}
 
 \section{Os componentes do aço}
-% \subsection{}
-% \subsubsection{}
 
-Aços podem ser vistos como uma combinação de ferro, carbono, manganês e outros elementos de liga. São conhecidas inúmeras combinações de ligas de ferro e carbono e, embora seja esperado que o aço tenha alta dureza e resistência, ele deve ser maleável a certa temperatura \cite{Dossett2006}. Tal mudança de propriedades está relacionada com as diferentes estruturas do ferro e fases que o aço pode assumir.
+Aços podem ser vistos como uma combinação de ferro, carbono, manganês e outros elementos de liga. São conhecidas inúmeras combinações de ligas de ferro e carbono e, embora seja esperado que o aço tenha alta dureza e resistência, ele deve ser maleável a certas temperaturas \cite{Dossett2006}. Tal mudança de propriedades está relacionada com as diferentes estruturas do ferro e fases que o aço pode assumir.
 
-O ferro em estado sólido tem duas formas alotrópicas, ou seja, diferentes estruturas cristalinas que dependem da temperatura e pressão. A baixas temperaturas, o ferro assume a estrutura cúbica de corpo centrado (CCC) e é denominado $\alpha$-Fe, ou ferrita; acima de 910°C, os cristais transformam sua estrutura para cúbica de faces centradas (CFC), também chamada de $\gamma$-Fe, ou austenita, de caráter paramagnético; sua estabilidade vai até 1400°C, onde voltam a assumir uma estrutura CCC, mas chamada de $\delta$-Fe para diferenciar a faixa de temperatura de ocorrência.  Uma quarta estrutura que o ferro pode assumir é o $\beta$-Fe, a 770°C, quando a rede perde suas propriedades ferromagnéticas \cite{Totten2006}.
+O ferro em estado sólido tem duas formas alotrópicas, ou seja, diferentes estruturas cristalinas que dependem da temperatura e pressão. A baixas temperaturas, o ferro assume a estrutura cúbica de corpo centrado (CCC) e é denominado $\alpha$-Fe, ou ferrita; acima de 910°C, os cristais transformam sua estrutura para cúbica de faces centradas (CFC), também chamada de $\gamma$-Fe, ou austenita, de caráter paramagnético; sua estabilidade vai até 1400°C, onde volta a assumir uma estrutura CCC, mas chamada de $\delta$-Fe para diferenciar a faixa de temperatura de ocorrência.  Uma quarta estrutura que o ferro pode assumir é o $\beta$-Fe, a 770°C, quando a rede perde suas propriedades ferromagnéticas \cite{Totten2006}.
 
-A combinação dessas possíveis estruturas do ferro com outros elementos consistem na formação de ligas, geralmente no estado fundido. Como o ferro é a base da liga e tem estruturas cristalinas limitadas, é a sua combinação com outros átomos que resulta em diferentes propriedades. O carbono é insolúvel na fase $\alpha$, mas bastante solúvel na fase $\gamma$, pois a estrutura CFC permite a alocação dos átomos de carbono em seus interstícios. A presença do carbono diminui as temperaturas necessárias para a liga de ferro sofra transformações de fases.
+A partir da combinação dessas possíveis estruturas do ferro com outros elementos formam-se as ligas, geralmente no estado fundido. Como o ferro é a base do aço e tem estruturas cristalinas limitadas, é a sua combinação com outros átomos que resulta em diferentes propriedades. O carbono é insolúvel na fase $\alpha$, mas bastante solúvel na fase $\gamma$, pois a estrutura CFC permite a alocação dos átomos de carbono em seus interstícios. A presença do carbono diminui as temperaturas necessárias para que a liga de ferro sofra transformações de fases.
 
-A porção de uma liga com estrutura e propriedades homogêneas é denominada fase. Para a combinação entre ferro e carbono, as fases principais são ferrita (fase $\alpha$), austenita (fase $\gamma$) e cementita \cite{Dossett2006}. O diagrama de fases ferro-carbono, como o da Figura \ref{fig:diagrama_fe-cementita}, representa a relação entre temperatura, composição e fases formadas no estado de equilíbrio.
+A porção de uma liga com estrutura e propriedades homogêneas é denominada fase. Em equilíbrio termodinâmico, as combinações entre o carbono e o ferro podem resultar em ferrita, austenita ou grafita, cujas relações com a temperatura e composição são mostradas no diagrama de equilíbrio da Figura \ref{fig:diagrama_fe-c}. Nessas condições, os constituintes do sistema Fe-C à temperatura ambiente seriam ferrita $\alpha$ e grafita.
 
-\begin{figure}
-  \includegraphics[width=.9\textwidth]{img/ferrocarbono-digges.png}
-  \caption{Diagrama de fases ferro-carbono \cite{Digges1960}}
-  \label{fig:diagrama_fe-cementita}
+\begin{figure}[ht!]
+  \includegraphics[width=.7\textwidth,angle=180]{img/Fe-C.jpg}
+  \caption{Diagrama de equilíbrio ferro-carbono \cite{Massalski1996v1}}
+  \label{fig:diagrama_fe-c}
 \end{figure}
 
-O ponto eutetóide é aquele em que as três fases coexistem e, para um diagrama ferro-carbono, corresponde a aproximadamente 0,8\% C em massa. Um aço nessa composição resfriado a taxas muito lentas não sofre alteração até alcançar a temperatura dada pela reta PSK da figura 1. A essa temperatura dá-se o nome de A1 e corresponde à máxima temperatura em que a porcentagem de austenita é zero. Aços com composições abaixo da eutetóide, os chamados hipoeutetóides, quando resfriados começam a precipitar ferrita ao atingirem a linha GOS da figura; a essa temperatura dá-se o nome de A3. Certas literaturas fazem distinção para a temperatura A3 de aços hipereutetóides, chamando-a de Acm, pois sob resfriamento ocorre precipitação de cementita. No presente trabalho, ambas serão chamadas de A3, por corresponderem à mínima temperatura em que a fração de austenita é igual a um. É possível ainda diferenciar a temperatura crítica no resfriamento da de aquecimento, utilizando respectivamente as letras ``r'' e ``e''. Teoricamente, elas deveriam ser iguais, mas na prática a taxa de resfriamento ou aquecimento diferencia Ae1 de Ar1 e Ae3 de Ar3. A faixa de temperatura entre A1 e A3 é chamada de intervalo crítico ou de transformação.
+Entretanto a condição de equilíbrio não é verificada na produção industrial, uma vez que a solidificação e resfriamento do aço são muito rápidos. Assim, em vez de grafita forma-se carboneto de ferro, também chamado de cementita, que apesar de ser uma fase metaestável pode ser considerada estável, pois o coeficiente de difusão do carbono no ferro é muito baixo (\SI{2,9e-19}{cm^2/s}). Para essas condições, o diagrama de fase, que não pode ser chamado de diagrama de equilíbrio, é dado pela Figura \ref{fig:diagrama_fe-c_meta}.
 
-Abaixo da temperatura A3, a austenita não é completamente estável e se decompõe em ferrita e cementita. O produto final é influenciado pela temperatura em que a transformação ocorre, que por sua vez é influenciada pela taxa de resfriamento \cite{Digges1960}.
+\begin{figure}[ht!]
+  \includegraphics[width=.7\textwidth,angle=180]{img/Fe-C_meta.jpg}
+  \caption{Diagrama de fases metaestável ferro-carbono \cite{Massalski1996v1}}
+  \label{fig:diagrama_fe-c_meta}
+\end{figure}
 
-A transformação da austenita para ferrita é prejudicada pela presença de carbono dissolvido na austenita. Dessa forma, a solubilidade do carbono tende a diminuir ao longo da transformação, precipitando na forma de carbonetos (Fe3C) \cite{Totten2006}.
+Um ponto importante do diagrama é o ponto eutetóide, no qual as três fases coexistem. Para um sistema apenas ferro e carbono, ele corresponde a aproximadamente 0,8\% C em massa. Assim, aços de composição abaixo desse ponto são denominados hipoeutetóides e, acima, hipereutetóides.
+
+\section{Temperaturas cr\'iticas de aços}
+Além das fases existentes no aço, existem temperaturas de transformação de extrema importância prática. O francês Le Chatelier foi o primeiro a atribuir a letra A para essas temperaturas, devido à palavra \textit{Arrêt}, que representa a parada na temperatura durante a transformação de fase \cite{Silva2010}.
+
+Para exemplificar essas temperaturas críticas de transformação, utilizou-se dados de chamadas do software Thermo-Calc\textregistered{} para traçar o diagrama Fe-C metaestável para um aço 1\% Mn, em massa, da Figura \ref{fig:fe-1mn-C_isopleth}, bem como os gráficos de fração molar de fase em função da temperatura para aços hipo, hiper e eutetóide, das Figuras \ref{fig:fe-01c-1mn}, \ref{fig:fe-0727c-1mn} e \ref{fig:fe-1c-1mn} a seguir.
+
+\begin{figure}[ht!]
+  \includegraphics[width=.7\textwidth]{img/Fe-1Mn-C_isopleth_edited.png}
+  \caption{Diagrama de fases Fe-C para aço 1\% Mn, em massa}
+  \label{fig:fe-1mn-C_isopleth}
+\end{figure}
+
+A primeira linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} representa um aço hipoeutetóide e sua fração molar de fases pode ser vista na Figura \ref{fig:fe-01c-1mn}.
+
+\begin{figure}[ht!]
+  \includegraphics[width=.7\textwidth]{img/Fe-Mn-01C_edited.png}
+  \caption{Fração molar de fase versus Temperatura para aço 0,1\%C 1\% Mn, em massa}
+  \label{fig:fe-01c-1mn}
+\end{figure}
+
+Um aço nessa composição, mediante aquecimento, mantém as fases $\alpha$ e \ch{Fe3C} até chegar ao ponto A1, no qual a $\alpha$ começa a se decompor em $\gamma$. No gráfico da Figura \ref{fig:fe-01c-1mn}, esse ponto pode ser notado pela primeira mudança de inclinação da curva da austenita. O aço permanece no campo trifásico até encontrar o ponto A1', quando toda a fase \ch{Fe3C} se transforma em $\gamma$, a segunda mudança de inclinação na curva da austenita. Caso o aquecimento permaneça, a fase $\alpha$ começa a se transformar em $\gamma$, até atingir o ponto A3, onde tem-se 100\% de fase $\gamma$, a última mudança de inclinação na curva da austenita.
+
+Um aço eutetoide, correspondente à segunda linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} e ao gráfico da Figura \ref{fig:fe-0727c-1mn}, segue o mesmo raciocínio. A diferença é que não há um campo trifásico, por isso a temperatura A1' equivale à temperatura A3.
+
+\begin{figure}[ht!]
+  \includegraphics[width=.7\textwidth]{img/Fe-Mn-0727C_edited.png}
+  \caption{Fração molar de fase versus Temperatura para aço 0,727\%C 1\% Mn, em massa}
+  \label{fig:fe-0727c-1mn}
+\end{figure}
+
+Já para um aço hipereutetóide, terceira linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} e gráfico da Figura \ref{fig:fe-1c-1mn}, a diferença é que o segundo campo bifásico é constituído por $\gamma$ e \ch{Fe3C}, até atingir o ponto em que toda a \ch{Fe3C} se transforma em $\gamma$. Certas literaturas, como \citet{Digges1960}, fazem distinção para a temperatura A3 de aços hipereutetóides, chamando-a de Acm, devido à diferença de campos bifásicos. No presente trabalho, ambas serão chamadas de A3, por corresponderem à mínima temperatura em que a fração de austenita é igual a um.
+
+\begin{figure}[ht!]
+  \includegraphics[width=.7\textwidth]{img/Fe-Mn-1C_edited.png}
+  \caption{Fração molar de fase versus Temperatura para aço 1\%C 1\% Mn, em massa}
+  \label{fig:fe-1c-1mn}
+\end{figure}
+
+Em resumo, a temperatura A1 corresponde à máxima temperatura em que a fração de austenita é zero. A3 é a mínima temperatura cuja fração de austenita é um. E A1' é o limite superior do campo intercrítico de três fases.
+
+É possível ainda diferenciar a temperatura crítica no resfriamento da de aquecimento, utilizando respectivamente as letras ``r'' e ``e''. Em teoria, elas deveriam ser iguais, mas na prática a taxa de resfriamento ou aquecimento diferencia Ae1 de Ar1 e Ae3 de Ar3. A faixa de temperatura entre A1 e A3 é chamada de intervalo crítico ou de transformação \cite{Digges1960} \cite{Honeycombe1982}.
 
 \section{Tratamento térmico de aços}
 
