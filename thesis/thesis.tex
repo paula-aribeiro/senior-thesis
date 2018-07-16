@@ -45,25 +45,28 @@
 % \agradecimentos{}
 
 \resumo{
-
+\setlength\parindent{0pt}
+A proposta deste trabalho é avaliar diferentes algoritmos de aprendizado de máquina para prever temperaturas críticas de transformações de fases. O banco de dados utilizado neste estudo foi gerado a partir de cálculos de termodinâmica computacional utilizando o software Thermo-Calc\textregistered{}. Até o momento, a etapa de criação de um banco de dados que represente as composições químicas de aços de engenharia foi realizada com sucesso. A comparação dos dados das temperaturas com equações empíricas para predição das temperaturas A1 e A3 mostra que, embora qualitativamente tanto os dados obtidos no presente trabalho quanto as equações da literatura apresentem tendências semelhantes, quantitativamente a correlação não é precisa.
 }
-\palavrachave{Termodinâmica, Temperaturas críticas, Aprendizado de máquina, Redes neurais}
+\palavrachave{Aço, Termodinâmica, Temperaturas críticas, Aprendizado de máquina, Redes neurais}
 
-\resumole{}
-\palavrachavele{Termodinâmica, Temperaturas críticas, Aprendizado de máquina, Redes neurais}
+% \resumole{}
+% \palavrachavele{Termodinâmica, Temperaturas críticas, Aprendizado de máquina, Redes neurais}
 
 \programa{ep-metalurgica}
 \departamento{ep-pmt}
 
-\elementospretextuais  %Comando do USPTeX para criação dos elemenos pré-textuais do documento
+% \elementospretextuais  %Comando do USPTeX para criação dos elemenos pré-textuais do documento
+\capa
+\folhaderosto
+\paginaresumo
+\tableofcontents
 
 \setlength\parindent{.85cm}  %Define em 0,85cm a identação da primeira linha do parágrafo.
 
 \chapter{Introdução}
 
-Aços têm diversas aplicações industriais e sua versatilidade está relacionada à variedade de propriedades que ele pode assumir. Além de sua composição química, processos de tratamento térmico controlam essas propriedades, que por sua vez, estão relacionados às temperaturas em que ocorrem as transformações de fases.
-
-Essas temperaturas também são chamadas de temperaturas críticas e ao longo do tempo foram desenvolvidos diversos métodos para determiná-las. Pode-se utilizar métodos experimentais, como a dilatometria, ou softwares de cálculos termodinâmicos, como o Thermo-Calc\textregistered{}, ou ainda equações empíricas.
+Aços têm diversas aplicações industriais e sua versatilidade está relacionada à variedade de propriedades que ele pode assumir. Além de sua composição química, processos de tratamento térmico controlam essas propriedades, que, por sua vez, estão relacionadas às temperaturas em que ocorrem as transformações de fases. Essas temperaturas também são chamadas de temperaturas críticas e ao longo do tempo foram desenvolvidos diversos métodos para determiná-las. Pode-se utilizar métodos experimentais, como a dilatometria, ou softwares de cálculos termodinâmicos, como o Thermo-Calc\textregistered{}, ou ainda equações empíricas.
 
 Novos modelos estão em desenvolvimento e entre eles estão os algoritmos de aprendizado de máquina, cujo desempenho aumenta quanto maior for sua experiência em realizar alguma atividade. Apesar de os métodos atuais serem razoavelmente precisos e eficientes, eles demandam certo custo de equipamento, software ou capacitação humana. Assim, uma ferramenta de cálculo de fácil acesso e utilização permitiria melhor compreensão das temperaturas críticas para o tratamento térmico de aços.
 
@@ -71,17 +74,16 @@ Novos modelos estão em desenvolvimento e entre eles estão os algoritmos de apr
 
 O presente trabalho tem como objetivo a criação de um algoritmo de aprendizado de máquina para determinar as temperaturas críticas de transformação em aços de engenharia, utilizando a base de dados do software Thermo-Calc\textregistered{}, a fim de disponibilizar uma ferramenta de cálculo simples de se utilizar e aberta à comunidade científica.
 
-Até o momento, o trabalho teve como objetivo montar um banco de dados adequado, que representasse as composições químicas e temperaturas de aços de engenharia.
-
 \chapter{Revisão bibliográfica}
 
 \section{Os componentes do aço}
 
-Aços podem ser vistos como uma combinação de ferro, carbono, manganês e outros elementos de liga. São conhecidas inúmeras combinações de ligas de ferro e carbono e, embora seja esperado que o aço tenha alta dureza e resistência, ele deve ser maleável a certas temperaturas \cite{Dossett2006}. Tal mudança de propriedades está relacionada com as diferentes estruturas do ferro e fases que o aço pode assumir.
+Aços podem ser vistos como uma liga ferrosa com adições de carbono e outros elementos de liga, dentre os quais destacam-se o manganês, silício, cromo, níquel, entre outros \cite{Dossett2006}. São conhecidas inúmeras combinações de ligas de ferro e carbono que fornecem diferentes combinações de propriedades mecânicas, podendo apresentar altíssimas dureza e resistência (e.g., as novas gerações de aços avançados de alta resistência), ou serem maleáveis, como em aços de baixa liga. Tal mudança de propriedades está relacionada com as diferentes estruturas do ferro (fases) e combinações de morfologias que o aço pode assumir.
 
-O ferro em estado sólido tem duas formas alotrópicas, ou seja, diferentes estruturas cristalinas que dependem da temperatura e pressão. A baixas temperaturas, o ferro assume a estrutura cúbica de corpo centrado (CCC) e é denominado $\alpha$-Fe, ou ferrita; acima de 910°C, os cristais transformam sua estrutura para cúbica de faces centradas (CFC), também chamada de $\gamma$-Fe, ou austenita, de caráter paramagnético; sua estabilidade vai até 1400°C, onde volta a assumir uma estrutura CCC, mas chamada de $\delta$-Fe para diferenciar a faixa de temperatura de ocorrência.  Uma quarta estrutura que o ferro pode assumir é o $\beta$-Fe, a 770°C, quando a rede perde suas propriedades ferromagnéticas \cite{Totten2006}.
+O ferro em estado sólido tem duas formas alotrópicas, ou seja, diferentes estruturas cristalinas que dependem da temperatura e pressão. A baixas temperaturas, o ferro assume a estrutura cúbica de corpo centrado (CCC) e é denominado $\alpha$-Fe, ou ferrita. Acima de 910°C, os cristais transformam sua estrutura para cúbica de faces centradas (CFC), também chamada de $\gamma$-Fe, ou austenita, de caráter paramagnético. A estabilidade da austenita permanece até 1400°C, quando volta a assumir uma estrutura CCC de caráter paramagnético. Esta ferrita de alta temperatura é comummente chamada de $\delta$-Fe para diferenciar a faixa de temperatura de ocorrência. Alguns autores também diferenciam a fase $\beta$-Fe da fase $\alpha$-Fe, ambas de estrutura CCC, pelo fato de que para temperaturas superiores a 770°C (temperatura de Curie) o $\alpha$-Fe perde suas propriedades ferromagnéticas e passa a ser paramagnético \cite{Totten2006}.
 
-A partir da combinação dessas possíveis estruturas do ferro com outros elementos formam-se as ligas. Como o ferro é a base do aço e tem estruturas cristalinas limitadas, é a sua combinação com outros átomos que resulta em diferentes propriedades. O carbono é insolúvel na fase $\alpha$, mas bastante solúvel na fase $\gamma$, pois a estrutura CFC permite a alocação dos átomos de carbono em seus interstícios. A presença do carbono diminui as temperaturas necessárias para que a liga de ferro sofra transformações de fases.
+A partir da combinação dessas possíveis estruturas do ferro com outros elementos formam-se as ligas. Como o ferro é a base do aço e tem estruturas cristalinas limitadas, é a sua combinação com outros átomos que resulta em diferentes propriedades. O carbono possui baixa solubilidade na fase $\alpha$ (0,02\% em massa a 738°C), mas é bastante solúvel na fase $\gamma$, pois a estrutura CFC permite a alocação dos átomos de carbono em seus interstícios. 
+% A presença do carbono diminui as temperaturas necessárias para que a liga de ferro sofra transformações de fases.
 
 A porção de uma liga com estrutura e propriedades homogêneas é denominada fase. Em equilíbrio termodinâmico, as combinações entre o carbono e o ferro podem resultar em ferrita, austenita ou grafita, cujas relações com a temperatura e composição são mostradas no diagrama de equilíbrio da Figura \ref{fig:diagrama_fe-c}. Nessas condições, os constituintes do sistema Fe-C à temperatura ambiente seriam ferrita $\alpha$ e grafita.
 
@@ -91,7 +93,10 @@ A porção de uma liga com estrutura e propriedades homogêneas é denominada fa
   \label{fig:diagrama_fe-c}
 \end{figure}
 
-Entretanto a condição de equilíbrio não é verificada na produção industrial, uma vez que a solidificação e resfriamento do aço são muito rápidos. Assim, em vez de grafita forma-se carboneto de ferro (\ch{Fe3C}), também chamado de cementita, que apesar de ser uma fase metaestável pode ser considerada estável, pois o coeficiente de difusão do carbono no ferro é muito baixo (\SI{2,9e-19}{cm^2/s}). Para essas condições, o diagrama de fase, que não pode ser chamado de diagrama de equilíbrio, é dado pela Figura \ref{fig:diagrama_fe-c_meta}.
+Entretanto a condição de equilíbrio não é verificada para a maioria dos processos e, em vez de grafita, forma-se o carboneto de ferro \ch{Fe3C}, também chamado de cementita. A cementita é uma fase metaestável, mas sua formação é favorecida cineticamente em relação à grafita devido às elevadas taxas de resfriamento aplicadas ao aço durante seu processamento.
+% uma vez que a solidificação e resfriamento do aço são muito rápidos. 
+% , que apesar de ser uma fase metaestável pode ser considerada estável, pois o coeficiente de difusão do carbono no ferro é muito baixo (\SI{2,9e-19}{cm^2/s}).
+Para essas condições, o diagrama de fase, que é então chamado de diagrama de equilíbrio metaestável, é dado pela Figura \ref{fig:diagrama_fe-c_meta}.
 
 \begin{figure}[ht!]
   \includegraphics[width=.8\textwidth,angle=180]{img/Fe-C_meta.jpg}
@@ -103,7 +108,7 @@ Um ponto importante do diagrama é o ponto eutetóide, no qual as três fases co
 
 \section{Decomposição da Austenita}
 
-Para um aço resfriado lentamente à temperatura ambiente, o teor de carbono controla as fases formadas. Entretanto, a taxa de resfriamento controla a formação de constituintes metaestáveis. Essa formação de constituintes a partir da austenita pode ocorrer por difusão, cisalhamento ou uma mistura dos dois mecanismos\cite{Honeycombe1982}.
+Para um aço resfriado lentamente à temperatura ambiente, o teor de carbono controla as fases formadas. Entretanto, a taxa de resfriamento controla a formação de constituintes metaestáveis. Essa formação de constituintes a partir da austenita pode ocorrer por difusão, cisalhamento ou uma mistura dos dois mecanismos \cite{Honeycombe1982}.
 
 No caso da ferrita, o resfriamento lento resulta em grãos equiaxiais preferencialmente no contorno de grão austenítico, enquanto um resfriamento rápido gera grãos em forma de agulhas, também conhecidos como ferrita acicular, nucleados no contorno e no interior do grão austenítico  \cite{Silva2010} %{Krauss1997}apud{Silva2010} ARRUMAR.
 A cementita segue o mesmo comportamento morfológico e ambas ocorrem sob mecanismo exclusivo de difusão \cite{Honeycombe1982}.
@@ -112,10 +117,11 @@ Para um aço de composição eutetóide, o resfriamento lento produz perlita, um
 
 Já um aço carbono resfriado bruscamente produz a martensita, uma estrutura que mantém o carbono em solução sólida da austenita. Diferente da formação de ferrita e perlita, esse processo não é controlado pela difusão devido à sua condição de resfriamento, mas sim por uma distorção na rede. Dessa forma, é um constituinte de mesma composição da austenita. Ela é característica pela sua microestrutura em ripas e alta dureza \cite{Honeycombe1982}.
 
-Já a bainita é um constituinte itermediário, pois reúne o rearranjo de rede da martensita à redistribuição de carbono e precipitação de carboneto da perlita \cite{Totten2006}. Sua natureza se modifica com a diminuição da temperatura de transformação, sendo classificada em bainita superior e inferior. A morfologia da bainita superior contem ferrita na forma de ripas, de concentração de carbono muito inferior à da austenita mãe; já a cementita depende do teor de carbono, podendo assumir a forma de partículas isoladas ou mesmo não precipitar, permanecendo na forma de austenita retida. Já a bainita inferior é mais acicular e tem lamelas mais individualizadas \cite{Honeycombe1982}.
+Já a bainita é um constituinte intermediário, pois reúne o rearranjo de rede da martensita à redistribuição de carbono e precipitação de carboneto da perlita \cite{Totten2006}. Sua natureza se modifica com a diminuição da temperatura de transformação, sendo classificada em bainita superior e inferior. A morfologia da bainita superior contem ferrita na forma de ripas, de concentração de carbono muito inferior à da austenita mãe; já a cementita depende do teor de carbono, podendo assumir a forma de partículas isoladas ou mesmo não precipitar, permanecendo na forma de austenita retida. Já a bainita inferior é mais acicular e tem lamelas mais individualizadas \cite{Honeycombe1982}.
 
 \section{Temperaturas cr\'iticas de aços}
-O francês Le Chatelier foi o primeiro a atribuir a letra A para as temperaturas críticas de transformação, devido à palavra \textit{Arrêt}, que representa a parada na temperatura durante a transformação de fase \cite{Silva2010}.
+
+O francês Le Chatelier foi o primeiro a atribuir a letra ``A'' para as temperaturas críticas de transformação, devido à palavra \textit{Arrêt}, que representa a parada na temperatura durante a transformação de fase \cite{Silva2010}.
 
 Para exemplificar essas temperaturas críticas em aços, utilizou-se dados de chamadas do software Thermo-Calc\textregistered{} para traçar o diagrama Fe-C metaestável para um aço 1\% Mn, em massa, da Figura \ref{fig:fe-1mn-C_isopleth}, bem como os gráficos de fração molar de fase em função da temperatura para aços hipo, hiper e eutetóide, das Figuras \ref{fig:fe-01c-1mn}, \ref{fig:fe-0727c-1mn} e \ref{fig:fe-1c-1mn} a seguir.
 
@@ -135,7 +141,7 @@ A primeira linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} repres
 
 Um aço nessa composição, mediante aquecimento, mantém as fases $\alpha$ e \ch{Fe3C} até chegar ao ponto A1, no qual a fase $\alpha$ começa a se decompor em $\gamma$. No gráfico da Figura \ref{fig:fe-01c-1mn}, esse ponto pode ser notado pela primeira mudança de inclinação da curva da austenita. O aço permanece no campo trifásico até encontrar o ponto A1', quando toda a fase \ch{Fe3C} se transforma em $\gamma$, a segunda mudança de inclinação na curva da austenita. Caso o aquecimento permaneça, a fase $\alpha$ começa a se transformar em $\gamma$, até atingir o ponto A3, onde tem-se 100\% de fase $\gamma$, a última mudança de inclinação na curva da austenita.
 
-Um aço eutetoide, correspondente à segunda linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} e ao gráfico da Figura \ref{fig:fe-0727c-1mn}, segue o mesmo raciocínio. A diferença é que não há um campo trifásico, por isso a temperatura A1' equivale à temperatura A3.
+Um aço eutetóide, correspondente à segunda linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} e ao gráfico da Figura \ref{fig:fe-0727c-1mn}, segue o mesmo raciocínio. A diferença é que não há um campo trifásico, por isso a temperatura A1' equivale à temperatura A3.
 
 \begin{figure}[ht!]
   \includegraphics[width=1.1\textwidth]{img/Fe-Mn-0727C_edited.png}
@@ -143,7 +149,7 @@ Um aço eutetoide, correspondente à segunda linha vertical tracejada da Figura 
   \label{fig:fe-0727c-1mn}
 \end{figure}
 
-Já para um aço hipereutetóide, terceira linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} e gráfico da Figura \ref{fig:fe-1c-1mn}, a diferença é que o segundo campo bifásico é constituído por $\gamma$ e \ch{Fe3C}, até atingir o ponto em que toda a \ch{Fe3C} se transforma em $\gamma$. Certas literaturas, como \citaremsentenca{Digges1960}, fazem distinção para a temperatura A3 de aços hipereutetóides, chamando-a de Acm, devido à diferença de campos bifásicos. No presente trabalho, ambas serão chamadas de A3, por corresponderem à mínima temperatura em que a fração de austenita é igual a um.
+Já para um aço hipereutetóide, terceira linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} e gráfico da Figura \ref{fig:fe-1c-1mn}, a diferença é que o segundo campo bifásico é constituído por $\gamma$ e \ch{Fe3C}, até atingir o ponto em que toda a \ch{Fe3C} se transforma em $\gamma$. Certas literaturas, como \citaremsentenca{Digges1960}, fazem distinção para a temperatura A3 de aços hipereutetóides, chamando-a de Acm, devido à diferença de campos bifásicos. No presente trabalho, ambas serão chamadas de A3, por corresponderem à mínima temperatura em que a fração de austenita é igual a 1.
 
 \begin{figure}[ht!]
   \includegraphics[width=1.1\textwidth]{img/Fe-Mn-1C_edited.png}
@@ -171,7 +177,7 @@ Outro tipo de tratamento térmico é a normalização, que após austenitizaçã
 Um terceiro tipo de processo muito importante é a têmpera, que consiste em resfriar o aço austenitizado rapidamente a fim de obter a estrutura metaestável martensítica. O teor de carbono aumenta a dureza da martensita e diminui a temperatura necessária para que o processo ocorra. Essa temperatura depende não só da composição do aço, mas também da taxa de resfriamento, e é chamada de Ms. Por depender de fatores cinéticos, essa temperatura crítica não será o foco do presente trabalho.
 %REVENIMENTO
 
-A formação de martensita aumenta a dureza do aço, entretanto o torna mais frágil. Para  melhorar a resistência mecânica e tenacidade do material temperado, realiza-se o revenimento da martensita, aquecendo o aço até temperatura inferior à de austenitização, mantendo-a até que as propriedades desejadas sejam alcançadas \cite{Silva2010}. Como a martensita é uma solução superssaturada de carbono, durante o revenimento o ferro o rejeita na forma de carbonetos em uma matriz de ferro $\alpha$ \cite{Honeycombe1982}.
+A formação de martensita aumenta a dureza do aço, entretanto o torna mais frágil. Para  melhorar a resistência mecânica e tenacidade do material temperado, realiza-se o revenimento da martensita, aquecendo o aço até temperatura inferior à de austenitização, mantendo-a até que as propriedades desejadas sejam alcançadas \cite{Silva2010}. Como a martensita é uma solução supersaturada de carbono, durante o revenimento o ferro o rejeita na forma de carbonetos em uma matriz de ferro $\alpha$ \cite{Honeycombe1982}.
 
 % \section{Efeito dos elementos de liga nas temperaturas críticas e tratamento térmico}
 %VAI FICAR PRA PRÓXIMA
@@ -185,7 +191,7 @@ Como as transformações de fase do aço também causam contração ou expansão
 
 \begin{figure}[ht!]
   \includegraphics[width=.9\textwidth]{img/dilatometer.png}
-  \caption{Determinação gráfica das temperaturas críticas em aço (a) hipoeutetóide, (b) eutetoide e (c) hipoeutetóide, a partir de dados do dilatômetro \cite{Pawlowski2012}}
+  \caption{Determinação gráfica das temperaturas críticas em aço (a) hipoeutetóide, (b) eutetóide e (c) hipoeutetóide, a partir de dados do dilatômetro \cite{Pawlowski2012}}
   \label{fig:dilatometer}
 \end{figure}
 
@@ -195,17 +201,15 @@ Uma terceira maneira é a utilização de equações empíricas que se baseiam n
 \citaremsentenca{ANDREWS1965} \enfase{apud} \citaremsentenca{Gorni2012} publicou fórmulas para o cálculo das temperaturas de transformação para austenita A1 e A3, descritas nas equações \ref{eq:andrewsA1} e \ref{eq:andrewsA3} a seguir.
 
 \begin{align}
-  A1 = 723 - 16.9 Ni + 29.1 Si + 6.38 W - 10.7 Mn + 16.9 Cr + 290 As \label{eq:andrewsA1}\\
-  \begin{split}
-  A3 &= 910 - 203 \sqrt{C}  + 44.7 Si - 15.2 Ni + 31.5 Mo + 104 V + 13.1 W - 30.0 Mn + 11.0 Cr \label{eq:andrewsA3}\\
-  &\quad + 20.0 Cu - 700 P - 400 Al - 120 As - 400 Ti
-  \end{split}
+  A1 &= 723 - 16.9 Ni + 29.1 Si + 6.38 W - 10.7 Mn + 16.9 Cr + 290 As \label{eq:andrewsA1}\\
+  A3 &= 910 - 203 \sqrt{C}  + 44.7 Si - 15.2 Ni + 31.5 Mo + 104 V + 13.1 W - 30.0 Mn \nonumber \\
+     & + 11.0 Cr + 20.0 Cu - 700 P - 400 Al - 120 As - 400 Ti \label{eq:andrewsA3}
 \end{align}
 % ARRUMAR FORMATAÇÃO
 
 \section{Aprendizado de m\'aquina e a determinação de Temperaturas Cr\'iticas}
 
-Dada a complexidade e o custo de desenvolvimento de um novo material, estudos recentes têm se voltado para a tecnologia como primeira forma de avaliar hipóteses \cite{Belisle2015}. Uma vez que muitas variáveis estão envolvidas na determinação de uma propriedade, tornaram-se populares algoritmos capazes de aprender com alguma experiência vinda de um conjunto de tarefas,  cujo desempenho melhora quanto maior sua experiência, também chamados de \textit{machine learning} ou aprendizado de máquina.
+Dada a complexidade e o custo de desenvolvimento de um novo material, estudos recentes têm se voltado para a tecnologia como primeira forma de avaliar hipóteses \cite{Belisle2015}. Uma vez que muitas variáveis estão envolvidas na determinação de uma propriedade, tornaram-se populares algoritmos capazes de aprender com alguma experiência vinda de um conjunto de tarefas, cujo desempenho melhora quanto maior sua experiência, também chamados de \textit{machine learning} ou aprendizado de máquina.
 
 Esses algoritmos podem ser classificados entre supervisionados e não supervisionados. Ele é dito supervisionado quando recebe um banco de dados com as respostas certas e a partir delas prevê um valor para dada situação (regressão) ou faz uma classificação binária. Já o algoritmo não supervisionado não sabe quais são as respostas certas; ele é alimentado com dados para que se encontre um padrão (clusterização) \footnote{Informações extraídas das vídeo aulas do curso de Machine Learning ministrado por Andrew Ng, disponível em <https://pt.coursera.org/learn/machine-learning>}.
 
@@ -221,7 +225,7 @@ Ambos são métodos muito utilizados devido ao baixo custo computacional. Entret
 
 Um segundo método é a rede neural. Inspirada no cérebro humano, a rede neural baseia-se em associações para fazer previsões, sendo muito utilizada para reconhecimento de padrões. É indicada para funções não lineares e pode identificar relações complexas entre variáveis independentes. A desvantagem é o maior tempo computacional necessário \cite{Belisle2015}.
 
-Uma rede neural tem uma camada de entrada, uma oculta e outra de saída. A camada de entrada recebe os dados e os envia para a camada intermediária, ou oculta, que multiplica cada variável por um peso aleatório. A soma de todas as multiplicações é somada também a uma constante aleatória. Como os valores dos pesos e da constante são aleatórios, o valor da saída inicialmente é bem diferente do esperado. A partir disso, os pesos são alterados até atingir um resultado satisfatório, etapa chamada de treinamento da rede neural \cite{Bhadeshia1999}.
+Uma rede neural tem uma camada de entrada, uma ou mais camadas ocultas e outra de saída. A camada de entrada recebe os dados e os envia para as camadas intermediárias (ocultas), que multiplicam cada variável por um peso aleatório. A soma de todas as multiplicações é somada também a uma constante aleatória. Como os valores dos pesos e da constante são aleatórios, o valor da saída inicialmente é bem diferente do esperado. A partir disso, os pesos são alterados até atingir um resultado satisfatório, etapa chamada de treinamento da rede neural \cite{Bhadeshia1999}.
 
 \citaremsentenca{Gavard1996} elaborou uma rede neural para prever A1 e A3 a partir de dados experimentais de composição química, temperatura e taxa de aquecimento. O modelo foi capaz de estimar temperaturas críticas com precisão de $\pm 40$K ou $95\%$ de confiança.
 
@@ -233,7 +237,7 @@ Uma rede neural tem uma camada de entrada, uma oculta e outra de saída. A camad
 
 A primeira etapa para elaboração de um algoritmo de machine learning é a construção do banco de dados utilizado em seu treinamento. Para este trabalho, utilizou-se dados extraídos do software Thermo-Calc\textregistered{}.
 
-Inicialmente, discutiu-se os elementos de liga e suas respectivas faixas de composição química nos aços estudados. Foram considerados apenas os mais comuns aços de engenharia, cujas composições estão detalhadas no Apêndice \ref{ap:composicao}. Não foram consideradas as composições relativas aos aços inoxidáveis. A Tabela \ref{tab:faixas_composicao} mostra as faixas de composições escolhidas para criação do banco de dados de temperaturas críticas.
+Inicialmente, discutiu-se os elementos de liga e suas respectivas faixas de composição química nos aços estudados. Foram considerados apenas os mais comuns aços de engenharia, cujas composições foram consultados em um handbook SAE \cite{SAE1983}. Não foram consideradas as composições relativas aos aços inoxidáveis. A Tabela \ref{tab:faixas_composicao} mostra as faixas de composições escolhidas para criação do banco de dados de temperaturas críticas.
 
 \begin{table}
   \caption{Faixas de composição química dos elementos de liga}
@@ -253,15 +257,15 @@ Inicialmente, discutiu-se os elementos de liga e suas respectivas faixas de comp
   \label{tab:faixas_composicao}
 \end{table}
 
-Também discutiu-se a faixa de temperatura a ser estudada. Para isso, analisou-se os diagramas binários para cada elemento de liga, que podem ser encontrados no Apêndice \ref{ap:diag_bin} e observou-se suas temperaturas críticas. Considerando a temperatura em que pode ser observada austenita, utilizou-se o intervalo de 673 a 1473K.
+Também discutiu-se a faixa de temperatura a ser estudada. Para isso, analisou-se os diagramas binários para cada elemento de liga, que podem ser encontrados no Anexo \ref{an:diag_bin} e observou-se suas temperaturas críticas. Considerando a temperatura em que pode ser observada austenita, utilizou-se o intervalo de 673 a 1473K.
 
-Definidas as faixas de composição química e temperatura, foram definidos os níveis para cada elemento, ou seja, quantas variações (ou steps) cada elemento tem. O valor do step é dado pela equação a seguir.
+Definidas as faixas de composição química e temperatura, foram definidos os níveis para cada elemento, ou seja, quantas variações (ou steps) cada elemento tem. O valor do step é dado pela equação a seguir:
 
 \begin{equation}
   step = \frac{\Delta c}{n - 1}
 \end{equation}
 
-Assim, os níveis e steps utilizados para cada elemento são dados na tabela \ref{tab:niveis_e_steps} a seguir.
+Assim, os níveis e steps utilizados para cada elemento são dados na Tabela \ref{tab:niveis_e_steps}.
 
 \begin{table}
   \caption{Níveis e steps para cada elemento de liga}
@@ -281,10 +285,9 @@ Assim, os níveis e steps utilizados para cada elemento são dados na tabela \re
   \label{tab:niveis_e_steps}
 \end{table}
 
-
 Já para a temperatura, estabeleceu-se um step de 10K. A partir da combinação desses valores de composição, um script faz a chamada do Thermo-Calc\textregistered{}. Dessa forma, para dada composição química, são retornadas as porcentagens de cada fase (ferrita, austenita e cementita) para cada temperatura dentro da faixa estabelecida.
 
-O resultado da chamada do Thermo-Calc\textregistered{} é salvo em um arquivo .DAT. No total, foram gerados 6874 arquivos.
+O resultado da chamada do Thermo-Calc\textregistered{} é salvo em um arquivo de texto de extensão .DAT. No total, foram gerados 6874 arquivos.
 
 \section{Extra\c{c}\~ao de temperaturas cr\'iticas}
 
@@ -335,7 +338,7 @@ Em seguida, para cada arquivo, extraiu-se as temperaturas críticas A1, A1' e A3
   \label{fig:Tcrit_liga_sem_cementita}
 \end{figure}
 
-A temperatura A1' é representada pela mudança de inclinação na curva da porcentagem de austenita. Para aços hipoeutetóides, essa temperatura corresponde ao ponto em que a porcentagem de cementita é zero, como mostra a figura x. Já para hipereutetóides, ao ponto em que a porcentagem de ferrita é zero, como na figura x. Enquanto isso, para aços em que a porcentagem de cementita é sempre zero, considera-se que a temperatura A1' é igual à A1.
+A temperatura A1' é representada pela mudança de inclinação na curva da porcentagem de austenita. Para aços hipoeutetóides, essa temperatura corresponde ao ponto em que a porcentagem de cementita é zero, como mostra a Figura \ref{fig:Tcrit_liga_hipo}. Já para hipereutetóides, ao ponto em que a porcentagem de ferrita é zero, como na Figura \ref{fig:Tcrit_liga_hiper}. Enquanto isso, para aços em que a porcentagem de cementita é sempre zero, considera-se que a temperatura A1' é igual à A1 (vide Figura \ref{fig:Tcrit_liga_sem_cementita}).
 
 É importante destacar que nem sempre um aço terá as três temperaturas críticas. Elementos muito alfagênicos podem não ter A3, como no caso de um $\gamma$ loop, e gamagênicos podem não ter A1, por terem austenita estável à temperatura ambiente.
 
@@ -343,7 +346,7 @@ Mesmo considerando que algumas temperaturas críticas podem não existir para ce
 Também foi realizada uma comparação dos valores de temperatura crítica com a equação empírica de Andrews, plotando o gráfico da Figura \ref{fig:tcrit_andrews}. A linha em azul representa os valores esperados ($T_{empirical} = T_{database}$).
 
 \begin{figure}
-  \includegraphics[width=1.1\textwidth]{img/andrews.png}
+  \includegraphics[width=1.1\textwidth]{img/andrews.pdf}
   \caption{Gráfico de temperatura crítica calculada pela equação empírica de Andrews e temperatura crítica do banco de dados}
   \label{fig:tcrit_andrews}
 \end{figure}
@@ -360,13 +363,19 @@ Um caso intermediário é o do silício, que apesar de alfagênico, tem influên
 
 \chapter{Conclusões parciais}
 
-\bibliography{/home/paula/Documentos/TCC/artigos/tcc.bib}
+Até o momento o foram realizadas as etapas de simulações termodinâmicas e as rotinas para extração das temperaturas críticas foram implementadas com sucesso, de modo que o banco de dados que alimentará os algoritmos de aprendizado de máquina já foi construído. A comparação dos dados das temperaturas com equações empíricas para predição das temperaturas A1 e A3 mostra que, embora qualitativamente tanto os dados obtidos no presente trabalho quanto as equações da literatura apresentem tendências semelhantes, quantitativamente a correlação não é precisa.
 
-\apendice{Composição química de aços de engenharia }
-\label{ap:composicao}
+\chapter{Próximas etapas}
 
-\apendice{Diagramas binários}
-\label{ap:diag_bin}
+Nas próximas etapas do trabalho serão implementados os algoritmos de aprendizado de máquina para predição das temperaturas críticas, a citar, redes neurais e regressão multivariável. O efeito dos elementos de liga nas temperaturas críticas serão avaliados com base nos parâmetros de ajuste dos algoritmos, como, por exemplo, os coeficientes de regressão.
+
+\bibliography{tcc}
+
+% \anexo{Composição química de aços de engenharia}
+% \label{an:composicao}
+
+\anexo{Diagramas binários}
+\label{an:diag_bin}
 
 \begin{figure}
   \includegraphics[width=1.1\textwidth]{img/Fe-Cr.jpg}

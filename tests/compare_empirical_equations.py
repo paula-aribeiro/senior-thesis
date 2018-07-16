@@ -26,7 +26,7 @@ A1_empirical = A1_Andrews(100*db['Ni'], 100*db['Mn'],
 A3_empirical = A3_Andrews(100*db['C'], 100*db['Ni'],
                           100*db['Mn'], 100*db['Si'], 100*db['Cr'])
 
-fig, ax = plt.subplots(figsize=(12, 8))
+fig, ax = plt.subplots(figsize=(6, 4))
 
 sel = (db['eutectoid'] == 'hipo') & (db['C'] > 0)
 
@@ -41,7 +41,7 @@ ax.set_xlabel(u'T database Thermo-Calc (°C)')
 ax.set_ylabel(u'T empirical equations (°C)')
 ax.legend()
 
-# fig.savefig('comparison_Andrews_TC.pdf')
+fig.savefig('comparison_Andrews_TC.pdf')
 
 # # add anotations and zoom in
 # sel = sel & (A1_empirical < db['A1'] - K)
