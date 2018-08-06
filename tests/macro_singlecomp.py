@@ -20,7 +20,7 @@ from extract_Tcrit import extract_Tcrit
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('indices', nargs='*')
+    parser.add_argument('indices', nargs='+')
     parser.add_argument('-r', '--replace', action='store_true')
     parser.add_argument('-s', '--silent', action='store_false')
     args = parser.parse_args()
