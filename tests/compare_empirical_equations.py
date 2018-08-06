@@ -28,7 +28,8 @@ A3_empirical = A3_Andrews(100*db['C'], 100*db['Ni'],
 
 fig, ax = plt.subplots(figsize=(6, 4))
 
-sel = (db['eutectoid'] == 'hipo') & (db['C'] > 0)
+sel = (db['eutectoid'] == 'hipo')
+# sel = slice(None)
 
 K = 273.15
 ax.plot(db['A1'][sel] - K, A1_empirical[sel], 'kx', label='A1')

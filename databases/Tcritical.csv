@@ -3348,10 +3348,10 @@ file,macro,C,Mn,Si,Cr,Ni,A1,A1prime,A3,eutectoid
 ../results/03340.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.02250025,1e-06,,,1023.88,hipo
 ../results/03341.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.02250025,0.00750075,,,1008.87,hipo
 ../results/03342.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.02250025,0.015000499999999996,,,994.768,hipo
-../results/03343.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.02250025,0.02250025,940.736,1030.61,1154.3,hiper
+../results/03343.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.02250025,0.02250025,940.737,1030.61,1154.3,hiper
 ../results/03344.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.02250025,0.03,864.6389999999999,1019.73,1158.86,hiper
 ../results/03345.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.03,1e-06,,,1019.73,hipo
-../results/03346.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.03,0.00750075,1889.16,1889.16,1004.89,hipo
+../results/03346.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.03,0.00750075,1020.0,1057.2,1168.43,hiper
 ../results/03347.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.03,0.015000499999999996,,,990.964,hipo
 ../results/03348.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.03,0.02250025,,,978.123,hipo
 ../results/03349.DAT,../macros_thermocalc/macro_67.tcm,0.0075,0.00750075,0.02250025,0.03,0.03,,,966.179,hipo
@@ -3378,7 +3378,7 @@ file,macro,C,Mn,Si,Cr,Ni,A1,A1prime,A3,eutectoid
 ../results/03370.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.00750075,0.03,0.03,1e-06,,,1039.43,hipo
 ../results/03371.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.00750075,0.03,0.03,0.00750075,,,1022.8,hipo
 ../results/03372.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.00750075,0.03,0.03,0.015000499999999996,,,1007.15,hipo
-../results/03373.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.00750075,0.03,0.03,0.02250025,2234.95,2234.95,992.475,hipo
+../results/03373.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.00750075,0.03,0.03,0.02250025,959.795,1054.77,1185.67,hiper
 ../results/03374.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.00750075,0.03,0.03,0.03,,,978.727,hipo
 ../results/03375.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,1e-06,1e-06,,,981.671,hipo
 ../results/03376.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,1e-06,0.00750075,,,971.945,hipo
@@ -3397,7 +3397,7 @@ file,macro,C,Mn,Si,Cr,Ni,A1,A1prime,A3,eutectoid
 ../results/03389.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,0.015000499999999996,0.03,,,941.652,hipo
 ../results/03390.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,0.02250025,1e-06,,,977.315,hipo
 ../results/03391.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,0.02250025,0.00750075,,,967.578,hipo
-../results/03392.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,0.02250025,0.015000499999999996,1178.0,1178.0,958.156,hipo
+../results/03392.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,0.02250025,0.015000499999999996,914.711,991.694,1120.88,hiper
 ../results/03393.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,0.02250025,0.02250025,,983.515,1123.97,hiper
 ../results/03394.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,0.02250025,0.03,,975.525,1127.14,hiper
 ../results/03395.DAT,../macros_thermocalc/macro_68.tcm,0.0075,0.015000499999999996,1e-06,0.03,1e-06,,,975.786,hipo
