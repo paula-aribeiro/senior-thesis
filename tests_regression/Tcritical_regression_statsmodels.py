@@ -39,7 +39,7 @@ class Formula:
                         'Cr', 'I(Cr**2)', 'I(Cr*Ni)',
                         'Ni', 'I(Ni**2)']):
         self.dep_var = dep_var
-        self.terms = terms
+        self.terms = terms.copy()
 
     def dropterms(self, drop=[]):
         if isinstance(drop, str):
