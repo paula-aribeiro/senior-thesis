@@ -20,9 +20,13 @@ from extract_Tcrit import extract_Tcrit
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('indices', nargs='+')
-    parser.add_argument('-r', '--replace', action='store_true')
-    parser.add_argument('-s', '--silent', action='store_false')
+    parser.add_argument('indices', nargs='+',
+                        help='Test indices used to load Thermo-Calc table.')
+    parser.add_argument('-r', '--replace', action='store_true',
+                        help=('Replace database entry with results of the '
+                              'new simulation'))
+    parser.add_argument('-s', '--silent', action='store_true',
+                        help=('Prevents plotting'))
     args = parser.parse_args()
 
     fdatabase = '../databases/Tcritical.csv'
@@ -35,16 +39,17 @@ if __name__ == '__main__':
     for idx in args.indices:
         fname = '../results/{:05d}.DAT'.format(int(idx))
 
-        try:
-            fig, ax = plt.subplots()
-            result = load_table(fname, sort='T', fill=0)
-            plot_table(df=result, xaxis='T', ax=ax, colpattern='NP(*)')
-        except:
-            print('Failed to plot {}'.format(fname))
-        else:
-            plt.pause(.1)
-            fig.show()
-            plt.pause(.1)
+        if not args.silent:
+            try:
+                fig, ax = plt.subplots()
+                result = load_table(fname, sort='T', fill=0)
+                plot_table(df=result, xaxis='T', ax=ax, colpattern='NP(*)')
+            except:
+                print('Failed to plot {}'.format(fname))
+            else:
+                plt.pause(.1)
+                fig.show()
+                plt.pause(.1)
 
         idx, = np.where(fname == df['file'].values)
         if len(idx) > 0:
@@ -90,7 +95,7 @@ if __name__ == '__main__':
                           'blab,\n'
                           '{}\n').format(fname))
 
-        if args.silent:
+        if not args.silent:
             fmacro.write(('post\n'
                           's-l f\n'
                           'plot,,\n'))

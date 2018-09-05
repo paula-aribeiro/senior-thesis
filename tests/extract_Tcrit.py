@@ -3,23 +3,40 @@ Extract critical temperatures (A1, A1', and A3) from Thermo-Calc
 generated tables
 """
 
-import glob
-import sys
 import numpy as np
 import pandas as pd
-from tctools import load_table, plot_table
-# local module
-from parse_database import read_header_database
 
+# github.com/arthursn/tctools
+from tctools import load_table
 
 def extract_Tcrit(fname):
-    A1, A1prime, A3, eutectoid = np.nan, np.nan, np.nan, None
+    """
+    Extract the critical temperature (Tcrit) from Thermo-Calc
+    generated table
+
+    Arguments
+    ---------
+    fname : Path to the Thermo-Calc table file
+
+    Return
+    ------
+    A1, A1prime, A3, eutectoid : tuple containing the extracted
+        values of A1, A1prime, and A3, and a string eutectoid 
+        (hipo/hiper) determining whether the alloy is hipo or hiper
+        eutectoid.
+    """
+    A1 = np.nan
+    A1prime = np.nan
+    A3 = np.nan
+    eutectoid = None
 
     try:
         df = load_table(fname, sort='T', fill=0)
     except:
         print('Failed to load {}'.format(fname))
     else:
+        # print('{} successfully loaded'.format(fname))
+
         # temperature
         T = df['T']
         mf_fer = np.array([])
@@ -81,10 +98,11 @@ def extract_Tcrit(fname):
                         eutectoid = 'hiper'
                 else:
                     # If cementite is not defined, there's no intecritical
-                    # phases field (ferrite + austenite + cementite).
-                    # In this case, we assume A1 = A1' and A3 is the lowest
-                    # temperature where mf_fer is 0
-                    A1prime = A1
+                    # phase field (ferrite + austenite + cementite).
+                    # In this case, A1 and A1' do not make sense and are
+                    # set as np.nan
+                    A1 = np.nan
+                    A1prime = np.nan
                     eutectoid = 'hipo'
             else:
                 if len(mf_cem) > 0:
@@ -96,6 +114,10 @@ def extract_Tcrit(fname):
 
 
 if __name__ == '__main__':
+    from progressbar import ProgressBar
+    # local module
+    from parse_database import read_header_database
+
     # database
     fname = '../databases/compositions_files.csv'
     header = read_header_database(fname)
@@ -107,8 +129,10 @@ if __name__ == '__main__':
     A3 = np.full(n, np.nan)
     eutectoid = np.full(n, None)
 
-    for i, fname in enumerate(db['file']):
+    pbar = ProgressBar(maxval=len(db.file)).start()
+    for i, fname in enumerate(db.file):
         A1[i], A1prime[i], A3[i], eutectoid[i] = extract_Tcrit(fname)
+        pbar.update(i)
 
     db['A1'] = A1
     db['A1prime'] = A1prime

@@ -18,15 +18,14 @@ trange, crange = parse_header_database(header)
 db = pd.read_csv(fname, comment='#')
 
 # get shape of multidimensional array
-shape = []
+newshape = []
 for el, rng in crange.items():
-    shape.append(rng.lvls)
-print(shape)
+    newshape.append(rng.lvls)
 
 # reshaple flattened dataframe
 dbmulti = OrderedDict()
 for key in db.columns:
-    dbmulti[key] = db[key].values.reshape(shape)
+    dbmulti[key] = db[key].values.reshape(newshape)
 
 
 if __name__ == '__main__':
@@ -35,13 +34,21 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-a', '--annotate', action='store_true',
-                        help='annotate plot')
+                        help='Annotate plot')
     parser.add_argument('-f', '--free', default=None,
-                        help='free variable besides carbon (e.g, try setting -free mn)')
-    parser.add_argument('--mn', type=int, default=0)
-    parser.add_argument('--si', type=int, default=0)
-    parser.add_argument('--cr', type=int, default=0)
-    parser.add_argument('--ni', type=int, default=0)
+                        help='Free variable besides carbon (e.g, try setting -free mn)')
+    parser.add_argument('-v', '--variable', default='A3',
+                        help='Which (dependent) variable to plot. Default: A3 temperature')
+
+    parser.add_argument('--mn', type=int, default=0,
+                        help='Amount of Mn expressed in terms of levels. Default: 0')
+    parser.add_argument('--si', type=int, default=0,
+                        help='Amount of Si expressed in terms of levels. Default: 0')
+    parser.add_argument('--cr', type=int, default=0,
+                        help='Amount of Cr expressed in terms of levels. Default: 0')
+    parser.add_argument('--ni', type=int, default=0,
+                        help='Amount of Ni expressed in terms of levels. Default: 0')
+
     args = parser.parse_args()
 
     def parse_fname(fname):
@@ -58,7 +65,7 @@ if __name__ == '__main__':
                 vars(args)[args.free] = i
 
             x = dbmulti['C'][:, args.mn, args.si, args.cr, args.ni]
-            y = dbmulti['A3'][:, args.mn, args.si, args.cr, args.ni]
+            y = dbmulti[args.variable][:, args.mn, args.si, args.cr, args.ni]
             files = dbmulti['file'][:, args.mn, args.si, args.cr, args.ni]
 
             for j, fname in enumerate(files):
