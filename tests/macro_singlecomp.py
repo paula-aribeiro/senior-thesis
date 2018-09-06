@@ -31,8 +31,7 @@ if __name__ == '__main__':
 
     fdatabase = '../databases/Tcritical.csv'
     header = read_header_database(fdatabase)
-    trange, crange = parse_header_database(header)
-    T_min, T_max, T_step, _ = trange
+    Trange, crange = parse_header_database(header)
 
     df = pd.read_csv(fdatabase, comment='#')
 
@@ -69,7 +68,7 @@ if __name__ == '__main__':
                       'go p-3\n\n'
                       'ent-sy tab blab\n'
                       't x(*,*) np(*);\n\n'
-                      's-a-v 1 t {:g} {:g} {:g}\n\n').format(T_min, T_max, T_step))
+                      's-a-v 1 t {:g} {:g} {:g}\n\n').format(Trange.min, Trange.max, Trange.step))
 
         wC = float(row['C'].values)
         wMn = float(row['Mn'].values)

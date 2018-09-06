@@ -5,6 +5,8 @@ arrays
 
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+
 from collections import OrderedDict
 # local module
 from parse_database import read_header_database, parse_header_database
@@ -38,7 +40,7 @@ def load_reshape_dataset(fname):
     # read database header to get data structure
     header = read_header_database(fname)
     # temperature range; composition range
-    trange, crange = parse_header_database(header)
+    Trange, crange = parse_header_database(header)
 
     # read database
     df = load_dataset(fname)
@@ -84,10 +86,8 @@ def plot_carbon_isopleth(isopleth, dep_var='A3',
 
     if annotate:
         for idx_, x_, y_ in zip(idx, x, y):
-            try:
+            if ~np.isnan(x_) and ~np.isnan(y_):
                 ax.text(x_, y_, str(idx_), size=10)
-            except:
-                pass
 
     return lines
 
