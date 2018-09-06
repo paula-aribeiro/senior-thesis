@@ -33,81 +33,149 @@ def load_dataset(fname):
 
 class Formula:
     def __init__(self, dep_var='A3',
-                 terms=['C', 'I(C**2)', 'I(C*Mn)', 'I(C*Si)', 'I(C*Cr)', 'I(C*Ni)',
-                        'Mn', 'I(Mn**2)', 'I(Mn*Si)', 'I(Mn*Cr)', 'I(Mn*Ni)',
-                        'Si', 'I(Si*Si)', 'I(Si*Cr)', 'I(Si*Ni)',
-                        'Cr', 'I(Cr**2)', 'I(Cr*Ni)',
-                        'Ni', 'I(Ni**2)']):
+                 factors=['C', 'I(C**2)', 'I(C*Mn)', 'I(C*Si)', 'I(C*Cr)', 'I(C*Ni)',
+                          'Mn', 'I(Mn**2)', 'I(Mn*Si)', 'I(Mn*Cr)', 'I(Mn*Ni)',
+                          'Si', 'I(Si*Si)', 'I(Si*Cr)', 'I(Si*Ni)',
+                          'Cr', 'I(Cr**2)', 'I(Cr*Ni)',
+                          'Ni', 'I(Ni**2)']):
         self.dep_var = dep_var
-        self.terms = terms.copy()
+        self.factors = factors.copy()
 
-    def dropterms(self, drop=[]):
+    def dropfactors(self, drop=[]):
         if isinstance(drop, str):
             drop = [drop]
 
-        for term in drop:
-            term = term.replace(' ', '')
-            self.terms.remove(term)
+        for factor in drop:
+            factor = factor.replace(' ', '')
+            self.factors.remove(factor)
 
     @property
     def formula(self):
         formula = '{} ~ '.format(self.dep_var)
-        formula += ' + '.join(self.terms)
+        formula += ' + '.join(self.factors)
 
         return formula
 
 
-def filter_terms_by_pvalue(results, maxpvalue=.05):
+def filter_factors_by_pvalue(results, maxpvalue=.05):
     pvalues = results.pvalues.sort_values(ascending=False)
     return list(pvalues.index[pvalues > maxpvalue])
 
 
-if __name__ == '__main__':
-    dataset = load_dataset('../databases/Tcritical.csv')
+def regression_poly_2nd_deg(dataset, dep_var, maxpvalue,
+                            maxit=10, printsummary=False):
+    """
+    Arguments
+    ---------
+    dataset : pandas DataFrame
+        dataset
+    dep_var : string
+        dependent variable
+    maxpvalue : float
+        maximum accepted p-value of each factor
+        terms with p-value > maxpvalue are dropped
+    maxit : integer, optional
+        maximum number of iterations
+        default : 10
+    printsummary : boolean
+        if True, print summary after each iteration
+        default : False
 
-    # filter dataset
-    criteria = dataset.eutectoid == 'hipo'
-    filtered_dataset = dataset[criteria]
-
-    # dependent variable
-    dep_var = 'A1prime'
-
+    Return
+    ------
+    reg : statsmodels.regression.linear_model.OLS object
+        regression
+    results : statsmodels.regression.linear_model.RegressionResultsWrapper object
+        regression results
+    """
     # initialize formula
-    poly_2nd_deg = Formula(dep_var)
-    print(poly_2nd_deg.formula)
+    poly_2nd_deg = Formula(dep_var=dep_var,
+                           factors=['C', 'I(C**2)', 'I(C*Mn)', 'I(C*Si)', 'I(C*Cr)', 'I(C*Ni)',
+                                    'Mn', 'I(Mn**2)', 'I(Mn*Si)', 'I(Mn*Cr)', 'I(Mn*Ni)',
+                                    'Si', 'I(Si*Si)', 'I(Si*Cr)', 'I(Si*Ni)',
+                                    'Cr', 'I(Cr**2)', 'I(Cr*Ni)',
+                                    'Ni', 'I(Ni**2)'])
 
     # initialize regression; ols stands for 'ordinary least squares'
-    reg = smf.ols(poly_2nd_deg.formula, data=filtered_dataset)
+    reg = smf.ols(poly_2nd_deg.formula, data=dataset)
     # fit
     results = reg.fit()
-    # print(results.summary())
-    it = 1
+    if printsummary:
+        print(results.summary())
+    it = 0
 
-    # maximum accepted p-value
-    maxpvalue = .01
-    # get terms with pvalue > maxpvalue
-    dropterms = filter_terms_by_pvalue(results, maxpvalue)
+    # get factors with pvalue > maxpvalue
+    dropfactors = filter_factors_by_pvalue(results, maxpvalue)
 
-    while len(dropterms) > 0:
-        # drop terms with p-value > maxpvalue
-        poly_2nd_deg.dropterms(dropterms[0])
+    while len(dropfactors) > 0 and it < maxit:
+        # drop factors with p-value > maxpvalue
+        poly_2nd_deg.dropfactors(dropfactors[0])
 
-        reg = smf.ols(poly_2nd_deg.formula, data=filtered_dataset)
+        reg = smf.ols(poly_2nd_deg.formula, data=dataset)
         results = reg.fit()
-        # print(results.summary())
+        if printsummary:
+            print(results.summary())
         it += 1
 
-        dropterms = filter_terms_by_pvalue(results, maxpvalue)
+        dropfactors = filter_factors_by_pvalue(results, maxpvalue)
 
-    print(results.summary())
-
-    print(reg.formula)
     print('{} iteration(s)'.format(it))
 
+    return reg, results
 
+
+if __name__ == '__main__':
+    from plot_carbon_isopleth import load_reshape_dataset, select_carbon_isopleth, plot_carbon_isopleth
+
+    fname_dataset = '../databases/Tcritical.csv'
+
+    # dataset as pandas DataFrame
+    dataset = load_dataset(fname_dataset)
+
+    reg, results = {}, {}
+
+    reg['A3hipo'], results['A3hipo'] = regression_poly_2nd_deg(
+        dataset=dataset[dataset.eutectoid == 'hipo'],
+        dep_var='A3', maxpvalue=.01,
+        printsummary=False)
+
+    reg['A3hiper'], results['A3hiper'] = regression_poly_2nd_deg(
+        dataset=dataset[dataset.eutectoid == 'hiper'],
+        dep_var='A3', maxpvalue=.01,
+        printsummary=False)
+
+    print(results['A3hipo'].summary())
+    print(results['A3hiper'].summary())
+
+    # plot isopleths
     fig, ax = plt.subplots()
 
-    exp = reg.endog
-    pred = results.predict()
-    ax.plot(exp, pred, 'kx')
-    ax.plot([exp.min(), exp.max()], [exp.min(), exp.max()], 'r-')
+    # multidimensional dataset as ordered dictionary
+    dataset_multi = load_reshape_dataset(fname_dataset)
+    Mn = 0
+    Cr = 0
+    Ni = 0
+
+    for Si in range(dataset_multi['Si'].shape[2]):
+        # experimental isopleth
+        isopleth = select_carbon_isopleth(dataset_multi, Mn, Si, Cr, Ni)
+
+        line, = plot_carbon_isopleth(
+            isopleth, 'A3', ax,
+            ls='none', marker='x',
+            label='Si = {}'.format(Si))
+
+        color = line.get_color()
+
+        # predicted isopleth
+        criteria = isopleth['eutectoid'] == 'hipo'
+        prediction = results['A3hipo'].predict(isopleth)
+        ax.plot(isopleth['C'][criteria], prediction[criteria], color=color)
+
+        criteria = isopleth['eutectoid'] == 'hiper'
+        prediction = results['A3hiper'].predict(isopleth)
+        ax.plot(isopleth['C'][criteria], prediction[criteria], color=color)
+
+    ax.legend()
+
+    plt.show()
