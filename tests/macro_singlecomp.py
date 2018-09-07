@@ -68,7 +68,9 @@ if __name__ == '__main__':
                       'go p-3\n\n'
                       'ent-sy tab blab\n'
                       't x(*,*) np(*);\n\n'
-                      's-a-v 1 t {:g} {:g} {:g}\n\n').format(Trange.min, Trange.max, Trange.step))
+                      's-a-v 1 t {:g} {:g} {:g}\n\n').format(Trange.min,
+                                                             Trange.max,
+                                                             Trange.step))
 
         wC = float(row['C'].values)
         wMn = float(row['Mn'].values)
