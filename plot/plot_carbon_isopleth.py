@@ -136,6 +136,14 @@ if __name__ == '__main__':
 
     dataset = load_reshape_dataset('../databases/Tcritical.csv')
 
+    # elements (allowed free variables)
+    # vars(args): object -> dictionary
+    elements = list(vars(args).keys())
+    elements.remove('annotate')
+    elements.remove('free')
+    elements.remove('variable')
+    # elements must be list ['mn', 'si', 'cr', 'ni']
+
     fig, ax = plt.subplots()
 
     # plot single isopleth
@@ -151,14 +159,13 @@ if __name__ == '__main__':
         # args.free to lowercase
         args.free = args.free.lower()
 
-        if args.free in ['mn', 'si', 'cr', 'ni']:
+        if args.free in elements:
             i = 0
 
             while True:
                 try:
-                    # vars: object -> dictionary
-                    if args.free in vars(args).keys():
-                        vars(args)[args.free] = i
+                    # vars(args): object -> dictionary
+                    vars(args)[args.free] = i
 
                     # same as above
                     isopleth = select_carbon_isopleth(
@@ -173,10 +180,18 @@ if __name__ == '__main__':
                 except:
                     break
 
+            elements.remove(args.free)
+
             ax.legend()
         else:
             print('{} is not a allowed free variable'.format(args.free))
             plt.close('all')
+
+    # Title
+    title = ['{} = {}'.format(el.title(), vars(args)[el])
+             for el in elements]
+    title = ', '.join(title)
+    ax.set_title(title)
 
     ax.set_xlabel('Carbon content (wt. %)')
     ax.set_ylabel('Temperature (°C)')
