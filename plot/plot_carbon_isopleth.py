@@ -151,7 +151,7 @@ if __name__ == '__main__':
         # args.free to lowercase
         args.free = args.free.lower()
 
-        if args.free in ['mn', 'si', 'cr', 'si']:
+        if args.free in ['mn', 'si', 'cr', 'ni']:
             i = 0
 
             while True:
