@@ -124,6 +124,7 @@ if __name__ == '__main__':
     while True:
         try:
             if args.free:
+                args.free = args.free.lower()
                 # vars: object -> dictionary
                 vars(args)[args.free] = i
 
