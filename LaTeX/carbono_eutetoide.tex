@@ -1,0 +1,176 @@
+\documentclass{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[symbolgreek]{mathastext}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{times}
+
+\begin{document}
+
+Modelo de segunda ordem:
+
+\begin{equation}
+	y = \beta_0 + \sum_{i=1}^k \beta_i x_i + \sum_{i=1}^{k} \sum_{j=i}^k \beta_{ij} x_i x_j + \epsilon
+\end{equation}
+
+% x1*x1 x1*x2 x1*x3 x1*x4 x1*x5
+% x2*x2 x2*x3 x2*x4 x2*x5
+% x3*x3 x3*x4 x3*x5
+% x4*x4 x4*x5
+% x5*x5
+
+% Alternativamente:
+
+% \begin{equation}
+% 	y = \beta_0 + \sum_{i=1}^k \beta_i x_i + \sum_{i=1}^k \beta_{ii} x_i^2 + \sum_{i=1}^{k-1} \sum_{j=i+1}^k \beta_{ij} x_i x_j + \epsilon
+% \end{equation}
+
+% % x1*x2 x1*x3 x1*x4 x1*x5
+% % x2*x3 x2*x4 x2*x5
+% % x3*x4 x3*x5
+% % x4*x5
+
+Equações para $A_3$:
+
+\begin{align}
+	A_3^{hipo} &= \beta_0^{hipo} + \sum_{i=1}^k \beta_i^{hipo} x_i + \sum_{i=1}^{k} \sum_{j=i}^k \beta_{ij}^{hipo} x_i x_j + \epsilon \\
+	A_3^{hiper} &= \beta_0^{hiper} + \sum_{i=1}^k \beta_i^{hiper} x_i + \sum_{i=1}^{k} \sum_{j=i}^k \beta_{ij}^{hipo} x_i x_j + \epsilon
+\end{align}
+
+No ponto eutetóide:
+
+\begin{equation}
+	A_3^{hipo} = A_3^{hiper} \Rightarrow A_3^{hipo} - A_3^{hiper} = 0
+\end{equation}
+
+Logo:
+
+\begin{equation}
+	\beta_0^{hipo} - \beta_0^{hiper} 
+	+ \sum_{i=1}^k \left(\beta_i^{hipo} - \beta_i^{hiper}\right) x_i 
+	+ \sum_{i=1}^{k} \sum_{j=i}^k \left(\beta_{ij}^{hipo} - \beta_{ij}^{hiper}\right) x_i x_j = 0
+	\label{eq:eutetoide_1}
+\end{equation}
+
+Definamos:
+
+\begin{align}
+	\beta_i^{eut} &= \beta_i^{hipo} - \beta_i^{hiper} \\
+	\beta_{ij}^{eut} &= \beta_{ij}^{hipo} - \beta_{ij}^{hiper}
+\end{align}
+
+Substituindo as definições acima na equação \ref{eq:eutetoide_1}, temos:
+
+\begin{equation}
+	\beta_0^{eut} + \sum_{i=1}^k \beta_i^{eut} x_i 
+	+ \sum_{i=1}^{k} \sum_{j=i}^k \beta_{ij}^{eut} x_i x_j = 0
+	\label{eq:eutetoide_2}
+\end{equation}
+
+Reescrevendo \ref{eq:eutetoide_2} de modo a separar $x_1$ (fração de carbono):
+
+\begin{align}
+	&\beta_0^{eut} 
+	+ \beta_1^{eut} x_ 1 
+	+ \sum_{i=2}^k \beta_i^{eut} x_i 
+	+ \beta_{11}^{eut} {x_1}^2 
+	+ \sum_{j=2}^k \beta_{1j}^{eut} x_1 x_j
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \beta_{ij}^{eut} x_i x_j = 0 \nonumber \\
+	&\beta_{11}^{eut} {x_1}^2 
+	+ \left(\beta_1^{eut} + \sum_{j=2}^k \beta_{1j}^{eut} x_j \right) x_1 
+	+ \left(\beta_0^{eut} 
+	+ \sum_{i=2}^k \beta_i^{eut} x_i 
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \beta_{ij}^{eut} x_i x_j\right) = 0 \label{eq:eutetoide_3}
+\end{align}
+
+Dividindo todos os termos em \ref{eq:eutetoide_3} por $2 \beta_{11}^{eut}$ e definindo:
+
+\begin{align}
+	\alpha_i 
+	&= \frac{\beta_i^{hipo} - \beta_i^{hiper}}{2 \beta_{11}}
+	= \frac{1}{2} \frac{\beta_i^{hipo} - \beta_i^{hiper}}{\beta_{11}^{hipo} - \beta_{11}^{hiper}}\\
+	\alpha_{ij} 
+	&= \frac{\beta_{ij}^{hipo} - \beta_{ij}^{hiper}}{2 \beta_{11}}
+	= \frac{1}{2} \frac{\beta_{ij}^{hipo} - \beta_{ij}^{hiper}}{\beta_{11}^{hipo} - \beta_{11}^{hiper}}
+\end{align}
+%
+então obtemos:
+
+\begin{equation}
+	\frac{{x_1}^2}{2}
+	+ \left(\alpha_1 + \sum_{j=2}^k \alpha_{1j} x_j \right) x_1 
+	+ \left(\alpha_0 
+	+ \sum_{i=2}^k \alpha_i x_i 
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \alpha_{ij} x_i x_j\right) = 0 \label{eq:eutetoide_4}
+\end{equation}
+
+A equação \ref{eq:eutetoide_4} pode ser resolvida para $x_1$ utilizando a fórmula quadrática:
+
+\begin{equation}
+	x_1 = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}
+	\label{eq:quadratica}
+\end{equation}
+%
+em que $a = 1/2$ e $b$ e $c$ são:
+
+\begin{align}
+	b &= \alpha_1 + \sum_{j=2}^k \alpha_{1j} x_j \\
+	c &= \alpha_0 
+	+ \sum_{i=2}^k \alpha_i x_i 
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \alpha_{ij} x_i x_j
+\end{align}
+
+Usando a substituição $a = 1/2$, a equação \ref{eq:quadratica} torna-se simplesmente:
+
+\begin{equation}
+	x_1 = -b \pm \sqrt{b^2 - 2 c}
+	\label{eq:quadratica_2}
+\end{equation}
+
+% \begin{equation}
+% 	-\left(\alpha_1 + \sum_{j=2}^k \alpha_{ij} x_j\right) \pm \sqrt{ \left(\alpha_1 + \sum_{j=2}^k \alpha_{ij} x_j\right)^2 - 2 \left( \alpha_0 
+% 	+ \sum_{i=2}^k \alpha_i x_i 
+% 	+ \sum_{i=2}^{k} \sum_{j=i}^k \alpha_{ij} x_i x_j \right)}
+% \end{equation}
+
+Em suma:
+
+\begin{align*}
+	\alpha_i &= \frac{1}{2} \frac{\beta_i^{hipo} - \beta_i^{hiper}}{\beta_{11}^{hipo} - \beta_{11}^{hiper}}\\
+	\alpha_{ij} &= \frac{1}{2} \frac{\beta_{ij}^{hipo} - \beta_{ij}^{hiper}}{\beta_{11}^{hipo} - \beta_{11}^{hiper}}\\
+	b &= \alpha_1 + \sum_{j=2}^k \alpha_{1j} x_j \\
+	c &= \alpha_0 
+	+ \sum_{i=2}^k \alpha_i x_i 
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \alpha_{ij} x_i x_j \\
+	x_1 &= -b \pm \sqrt{b^2 - 2 c}
+\end{align*}
+
+\pagebreak
+
+Tabela de correspondência:
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{c c c c c}
+	\hline
+	$x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ \\
+	\hline
+	C & Mn & Si & Cr & Ni \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{align}
+	b =&\,\alpha_{C} + \alpha_{C Mn} Mn + \alpha_{C Si} Si + \alpha_{C Cr} Cr + \alpha_{C Ni} Ni\\
+	c =&\,\alpha_0 + \alpha_{Mn} Mn + \alpha_{Si} Si + \alpha_{Cr} Cr + \alpha_{Ni} Ni + \nonumber \\
+	   &\,\alpha_{Mn^2}\ Mn^2 + \alpha_{Mn Si}\ Mn\ Si + \alpha_{Mn Cr}\ Mn\ Cr + \alpha_{Mn Ni}\ Mn\ Ni + \nonumber \\
+	   &\,\alpha_{Si^2}\ Si^2 + \alpha_{Si Cr}\ Si\ Cr + \alpha_{Si Ni}\ Si\ Ni + \nonumber \\
+	   &\,\alpha_{Cr^2}\ Cr^2 + \alpha_{Cr Ni}\ Cr\ Ni + \nonumber \\
+	   &\,\alpha_{Ni^2}\ Ni^2
+\end{align}
+
+\end{document}
