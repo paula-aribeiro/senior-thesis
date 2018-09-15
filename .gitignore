@@ -27,6 +27,7 @@ tctools/
 *.log
 *.out
 *.toc
+*.synctex.gz
 
 # C extensions
 *.so
