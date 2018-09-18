@@ -27,7 +27,7 @@ Cr = Cr.ravel()
 Ni = Ni.ravel()
 
 # Temperature
-T_min, T_max, T_step = 673, 1473, 10
+T_min, T_max, T_step = 673., 1473., 10.
 
 # Code shared to all macros
 # blab: table containing phases compositions (x(*,*)) and phase fraction (np(*))
@@ -39,7 +39,7 @@ common_snippet = ('go data\n'
                   'go p-3\n\n'
                   'ent-sy tab blab\n'
                   't w(*,*) np(*);\n\n'
-                  's-a-v 1 t {:d} {:d} {:d}\n\n').format(T_min, T_max, T_step)
+                  's-a-v 1 t {:g} {:g} {:g}\n\n').format(T_min, T_max, T_step)
 
 filelist = []
 currmacro = []
