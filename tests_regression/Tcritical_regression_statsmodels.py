@@ -32,12 +32,7 @@ def load_dataset(fname):
 
 
 class Formula:
-    def __init__(self, dep_var='A3',
-                 factors=['C', 'I(C**2)', 'I(C*Mn)', 'I(C*Si)', 'I(C*Cr)', 'I(C*Ni)',
-                          'Mn', 'I(Mn**2)', 'I(Mn*Si)', 'I(Mn*Cr)', 'I(Mn*Ni)',
-                          'Si', 'I(Si*Si)', 'I(Si*Cr)', 'I(Si*Ni)',
-                          'Cr', 'I(Cr**2)', 'I(Cr*Ni)',
-                          'Ni', 'I(Ni**2)']):
+    def __init__(self, dep_var, factors):
         self.dep_var = dep_var
         self.factors = factors.copy()
 
@@ -57,7 +52,7 @@ class Formula:
         return formula
 
 
-def filter_factors_by_pvalue(results, maxpvalue=.05):
+def filter_factors_by_pvalue(results, maxpvalue=.01):
     pvalues = results.pvalues.sort_values(ascending=False)
     return list(pvalues.index[pvalues > maxpvalue])
 
@@ -108,7 +103,7 @@ def regression_poly_2nd_deg(dataset, dep_var, maxpvalue,
     dropfactors = filter_factors_by_pvalue(results, maxpvalue)
 
     while len(dropfactors) > 0 and it < maxit:
-        # drop factors with p-value > maxpvalue
+        # drop largest factor with p-value > maxpvalue
         poly_2nd_deg.dropfactors(dropfactors[0])
 
         reg = smf.ols(poly_2nd_deg.formula, data=dataset)
@@ -130,7 +125,7 @@ def plot_fitting_results(results, dataset, dep_var, ax=None, *args, **kwargs):
 
     ax.plot(dataset[dep_var], results.predict(dataset), 'kx')
 
-    lw, up = filtered_dataset[dep_var].min(), filtered_dataset[dep_var].max()
+    lw, up = dataset[dep_var].min(), dataset[dep_var].max()
     ax.plot([lw, up], [lw, up], 'r-')
 
     ax.set_xlabel('True values')
