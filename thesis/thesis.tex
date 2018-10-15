@@ -1,4 +1,4 @@
-\documentclass[brazil,tese,epusp]{usp}
+\documentclass[brazil,tf,epusp]{usp}  %Código de trabalho de formatura: tf
 \usepackage[T1]{fontenc}  %Orienta a saída do texto a reproduzir caracteres especiais
 \usepackage[utf8]{inputenc} %Permite que o usuário redija o documento utilizando caracteres especiais UTF-8
 
@@ -42,25 +42,48 @@
 \coorientador{Arthur Seiji Nishikawa}
 \titulo{Método de aprendizado de máquina para previsão de pontos críticos de equilíbrio em ligas multi-componente}
 
+\departamento{ep-pmt}
+% \programa{ep-metalurgica}
+\renewcommand{\USPareadeconcentracaodata}{Engenharia de Materiais} %Define área de concentração Engenharia de Materiais
+% Texto que vai na folha de rosto. É possível redefini-lo usando o comando abaixo
+% \renewcommand{\USPcomentariodata}{\hyphenpenalty=100009%
+% Trabalho de formatura apresentado \`a Escola Polit\'ecnica da Universidade de
+% S\~ao Paulo para obtenção do t\'itulo de Engenheira}
+
 % \agradecimentos{}
 
+% \textregistered{} não pode estar em resumo. Isso gera um erro na hora de compilar o texto
 \resumo{
 \setlength\parindent{0pt}
-A proposta deste trabalho é avaliar diferentes algoritmos de aprendizado de máquina para prever temperaturas críticas de transformações de fases. O banco de dados utilizado neste estudo foi gerado a partir de cálculos de termodinâmica computacional utilizando o software Thermo-Calc\textregistered{}. Até o momento, a etapa de criação de um banco de dados que represente as composições químicas de aços de engenharia foi realizada com sucesso. A comparação dos dados das temperaturas com equações empíricas para predição das temperaturas A1 e A3 mostra que, embora qualitativamente tanto os dados obtidos no presente trabalho quanto as equações da literatura apresentem tendências semelhantes, quantitativamente a correlação não é precisa.
+A proposta deste trabalho é avaliar diferentes algoritmos de aprendizado de máquina para prever temperaturas críticas de transformações de fases. O banco de dados utilizado neste estudo foi gerado a partir de cálculos de termodinâmica computacional utilizando o software Thermo-Calc. Até o momento, a etapa de criação de um banco de dados que represente as composições químicas de aços de engenharia foi realizada com sucesso. A comparação dos dados das temperaturas com equações empíricas para predição das temperaturas A1 e A3 mostra que, embora qualitativamente tanto os dados obtidos no presente trabalho quanto as equações da literatura apresentem tendências semelhantes, quantitativamente a correlação não é precisa.
 }
-\palavrachave{Aço, Termodinâmica, Temperaturas críticas, Aprendizado de máquina, Redes neurais}
+\palavrachave{Aço}
+\palavrachave{Termodinâmica}
+\palavrachave{Temperaturas críticas}
+\palavrachave{Aprendizado de máquina}
+\palavrachave{Regressão}
+\palavrachave{Redes neurais}
 
 % \resumole{}
-% \palavrachavele{Termodinâmica, Temperaturas críticas, Aprendizado de máquina, Redes neurais}
+% \palavrachavele{Steel}
+% \palavrachavele{Thermodynamics}
+% \palavrachavele{Critical temperatures}
+% \palavrachavele{Machine learning}
+% \palavrachavele{Regression}
+% \palavrachavele{Neural Networks}
 
-\programa{ep-metalurgica}
-\departamento{ep-pmt}
+% Palavras chave na ficha catalográfica. 5 no máximo
+\assunto{Aço}
+\assunto{Termodinâmica}
+\assunto{Aprendizado de máquina}
+\assunto{Regressão}
+\assunto{Redes neurais}
 
-% \elementospretextuais  %Comando do USPTeX para criação dos elemenos pré-textuais do documento
-\capa
-\folhaderosto
-\paginaresumo
-\tableofcontents
+% Nomes na ficha catalográfica
+\FCautorresumido{Ribeiro, P. A.}
+\FCautorexpandido{Ribeiro, Paula Arantes}
+
+\elementospretextuais  %Comando do USPTeX para criação dos elemenos pré-textuais do documento
 
 \setlength\parindent{.85cm}  %Define em 0,85cm a identação da primeira linha do parágrafo.
 
