@@ -1,0 +1,287 @@
+go data
+def-el fe c mn si cr ni
+rej ph *
+rest ph fcc bcc cem
+get
+go p-3
+
+ent-sy tab blab
+t w(*,*) np(*);
+
+s-a-v 1 t 673 1473 10
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0050804 w(mn)=0.00222171 w(si)=0.0143169
+s-c w(cr)=0.0248182 w(ni)=0.00103264
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00375.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0062491 w(mn)=0.0276778 w(si)=0.00160785
+s-c w(cr)=0.018418 w(ni)=0.0190389
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00376.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0100586 w(mn)=0.0124943 w(si)=0.0278425
+s-c w(cr)=0.0173598 w(ni)=0.00600511
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00377.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0122496 w(mn)=0.0111494 w(si)=0.00982626
+s-c w(cr)=0.00562699 w(ni)=0.0279869
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00378.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0135078 w(mn)=0.011904 w(si)=0.0114549
+s-c w(cr)=0.0142658 w(ni)=0.0268354
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00379.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.00845874 w(mn)=0.00798204 w(si)=0.0208592
+s-c w(cr)=0.0267274 w(ni)=0.0127759
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00380.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0103244 w(mn)=0.00817827 w(si)=0.00732751
+s-c w(cr)=0.0223051 w(ni)=0.0251001
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00381.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.00166502 w(mn)=0.0209342 w(si)=0.0188382
+s-c w(cr)=0.021635 w(ni)=0.0155646
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00382.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0144087 w(mn)=0.0170848 w(si)=0.0259366
+s-c w(cr)=0.00590295 w(ni)=0.00224979
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00383.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0064488 w(mn)=0.00533222 w(si)=0.00584367
+s-c w(cr)=0.00175703 w(ni)=0.025277
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00384.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.00759112 w(mn)=0.0209217 w(si)=0.0184242
+s-c w(cr)=0.0099931 w(ni)=0.0205492
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00385.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0145031 w(mn)=0.00123983 w(si)=0.0210855
+s-c w(cr)=0.00333159 w(ni)=0.0109521
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00386.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.012587 w(mn)=0.00294531 w(si)=0.0203615
+s-c w(cr)=0.0224449 w(ni)=0.016182
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00387.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.00217811 w(mn)=0.0244833 w(si)=0.0288263
+s-c w(cr)=0.0264843 w(ni)=0.00544616
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00388.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.00223289 w(mn)=0.0274534 w(si)=0.0184783
+s-c w(cr)=0.0170835 w(ni)=0.0054605
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00389.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0149043 w(mn)=0.0280132 w(si)=0.00119521
+s-c w(cr)=0.0231067 w(ni)=0.00706392
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00390.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.00307155 w(mn)=0.0288877 w(si)=0.0241446
+s-c w(cr)=0.013804 w(ni)=0.0196276
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00391.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0119604 w(mn)=0.00390984 w(si)=0.00271846
+s-c w(cr)=0.00137197 w(ni)=0.0108506
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00392.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0116657 w(mn)=0.0151348 w(si)=0.0181649
+s-c w(cr)=0.0289554 w(ni)=0.0249841
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00393.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0047075 w(mn)=0.0228624 w(si)=0.0272928
+s-c w(cr)=0.0179571 w(ni)=0.0293713
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00394.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0125884 w(mn)=0.00291258 w(si)=0.0166037
+s-c w(cr)=0.0176758 w(ni)=0.00514183
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00395.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.0114691 w(mn)=0.028705 w(si)=0.0273018
+s-c w(cr)=0.0121403 w(ni)=0.0296563
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00396.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.00916976 w(mn)=0.00450284 w(si)=0.00469012
+s-c w(cr)=0.0186498 w(ni)=0.00481959
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00397.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.000211498 w(mn)=0.0223002 w(si)=0.0199184
+s-c w(cr)=0.0230041 w(ni)=0.0121935
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00398.DAT
+save RESULT.POLY3 y
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0.011484 w(mn)=0.0149357 w(si)=0.0219157
+s-c w(cr)=0.0078154 w(ni)=0.0162658
+c-e
+c-e
+step,,
+tab,
+blab,
+../results/random_compositions_database_00399.DAT
+save RESULT.POLY3 y
+
