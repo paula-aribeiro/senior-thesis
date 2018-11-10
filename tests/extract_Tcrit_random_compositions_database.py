@@ -1,5 +1,5 @@
 """
-Extract critical temperatures from Thermo-Calc generated tables for randim
+Extract critical temperatures from Thermo-Calc generated tables for random
 compositions
 """
 
@@ -34,6 +34,12 @@ if __name__ == '__main__':
     db['A1prime'] = A1prime
     db['A3'] = A3
     db['eutectoid'] = eutectoid
+    # wt.% to wt. fraction
+    db['C'] = db['C'].apply(lambda x: 1e-2*x)
+    db['Mn'] = db['Mn'].apply(lambda x: 1e-2*x)
+    db['Si'] = db['Si'].apply(lambda x: 1e-2*x)
+    db['Cr'] = db['Cr'].apply(lambda x: 1e-2*x)
+    db['Ni'] = db['Ni'].apply(lambda x: 1e-2*x)
     db = db[['file','C','Mn','Si','Cr','Ni','A1','A1prime','A3','eutectoid']]
 
     fname = '../databases/Tcritical_random_compositions_database.csv'
