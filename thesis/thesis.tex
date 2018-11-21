@@ -259,7 +259,10 @@ Esses algoritmos podem ser classificados entre supervisionados e não supervisio
 
 No campo da engenharia de materiais, os algoritmos mais utilizados são os supervisionados, uma vez que pode-se reunir dados teóricos ou experimentais e a partir deles fazer a predição de propriedades. Diversas funções podem ser utilizadas para esse fim, cada uma com certa eficiência, e segundo o teorema ``No Free Lunch'' de Wolpert e Macready \enfase{apud} \citaremsentenca{Belisle2015}, não existe um algoritmo perfeito.
 
-Dentre os métodos supervisionados, pode-se destacar alguns algoritmos. O primeiro e mais simples é a interpolação polinomial. Este pode se comportar de forma linear, como descrito na equação \ref{eq:interpolacao_linear}, ou quadrática, como na equação \ref{eq:interpolacao_quadratica}.
+Dentre os métodos supervisionados, destacam-se os algoritmos que foram explorados nesse trabalho.
+
+\subsection{Regressão Polinomial}
+O primeiro e mais simples é a interpolação polinomial. Este pode se comportar de forma linear, como descrito na equação \ref{eq:interpolacao_linear}, ou quadrática, como na equação \ref{eq:interpolacao_quadratica}.
 \begin{align}
   f(x) &= b x + c \label{eq:interpolacao_linear} \\
   f(x) &= \frac{1}{2} a x^T + b x + c \label{eq:interpolacao_quadratica}
@@ -267,9 +270,30 @@ Dentre os métodos supervisionados, pode-se destacar alguns algoritmos. O primei
 
 Ambos são métodos muito utilizados devido ao baixo custo computacional. Entretanto, têm a necessidade de estabelecer alguma relação (linear ou quadrática) entre os termos estudados, utilizando termos fixos \cite{Bhadeshia1999}.
 
-Um segundo método é a rede neural. Inspirada no cérebro humano, a rede neural baseia-se em associações para fazer previsões, sendo muito utilizada para reconhecimento de padrões. É indicada para funções não lineares e pode identificar relações complexas entre variáveis independentes. A desvantagem é o maior tempo computacional necessário \cite{Belisle2015}.
+\subsection{Rede Neural Artificial}
+Um segundo método é a rede neural. Inspirada no cérebro humano, baseia-se em associações para fazer previsões, sendo muito utilizada para reconhecimento de padrões. É indicada para funções não lineares e pode identificar relações complexas entre variáveis independentes. A desvantagem é o maior tempo computacional necessário \cite{Belisle2015}.
 
-Uma rede neural tem uma camada de entrada, uma ou mais camadas ocultas e outra de saída. A camada de entrada recebe os dados e os envia para as camadas intermediárias (ocultas), que multiplicam cada variável por um peso aleatório. A soma de todas as multiplicações é somada também a uma constante aleatória. Como os valores dos pesos e da constante são aleatórios, o valor da saída inicialmente é bem diferente do esperado. A partir disso, os pesos são alterados até atingir um resultado satisfatório, etapa chamada de treinamento da rede neural \cite{Bhadeshia1999}.
+A rede neural artificial é um conjunto de neurônios de software organizados em camadas, conectados de forma que possibilita a comunicação entre eles. Como mostra a Figura \ref{fig:rede-neural-arquitetura}, ela tem uma camada de entrada, uma ou mais camadas intermediárias e outra de saída.
+
+\begin{figure}[ht!]
+  \includegraphics[width=.9\textwidth]{img/neural-network.png}
+  \caption{Arquitetura da rede neural}
+  \label{fig:rede-neural-arquitetura}
+\end{figure}
+
+Para o exemplo da Figura \ref{fig:rede-neural-arquitetura}, a primeira camada recebe uma entrada X de cinco dados n vezes, sendo n o tamanho do banco de dados utilizado no treinamento. Os neurônios da camada intermediária recebem o vetor X com as 5 entradas para calcular o valor predito Ŷ. Para cada neurônio existem os vetores de peso e os viéses (ou \textit{bias}), que a princípio são randômicos. O vetor X é multiplicado pelo vetor de peso e depois adicionado ao viés, como mostra a Equação \ref{eq:single-neuron}. Como os valores dos pesos e viéses são aleatórios, o valor da saída inicialmente é bem diferente do esperado. A cada iteração, os pesos são alterados até atingir um resultado satisfatório, etapa chamada de treinamento da rede neural \cite{Bhadeshia1999}.
+
+\begin{align}
+  z &= \var{w}_1 \var{x}_1 + \var{w}_2 \var{x}_2 + \var{w}_3 \var{x}_3 + ... + \var{w}_n \var{x}_n \label{eq:single-neuron}
+\end{align}
+
+Como mostra a Figura \ref{fig:single-neuron}, o resultado desse cálculo passa por uma função de ativação para que se defina a próxima conexão \cite{Skalski2017}.
+
+\begin{figure}[ht!]
+  \includegraphics[width=.7\textwidth]{img/single-neuron.png}
+  \caption{Operações em um único neurônio \cite{Skalski2017}}
+  \label{fig:single-neuron}
+\end{figure}
 
 \citaremsentenca{Gavard1996} elaborou uma rede neural para prever A1 e A3 a partir de dados experimentais de composição química, temperatura e taxa de aquecimento. O modelo foi capaz de estimar temperaturas críticas com precisão de $\pm 40$K ou $95\%$ de confiança.
 
