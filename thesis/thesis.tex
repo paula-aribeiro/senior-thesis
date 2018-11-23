@@ -40,7 +40,7 @@
 \autor{Paula Arantes Ribeiro}
 \orientador{Prof. Dr. Hélio Goldenstein}
 \coorientador{Dr. Arthur Seiji Nishikawa}
-\titulo{Método de aprendizado de máquina para previsão de pontos críticos de equilíbrio em ligas multi-componente}
+\titulo{Métodos de aprendizado de máquina para previsão de pontos críticos de equilíbrio em ligas multi-componente}
 
 \departamento{ep-pmt}
 % \programa{ep-metalurgica}
@@ -295,7 +295,7 @@ Como mostra a Figura \ref{fig:single-neuron}, o resultado desse cálculo passa p
   \label{fig:single-neuron}
 \end{figure}
 
-\citaremsentenca{Gavard1996} elaborou uma rede neural para prever A1 e A3 a partir de dados experimentais de composição química, temperatura e taxa de aquecimento. O modelo foi capaz de estimar temperaturas críticas com precisão de $\pm 40$K ou $95\%$ de confiança.
+\citaremsentenca{Gavard1996} elaborou uma rede neural para prever A1 e A3 a partir de dados experimentais de composição química, temperatura e wtaxa de aquecimento. O modelo foi capaz de estimar temperaturas críticas com precisão de $\pm 40$K ou $95\%$ de confiança.
 
 \chapter{Metodologia}
 
@@ -303,6 +303,7 @@ Como mostra a Figura \ref{fig:single-neuron}, o resultado desse cálculo passa p
 
 \label{sec:banco_dados}
 
+\subsection{Escolha das vari\'aveis}
 A primeira etapa para elaboração de um algoritmo de machine learning é a construção do banco de dados utilizado em seu treinamento. Para este trabalho, utilizou-se dados extraídos do software Thermo-Calc\textregistered{}.
 
 Inicialmente, discutiu-se os elementos de liga e suas respectivas faixas de composição química nos aços estudados. Foram considerados apenas os mais comuns aços de engenharia, cujas composições foram consultados em um handbook SAE \cite{SAE1983}. Não foram consideradas as composições relativas aos aços inoxidáveis. A Tabela \ref{tab:faixas_composicao} mostra as faixas de composições escolhidas para criação do banco de dados de temperaturas críticas.
@@ -357,7 +358,7 @@ Já para a temperatura, estabeleceu-se um step de 10K. A partir da combinação 
 
 O resultado da chamada do Thermo-Calc\textregistered{} é salvo em um arquivo de texto de extensão .DAT. No total, foram gerados 6874 arquivos.
 
-\section{Extra\c{c}\~ao de temperaturas cr\'iticas}
+\subsection{Extra\c{c}\~ao de temperaturas cr\'iticas}
 
 Para cada arquivo gerado pela chamada do Thermo-Calc\textregistered{}, calculou-se as temperaturas críticas através de outro script. Este faz a leitura do arquivo .DAT, que contém as porcentagens de cada fase para cada temperatura entre 673 e 1473K, variando em 10K.
 
@@ -367,7 +368,7 @@ Também identificou-se a temperatura crítica intermediária, A1', e consequente
 
 Os dados do nome do arquivo, o número da macro que fez sua chamada, composição química, temperaturas críticas e classificação em hipo ou hiper eutetóide foram salvos em um arquivo CSV.
 
-\section{Experimentos}
+\subsection{Avaliação do Banco de Dados}
 
 Foram realizados testes para averiguar a qualidade dos dados extraídos do Thermo-Calc\textregistered{}.
 
@@ -379,6 +380,20 @@ Uma importante verificação da base de dados como um todo foi a comparação co
 
 A fim de avaliar o efeito de cada elemento na temperatura crítica A3, foram traçadas isopletas com a composição de carbono como variável livre e diferentes composições de cada elemento.
 
+\section{Regressão Linear}
+
+Analisou-se a predição das temperaturas A1, A1' e A3 atráves de algoritmos de regressão linear multivariável.
+
+Primeiramente, manipulou-se o banco de dados gerado conforme a secção \ref{sec:banco_dados}, transformando as composições para porcentagem em peso e as temperaturas para graus celsius, além de remover os dados cujas temperaturas críticas não existissem. A fim de avaliar o efeito dos termos ao quadrado e da interdependência entre elementos químicos no valor das temperaturas críticas, foram criadas novas colunas, totalizando os seguintes parâmetros: C, C^{2}, CMn, CSi, CCr, CNi, Mn, Mn^{2}, MnSi, MnCr, MnNi, Si, Si^{2}, SiCr, SiNi, Cr, Cr^{2}, CrNi, Ni, Ni^{2}.
+% ARRUMAR
+
+Em seguida, o banco de dados foi separado entre dados de treino e dados de teste para o algoritmo. Utilizou-se a proporção 80\% treino e 20\% teste, selecionando dados com um algoritmo pseudoaleatório, ou seja, para uma mesma semente são selecionados os mesmos dados.
+
+A seguir, os dados de treino foram utilizados para gerar modelos de regressão linear multivariável, utilizando a biblioteca \italic{Scikit-learn}, do \italic{Python}. Para cada temperatura crítica, foi gerado um modelo para composições hipoeutetóides, um para hipereutetóides e um para todas as composições, totalizando nove modelos. Para cada modelo obteve-se os coeficientes de cada variável independente e calculou-se tanto o coeficiente de determinação (r^{2}) quanto o erro quadrático médio (MSE) da predição dos dados de teste.
+
+Para cada modelo, foram plotados gráficos de valores preditos versus valores esperados para o conjunto de dados de teste, além de isopletas comparando os dados de treino com os de teste.
+
+Uma vez que os valores de r^{2} foram muito satisfatórios, realizou-se um novo teste, a fim de verificar a possibilidade de \italic(overfit). Para isso, gerou-se um novo banco de dados de teste, de tamanho equivalente a 20\% ao do banco original, gerando-se composições químicas aleatórias dentro das faixas de composição estudadas e rodando os scripts para determinar a temperatura dada pelo Thermo-Calc\textregistered{}, descritos na secção \cite{sec:banco_dados}. Novos gráficos de valores preditos versus valores esperados foram gerados, bem como novos cálculos de r^{2}.
 
 \chapter{Resultados e discussão}
 
