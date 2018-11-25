@@ -211,11 +211,11 @@ Quanto maior o teor de carbono, maior a temperabilidade do aço. Entretanto, ess
 
 Os elementos de liga podem ser classificados de acordo com sua influência no campo austenítico, que por sua vez está relacionada à estrutura eletrônica dos elementos. São eles:
 \begin{itemize}
-\item Classe 1: elementos de domínio-$\gamma$ aberto, podendo até mesmo eliminar completamente a fase $\alpha$ em concentrações suficientemente altas. Assim, as transformações $\gamma$ \rightarrow  $\alpha$ ocorrem a temperaturas menores, ou seja, A3 diminui e pode haver casos em que não há a temperatura A1. Fazem parte desse grupo: Níquel, Manganês, Cobalto, Rutênio, Ródio, Paládio, Ósmio, Irídio e Platina.
+\item Classe 1: elementos de domínio-$\gamma$ aberto, podendo até mesmo eliminar completamente a fase $\alpha$ em concentrações suficientemente altas. Assim, as transformações $\gamma \rightarrow  \alpha$ ocorrem a temperaturas menores, ou seja, A3 diminui e pode haver casos em que não há a temperatura A1. Fazem parte desse grupo: Níquel, Manganês, Cobalto, Rutênio, Ródio, Paládio, Ósmio, Irídio e Platina.
 
 \item Classe 2: domínio-$\gamma$ é expandido até a formação de um composto de ferro. Essa expansão é responsável por formar solução sólida homogênea, sendo muito importante para o tratamento térmico dos aços. Pertencem a esse grupo o Carbono e o Nitrogênio, que diminuem o valor de A3.
 
-\item Classe 3: domínio-$\gamma$ fechado, elementos que favorecem a expansão do domínio-$\alpha$, que circunda o campo austenítico, formando uma região chamada de ilha gama ou $\gamma$-loop. Estes aumentam A1 e pode haver casos em que A3 não existe. Essas ligas não podem passar por tratamento térmico de arrefecimento através da transformação $\gamma$ \rightarrow $\alpha$. Fazem parte desse grupo: Silício, Alumínio, Berílio, Fósforo e elementos fortemente formadores de carboneto, como Titânio, Vanádio, Molibdênio e Cromo.
+\item Classe 3: domínio-$\gamma$ fechado, elementos que favorecem a expansão do domínio-$\alpha$, que circunda o campo austenítico, formando uma região chamada de ilha gama ou $\gamma$-loop. Estes aumentam A1 e pode haver casos em que A3 não existe. Essas ligas não podem passar por tratamento térmico de arrefecimento através da transformação $\gamma \rightarrow \alpha$. Fazem parte desse grupo: Silício, Alumínio, Berílio, Fósforo e elementos fortemente formadores de carboneto, como Titânio, Vanádio, Molibdênio e Cromo.
 
 \item Classe 4: domínio-$\gamma$ contraído mas há formação de compostos de ferro. Os elementos Boro, Enxofre, Tântalo, Nióbio, Zircônio estão nessa categoria \cite{Honeycombe1982} \cite{Silva2010}.
 \end{itemize}
@@ -284,7 +284,7 @@ A rede neural artificial é um conjunto de neurônios de software organizados em
 Para o exemplo da Figura \ref{fig:rede-neural-arquitetura}, a primeira camada recebe uma entrada X de cinco dados n vezes, sendo n o tamanho do banco de dados utilizado no treinamento. Os neurônios da camada intermediária recebem o vetor X com as 5 entradas para calcular o valor predito Ŷ. Para cada neurônio existem os vetores de peso e os viéses (ou \textit{bias}), que a princípio são randômicos. O vetor X é multiplicado pelo vetor de peso e depois adicionado ao viés, como mostra a Equação \ref{eq:single-neuron}. Como os valores dos pesos e viéses são aleatórios, o valor da saída inicialmente é bem diferente do esperado. A cada iteração, os pesos são alterados até atingir um resultado satisfatório, etapa chamada de treinamento da rede neural \cite{Bhadeshia1999}.
 
 \begin{align}
-  z &= \var{w}_1 \var{x}_1 + \var{w}_2 \var{x}_2 + \var{w}_3 \var{x}_3 + ... + \var{w}_n \var{x}_n \label{eq:single-neuron}
+  z &= {w}_1 {x}_1 + {w}_2 {x}_2 + {w}_3 {x}_3 + ... + {w}_n {x}_n \label{eq:single-neuron}
 \end{align}
 
 Como mostra a Figura \ref{fig:single-neuron}, o resultado desse cálculo passa por uma função de ativação para que se defina a próxima conexão \cite{Skalski2017}.
@@ -381,22 +381,50 @@ Uma importante verificação da base de dados como um todo foi a comparação co
 A fim de avaliar o efeito de cada elemento na temperatura crítica A3, foram traçadas isopletas com a composição de carbono como variável livre e diferentes composições de cada elemento.
 
 \section{Regressão Linear}
+\label{sec:metodo_RL}
 
 Analisou-se a predição das temperaturas A1, A1' e A3 atráves de algoritmos de regressão linear multivariável.
 
-Primeiramente, manipulou-se o banco de dados gerado conforme a secção \ref{sec:banco_dados}, transformando as composições para porcentagem em peso e as temperaturas para graus celsius, além de remover os dados cujas temperaturas críticas não existissem. A fim de avaliar o efeito dos termos ao quadrado e da interdependência entre elementos químicos no valor das temperaturas críticas, foram criadas novas colunas, totalizando os seguintes parâmetros: C, C^{2}, CMn, CSi, CCr, CNi, Mn, Mn^{2}, MnSi, MnCr, MnNi, Si, Si^{2}, SiCr, SiNi, Cr, Cr^{2}, CrNi, Ni, Ni^{2}.
+Primeiramente, o banco de dados gerado conforme a secção \ref{sec:banco_dados} foi manipulado, transformando as composições para porcentagem em peso e as temperaturas para graus Celsius, além de remover os dados cujas temperaturas críticas não existissem. A fim de avaliar o efeito dos termos ao quadrado e da interdependência entre elementos químicos no valor das temperaturas críticas, foram criadas novas colunas, totalizando os seguintes parâmetros: C, $C^{2}$, CMn, CSi, CCr, CNi, Mn, $Mn^{2}$, MnSi, MnCr, MnNi, Si, $Si^{2}$, SiCr, SiNi, Cr, $Cr^{2}$, CrNi, Ni, $Ni^{2}$.
 % ARRUMAR
 
 Em seguida, o banco de dados foi separado entre dados de treino e dados de teste para o algoritmo. Utilizou-se a proporção 80\% treino e 20\% teste, selecionando dados com um algoritmo pseudoaleatório, ou seja, para uma mesma semente são selecionados os mesmos dados.
 
-A seguir, os dados de treino foram utilizados para gerar modelos de regressão linear multivariável, utilizando a biblioteca \italic{Scikit-learn}, do \italic{Python}. Para cada temperatura crítica, foi gerado um modelo para composições hipoeutetóides, um para hipereutetóides e um para todas as composições, totalizando nove modelos. Para cada modelo obteve-se os coeficientes de cada variável independente e calculou-se tanto o coeficiente de determinação (r^{2}) quanto o erro quadrático médio (MSE) da predição dos dados de teste.
+A seguir, os dados de treino foram utilizados para gerar modelos de regressão linear multivariável, utilizando o \textit{Scikit-learn}. Essa biblioteca do \textit{Python} contém funções eficientes de aprendizado de máquina, incluindo o módulo \textit{linear\_model}, no qual se espera que o valor alvo seja uma combinação linear dos dados de entrada.
+
+Para cada temperatura crítica, foi gerado um modelo para composições hipoeutetóides, um para hipereutetóides e um para todas as composições, totalizando nove modelos. Para cada modelo obteve-se os coeficientes de regressão de cada variável independente e calculou-se o coeficiente de determinação ($R^{2}$) da predição do modelo.
 
 Para cada modelo, foram plotados gráficos de valores preditos versus valores esperados para o conjunto de dados de teste, além de isopletas comparando os dados de treino com os de teste.
+% ARRUMAR isopleta aqui quando estiver terminada
 
-Uma vez que os valores de r^{2} foram muito satisfatórios, realizou-se um novo teste, a fim de verificar a possibilidade de \italic(overfit). Para isso, gerou-se um novo banco de dados de teste, de tamanho equivalente a 20\% ao do banco original, gerando-se composições químicas aleatórias dentro das faixas de composição estudadas e rodando os scripts para determinar a temperatura dada pelo Thermo-Calc\textregistered{}, descritos na secção \cite{sec:banco_dados}. Novos gráficos de valores preditos versus valores esperados foram gerados, bem como novos cálculos de r^{2}.
+Uma vez que os valores de $R^{2}$ foram muito satisfatórios, realizou-se um novo teste, a fim de verificar a possibilidade de \textit{overfit}. Para isso, gerou-se um novo banco de dados de teste, de tamanho equivalente a 20\% ao do banco original, utilizando o algoritmo \textit{rand} do \textit{Numpy}, que retorna números aleatórios distribuídos uniformemente de 0 a 1. Em seguida esses números foram multiplicados pelas composições máximas do elemento químico correspondente, a fim de se obter ligas dentro das faixas de composição estudadas. Por fim, foram rodados os scripts para determinar a temperatura dada pelo Thermo-Calc\textregistered{}, descritos na secção \ref{sec:banco_dados}. Novos cálculos de $R^{2}$ foram feitos e comparados com os originais.
+
+\section{Rede Neural}
+Uma vez que a temperatura A3 é a mais complexa de se determinar, devido à inversão da curva no ponto eutetóide, para essa temperatura crítica foi elaborada uma rede neural, de arquitetura semelhante à mostrada na Figura \ref{fig:rede-neural-arquitetura}.
+
+Para isso, houve o mesmo tratamento de dados descrito na secção \ref{sec:metodo_RL}, transformando as composições para porcentagem em peso, as temperaturas para graus Celsius, e removendo os dados cujas temperaturas críticas não existissem. Também foi feita a mesma separação entre dados de treino e teste, utilizando a mesma proporção de 80/20\%, respectivamente.
+
+Além desses procedimentos, a rede neural exige que os dados sejam normalizados para que haja melhor convergência, uma vez que a função de ativação escolhida para o modelo foi a de tangente hiperbólica. Foi utilizado o \textit{MinMax Scaler}, função do módulo \textit{Scikit-learn} do \textit{Python}, que reduz o intervalo dos dados para que estejam entre 0 e 1.
+
+Para construção da rede neural, foi utilizado o Keras, uma API de alto nível escrita em \textit{Python} e cujo
+\textit{backend} pode ser rodado em \textit{TensorFlow}, \textit{CNTK} ou \textit{Theano}. Para esse caso, foi utilizado o \textit{TensorFlow}. Essa biblioteca tem como maior vantagem a agilidade para criar modelos complexos, facilitando a elaboração de testes \cite{Skalski2017}.
+
+Como valor de saída foi estabelecido A3, enquanto as porcentagens em peso de C, Mn, Si, Cr, Ni foram definidas como valores de entrada. Foram variados o número de neurônios na camada intermediária, de 1 a 12, bem como a taxa de aprendizado (ou \textit{learning rate}) de 0.1, 0.01 e 0.001. Foram plotados gráficos de Erro quadrático médio versus número de neurônios na camada intermediária, a fim de estipular um ponto ótimo desses parâmetros, como realizado no trabalho de \citaremsentenca{Capdevila2004}. Para um mesmo número de neurônios, foram testados 5 modelos, uma vez que os pesos e vieses iniciais são aleatórios e podem influenciar no resultado final.
+
+Definida a taxa de aprendizado que apresentava melhor estabilidade do erro quadrático médio, avaliou-se o efeito do número de neurônios na camada interna na função perda e nos valores preditos. Foram plotados gráficos de função perda versus número de iterações, bem como de valores preditos versus valores esperados, para número de neurônios na camada intermediária de 1 a 12.
+
+Estabelecendo o ponto ótimo de número de neurônios, foram plotadas isopletas comparando os dados de treino com de teste, foram calculados o coeficiente de determinação ($R^{2}$) e o erro quadrático médio (MSE) da predição do modelo.
+
+\section{Comparação dos modelos}
+
+A fim de se comparar a assertividade dos modelos, foram comparadas as métricas de regressão linear e rede neural para predição da temperatura A3. Primeiramente, foi necessário utilizar os dados normalizados pelo \textit{MinMax Scaler} para treinar novamente o algoritmo de regressão linear, para que o valor de erro quadrático médio fosse comparável ao da rede neural.
+
+Também foram plotados gráficos de valores preditos pela regressão linear e pela rede neural versus valores calculados pela equação empírica, uma vez que os dados normalizados não podem ser usados para essas equações e a comparação das métricas não teria sentido. Para isso, as predições da rede neural foram desnormalizadas utilizando o método \textit{inverse\_transform} do \textit{Scikit-learn}.
+
+ %ARRUMAR: falar quais equações usou
 
 \chapter{Resultados e discussão}
-
+\section{O Banco de Dados}
 O resultado da variação de composição química para aços carbono gerou um total de 6874 combinações e, para cada, fez-se a chamada do Thermo-Calc\textregistered{} que retorna a porcentagem de cada fase para temperaturas de 673 a 1473K, variando de 10K. Para cada composição, os dados são salvos em um arquivo .DAT.
 
 Inicialmente, sete macros faziam a chamada do Thermo-Calc\textregistered{} com 1000 composições cada. Isso trouxe resultados muito inconsistentes, como valores em branco ou ou incoerentes com a literatura, e podem estar relacionados à sobrecarga de memória do computador. Notou-se que, quanto menos chamadas cada macro fazia, menor o número de erros nos resultados e, assim, chegou-se ao número de 69 macros com 100 chamadas cada.
@@ -443,6 +471,182 @@ Para o manganês e níquel, nota-se que a baixas concentrações de carbono a co
 Já para elementos alfagênicos, como o cromo, a relação se inverte. Para baixas concentrações de carbono, os valores de temperatura ficam próximos, e a partir de 0,4\% de carbono a concentração do cromo já contribui para sua divergência.
 
 Um caso intermediário é o do silício, que apesar de alfagênico, tem influência na temperatura tanto a baixas quanto a mais altas concentrações de carbono, embora a influência a baixas concentrações seja maior.
+
+\section{Regressão Linear}
+
+Após o tratamento dos dados, pontos cuja temperatura crítica correspondente não existisse foram eliminados e os
+dados foram separados entre hipo e hipereutetóide. A Tabela \ref{tab:conj_dados} mostra o tamanho do banco de dados para cada condição.
+
+\begin{table}
+  \caption{Tamanho dos conjuntos de dados usados para regressão linear}
+
+  \begin{tabular}{llll}
+  \hline
+                 & A1   & A1'  & A3   \\
+  \hline
+  Hipoeutetóide  & 1151 & 1643 & 2303 \\
+  Hipereutetóide & 3308 & 4339 & 4542 \\
+  Total          & 4459 & 5982 & 6845 \\
+  \hline
+  \end{tabular}
+
+  \label{tab:conj_dados}
+\end{table}
+
+Os valores de $R^{2}$ para os nove modelos são mostrados na Tabela \ref{tab:r2_reg_lin} a seguir.
+
+\begin{table}
+  \caption{Valores de $R^{2}$ para regressão linear}
+
+  \begin{tabular}{llll}
+  \hline
+  & A1     & A1'    & A3     \\
+  \hline
+  Hipoeutetóide  & 0.8663 & 0.9743 & 0.9607 \\
+  Hipereutetóide & 0.9817 & 0.9934 & 0.9971 \\
+  Todos os dados & 0.9425 & 0.9748 & 0.8774 \\
+  \hline
+  \end{tabular}
+
+  \label{tab:r2_reg_lin}
+\end{table}
+
+Nota-se que o conjunto de dados para determinar a temperatura A1 é o menor. Isso ocorre pois três dos cinco elementos estudados são gamagênicos, reduzindo a probabilidade de existir A1. A quantidade reduzida de dados teve efeito no valor de $R^{2}$, o menos satisfatório dos modelos, principalmente para os pontos hipoeutetóides.
+
+Os valores de $R^{2}$ obtidos foram satisfatórios porém muito altos, por isso houve o cuidado em se verificar a possibilidade de \textit{overfit}, como será mostrado a seguir.
+
+%ARRUMAR: adicionar tabelas com coeficientes das Regressões
+\subsection{Regressão Linear de A1}
+
+As Figuras \ref{fig:LR_A1_hipo}, \ref{fig:LR_A1_hiper} e \ref{fig:LR_A1_total} a seguir mostram os gráficos de valores preditos versus esperados para a temperatura A1.
+
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/A1_hipo.png}
+  \caption{Arrumar}
+  \label{fig:LR_A1_hipo}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/A1_hiper.png}
+  \caption{Arrumar}
+  \label{fig:LR_A1_hiper}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/A1_total.png}
+  \caption{Arrumar}
+  \label{fig:LR_A1_total}
+\end{figure}
+%ARRUMAR P/ FICAR LADO A LADO, UMA LEGENDA SÓ
+
+Nota-se que, mesmo com a quantidade de dados reduzida, os dados tiveram um bom \textit{fit} com a reta $y = x$. Os problemas estão localizados no extremo inferior, onde a curva de A1 no diagrama binário Fe-C não se assemelha a uma reta. Essa faixa corresponde às temperaturas mais baixas dos hipoeutetóides, onde há poucos pontos devido à proximidade do campo $\alpha$, no qual A1 não existe.
+
+\subsection{Regressão Linear de A1'}
+
+As Figuras \ref{fig:LR_A1prime_hipo}, \ref{fig:LR_A1prime_hiper} e \ref{fig:LR_A1prime_total} a seguir mostram os gráficos de valores preditos versus esperados para a temperatura A1'.
+
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/A1prime_hipo.png}
+  \caption{Arrumar}
+  \label{fig:LR_A1prime_hipo}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/A1prime_hiper.png}
+  \caption{Arrumar}
+  \label{fig:LR_A1prime_hiper}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/A1prime_total.png}
+  \caption{Arrumar}
+  \label{fig:LR_A1prime_total}
+\end{figure}
+%ARRUMAR P/ FICAR LADO A LADO, UMA LEGENDA SÓ
+
+A temperatura A1', assim como A1, é mais difícil de ser determinada na proximidade do campo $\alpha$, como é possível notar nas temperaturas mais baixas dos hipoeutetóides. O maior número de dados utilizados para o treino resultou em um melhor ajuste das curvas.
+
+\subsection{Regressão Linear de A3}
+
+As Figuras \ref{fig:LR_A3_hipo}, \ref{fig:LR_A3_hiper} e \ref{fig:LR_A3_total} a seguir mostram os gráficos de valores preditos versus esperados para a temperatura A1'.
+
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/A3_hipo.png}
+  \caption{Arrumar}
+  \label{fig:LR_A3_hipo}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/A3_hiper.png}
+  \caption{Arrumar}
+  \label{fig:LR_A3_hiper}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/A3_total.png}
+  \caption{Arrumar}
+  \label{fig:LR_A3_total}
+\end{figure}
+%ARRUMAR P/ FICAR LADO A LADO, UMA LEGENDA SÓ
+
+Para essa temperatura crítica, os pontos que menos se ajustaram foram os hipoeutetóides. Isso possivelmente ocorre pois a curva correspondente no diagrama binário Fe-C tem uma inclinação mais variável do que a hipereutetóide. Além disso, nota-se menor quantidade de pontos a temperaturas altas, ou seja, a baixas concentrações de carbono. As predições para composições hipereutetóides tiveram melhor ajuste, não apenas pelo maior conjunto de dados mas também pela curva correspondente no diagrama binário Fe-C ter inclinação mais constante.
+
+O modelo que utilizou todo o conjunto de dados não teve um bom ajuste, como era esperado, devido à inversão da curva no ponto eutetóide do diagrama binário Fe-C
+
+\subsection{Comparação com banco de dados aleatórios}
+Ao todo foram gerados 1375 dados de teste, que passaram novamente pela predição para se avaliar os ajustes. As Tabelas \ref{tab:r2_A1_RL_random}, \ref{tab:r2_A1prime_RL_random} e \ref{tab:r2_A3_RL_random} a seguir mostram os novos valores de $R^{2}$ recalculados para cada modelo.
+
+\begin{table}
+  \caption{Valores de $R^{2}$ para regressão linear de A1 com dados aleatórios}
+
+  \begin{tabular}{lll}
+  \hline
+                 & Original & Aleatório \\
+  \hline
+  Hipoeutetóide  & 0.8663   & 0.7304    \\
+  Hipereutetóide & 0.9817   & 0.9806    \\
+  Todos os dados & 0.9425   & 0.9752    \\
+  \hline
+  \end{tabular}
+
+  \label{tab:r2_A1_RL_random}
+\end{table}
+
+\begin{table}
+  \caption{Valores de $R^{2}$ para regressão linear de A1' com dados aleatórios}
+
+  \begin{tabular}{lll}
+  \hline
+                 & Original & Aleatório \\
+  \hline
+  Hipoeutetóide  & 0.9743   & 0.8137    \\
+  Hipereutetóide & 0.9934   & 0.9941    \\
+  Todos os dados & 0.9748   & 0.8754    \\
+  \hline
+  \end{tabular}
+
+  \label{tab:r2_A1prime_RL_random}
+\end{table}
+
+\begin{table}
+  \caption{Valores de $R^{2}$ para regressão linear de A3 com dados aleatórios}
+
+  \begin{tabular}{lll}
+  \hline
+                 & Original & Aleatório \\
+  \hline
+  Hipoeutetóide  & 0.9607   & 0.9603    \\
+  Hipereutetóide & 0.9971   & 0.9981    \\
+  Todos os dados & 0.8774   & 0.9207    \\
+  \hline
+  \end{tabular}
+
+  \label{tab:r2_A3_RL_random}
+\end{table}
+
+Os resultados obtidos dos dados aleatórios possibilitou uma comparação de métricas, uma vez que não foi encontrado na literatura o que seria um valor satisfatório de $R^{2}$ para a predição dessas temperaturas em específico. Nota-se que não houve muita variação dos valores originais para os aleatórios, entretanto, a hipótese de \textit{overfit} não pode ser completamente descartada. É possível que a alta complexidade do modelo, devido ao grande número de dados de entrada, esteja elevando as métricas.
+
+\subsection{Isopletas das Regressões Lineares}
 
 \chapter{Conclusões parciais}
 
