@@ -84,7 +84,7 @@ A proposta deste trabalho é avaliar diferentes algoritmos de aprendizado de má
 \FCautorresumido{Ribeiro, P. A.}
 \FCautorexpandido{Ribeiro, Paula Arantes}
 
-\elementospretextuais  %Comando do USPTeX para criação dos elemenos pré-textuais do documento
+\elementospretextuais{}  %Comando do USPTeX para criação dos elemenos pré-textuais do documento
 
 \setlength\parindent{.85cm}  %Define em 0,85cm a identação da primeira linha do parágrafo.
 
@@ -647,6 +647,46 @@ Ao todo foram gerados 1375 dados de teste, que passaram novamente pela prediçã
 Os resultados obtidos dos dados aleatórios possibilitou uma comparação de métricas, uma vez que não foi encontrado na literatura o que seria um valor satisfatório de $R^{2}$ para a predição dessas temperaturas em específico. Nota-se que não houve muita variação dos valores originais para os aleatórios, entretanto, a hipótese de \textit{overfit} não pode ser completamente descartada. É possível que a alta complexidade do modelo, devido ao grande número de dados de entrada, esteja elevando as métricas.
 
 \subsection{Isopletas das Regressões Lineares}
+
+\section{Rede Neural}
+Após o tratamento do banco, foram obtidos 6845 dados normalizados, que foram separados entre 5476 para treino e 1369 de teste. Os parâmetros da rede neural foram variados para se definir o melhor modelo.
+
+Avaliando-se o efeito da taxa de aprendizado e do número de neurônios na camada intermediária, obteve-se os
+gráficos das Figuras \ref{img/test1.png}, \ref{img/test01.png} e \ref{img/test001.png} a seguir.
+
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/test1.png}
+  \caption{Arrumar}
+  \label{fig:test1}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/test01.png}
+  \caption{Arrumar}
+  \label{fig:test01}
+\end{figure}
+%
+\begin{figure}
+  \includegraphics[width=0.3\textwidth]{img/test001.png}
+  \caption{Arrumar}
+  \label{fig:test001}
+\end{figure}
+
+Nota-se que, à medida em que a taxa de aprendizado diminui, a variação do erro quadrático médio diminui para um mesmo número de neurônios. Dessa forma, determinou-se o valor ideal para a taxa de aprendizado, 0.001.
+Em seguida, foi avaliado o efeito do número de iterações e do número de neurônios na função perda. As Figuras ?? a seguir mostram o comportamento da função perda com o número de iterações para um, seis e doze neurônios.
+
+%ARRUMAR: INSERIR GRÁFICOS PERDA X ITERAÇÕES
+
+Pode-se constatar que para poucos neurônios a função perda se estabiliza com menos iterações, porém a um valor maior. Aumentando-se número de neurônios, as 100 iterações se tornam cada vez mais necessárias para se obter um valor adequado de perda.
+
+Considerando a taxa de aprendizado escolhida, nota-se que o erro quadrático médio estabiliza a partir de cinco neurônios e que 100 iterações são o suficiente para se obter uma perda adequada. Dessa forma, foi estabelecido que o ponto ótimo seria de seis neurônios e 100 iterações, considerando também o tempo computacional.
+
+Para confirmar se esses parâmetros eram adequados, foram analisados os valores preditos versus esperados variando o número de neurônios. As Figuras ?? a seguir mostram esse comportamento para um, seis e doze neurônios.
+%ARRUMAR: INSERIR GRÁFICOS PREDITO X ESPERADO
+
+Nota-se que as predições para seis e doze neurônios são próximas e, considerando o tempo computacional, a primeira opção é, de fato, o ponto ótimo. Definindo todos os parâmetros, foram plotadas isopletas variando um dos elementos e fixando os demais, com o intuito de se comparar os valores obtidos pelo Thermo-Calc\textregistered{} com as predições do modelo.
+
+
 
 \chapter{Conclusões parciais}
 
