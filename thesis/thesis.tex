@@ -386,7 +386,6 @@ A fim de avaliar o efeito de cada elemento na temperatura crítica A3, foram tra
 Analisou-se a predição das temperaturas A1, A1' e A3 atráves de algoritmos de regressão linear multivariável.
 
 Primeiramente, o banco de dados gerado conforme a secção \ref{sec:banco_dados} foi manipulado, transformando as composições para porcentagem em peso e as temperaturas para graus Celsius, além de remover os dados cujas temperaturas críticas não existissem. A fim de avaliar o efeito dos termos ao quadrado e da interdependência entre elementos químicos no valor das temperaturas críticas, foram criadas novas colunas, totalizando os seguintes parâmetros: C, $C^{2}$, CMn, CSi, CCr, CNi, Mn, $Mn^{2}$, MnSi, MnCr, MnNi, Si, $Si^{2}$, SiCr, SiNi, Cr, $Cr^{2}$, CrNi, Ni, $Ni^{2}$.
-% ARRUMAR
 
 Em seguida, o banco de dados foi separado entre dados de treino e dados de teste para o algoritmo. Utilizou-se a proporção 80\% treino e 20\% teste, selecionando dados com um algoritmo pseudoaleatório, ou seja, para uma mesma semente são selecionados os mesmos dados.
 
@@ -518,76 +517,44 @@ Os valores de $R^{2}$ obtidos foram satisfatórios porém muito altos, por isso 
 %ARRUMAR: adicionar tabelas com coeficientes das Regressões
 \subsection{Regressão Linear de A1}
 
-As Figuras \ref{fig:LR_A1_hipo}, \ref{fig:LR_A1_hiper} e \ref{fig:LR_A1_total} a seguir mostram os gráficos de valores preditos versus esperados para a temperatura A1.
+A Figura \ref{fig:LR_A1} a seguir mostra os gráficos de valores preditos versus esperados para a temperatura A1.
 
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/A1_hipo.png}
-  \caption{Arrumar}
-  \label{fig:LR_A1_hipo}
+\begin{figure}[!h]
+\subfloat[\label{fig:LR_A1_hipo}]{\includegraphics[width=.33\textwidth]{img/A1_hipo.png}}
+\subfloat[\label{fig:LR_A1_hiper}]{\includegraphics[width=.33\textwidth]{img/A1_hiper.png}}
+\subfloat[\label{fig:LR_A1_total}]{\includegraphics[width=.33\textwidth]{img/A1_total.png}}
+\caption{Valores preditos x Valores esperados da regressão linear de A1, para (a) Hipoeutetóides, (b) Hipereutetóides, (c) Todos os valores}
+\label{fig:LR_A1}
 \end{figure}
-%
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/A1_hiper.png}
-  \caption{Arrumar}
-  \label{fig:LR_A1_hiper}
-\end{figure}
-%
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/A1_total.png}
-  \caption{Arrumar}
-  \label{fig:LR_A1_total}
-\end{figure}
-%ARRUMAR P/ FICAR LADO A LADO, UMA LEGENDA SÓ
 
 Nota-se que, mesmo com a quantidade de dados reduzida, os dados tiveram um bom \textit{fit} com a reta $y = x$. Os problemas estão localizados no extremo inferior, onde a curva de A1 no diagrama binário Fe-C não se assemelha a uma reta. Essa faixa corresponde às temperaturas mais baixas dos hipoeutetóides, onde há poucos pontos devido à proximidade do campo $\alpha$, no qual A1 não existe.
 
 \subsection{Regressão Linear de A1'}
 
-As Figuras \ref{fig:LR_A1prime_hipo}, \ref{fig:LR_A1prime_hiper} e \ref{fig:LR_A1prime_total} a seguir mostram os gráficos de valores preditos versus esperados para a temperatura A1'.
+A Figura \ref{fig:LR_A1prime} a seguir mostra os gráficos de valores preditos versus esperados para a temperatura A1'.
 
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/A1prime_hipo.png}
-  \caption{Arrumar}
-  \label{fig:LR_A1prime_hipo}
+\begin{figure}[!h]
+\subfloat[\label{fig:LR_A1prime_hipo}]{\includegraphics[width=.33\textwidth]{img/A1prime_hipo.png}}
+\subfloat[\label{fig:LR_A1prime_hiper}]{\includegraphics[width=.33\textwidth]{img/A1prime_hiper.png}}
+\subfloat[\label{fig:LR_A1prime_total}]{\includegraphics[width=.33\textwidth]{img/A1prime_total.png}}
+\caption{Valores preditos x Valores esperados da regressão linear de A1', para (a) Hipoeutetóides, (b) Hipereutetóides, (c) Todos os valores}
+\label{fig:LR_A1prime}
 \end{figure}
-%
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/A1prime_hiper.png}
-  \caption{Arrumar}
-  \label{fig:LR_A1prime_hiper}
-\end{figure}
-%
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/A1prime_total.png}
-  \caption{Arrumar}
-  \label{fig:LR_A1prime_total}
-\end{figure}
-%ARRUMAR P/ FICAR LADO A LADO, UMA LEGENDA SÓ
+% ARRUMAR: GRÁFICO NO LUGAR ERRADO
 
 A temperatura A1', assim como A1, é mais difícil de ser determinada na proximidade do campo $\alpha$, como é possível notar nas temperaturas mais baixas dos hipoeutetóides. O maior número de dados utilizados para o treino resultou em um melhor ajuste das curvas.
 
 \subsection{Regressão Linear de A3}
 
-As Figuras \ref{fig:LR_A3_hipo}, \ref{fig:LR_A3_hiper} e \ref{fig:LR_A3_total} a seguir mostram os gráficos de valores preditos versus esperados para a temperatura A1'.
+A Figura \ref{fig:LR_A3} a seguir mostra os gráficos de valores preditos versus esperados para a temperatura A3.
 
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/A3_hipo.png}
-  \caption{Arrumar}
-  \label{fig:LR_A3_hipo}
+\begin{figure}[!h]
+\subfloat[\label{fig:LR_A3_hipo}]{\includegraphics[width=.33\textwidth]{img/A3_hipo.png}}
+\subfloat[\label{fig:LR_A3_hiper}]{\includegraphics[width=.33\textwidth]{img/A3_hiper.png}}
+\subfloat[\label{fig:LR_A3_total}]{\includegraphics[width=.33\textwidth]{img/A3_total.png}}
+\caption{Valores preditos x Valores esperados da regressão linear de A3, para (a) Hipoeutetóides, (b) Hipereutetóides, (c) Todos os valores}
+\label{fig:LR_A3}
 \end{figure}
-%
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/A3_hiper.png}
-  \caption{Arrumar}
-  \label{fig:LR_A3_hiper}
-\end{figure}
-%
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/A3_total.png}
-  \caption{Arrumar}
-  \label{fig:LR_A3_total}
-\end{figure}
-%ARRUMAR P/ FICAR LADO A LADO, UMA LEGENDA SÓ
 
 Para essa temperatura crítica, os pontos que menos se ajustaram foram os hipoeutetóides. Isso possivelmente ocorre pois a curva correspondente no diagrama binário Fe-C tem uma inclinação mais variável do que a hipereutetóide. Além disso, nota-se menor quantidade de pontos a temperaturas altas, ou seja, a baixas concentrações de carbono. As predições para composições hipereutetóides tiveram melhor ajuste, não apenas pelo maior conjunto de dados mas também pela curva correspondente no diagrama binário Fe-C ter inclinação mais constante.
 
@@ -651,25 +618,17 @@ Os resultados obtidos dos dados aleatórios possibilitou uma comparação de mé
 \section{Rede Neural}
 Após o tratamento do banco, foram obtidos 6845 dados normalizados, que foram separados entre 5476 para treino e 1369 de teste. Os parâmetros da rede neural foram variados para se definir o melhor modelo.
 
-Avaliando-se o efeito da taxa de aprendizado e do número de neurônios na camada intermediária, obteve-se os
-gráficos das Figuras \ref{img/test1.png}, \ref{img/test01.png} e \ref{img/test001.png} a seguir.
+\subsection{Testes para obtenção do modelo}
 
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/test1.png}
-  \caption{Arrumar}
-  \label{fig:test1}
-\end{figure}
-%
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/test01.png}
-  \caption{Arrumar}
-  \label{fig:test01}
-\end{figure}
-%
-\begin{figure}
-  \includegraphics[width=0.3\textwidth]{img/test001.png}
-  \caption{Arrumar}
-  \label{fig:test001}
+Avaliando-se o efeito da taxa de aprendizado e do número de neurônios da camada intermediária no erro quadrático médio, obteve-se os
+gráficos da Figura \ref{fig:test_NN} a seguir.
+
+\begin{figure}[!h]
+\subfloat[\label{fig:test1}]{\includegraphics[width=.33\textwidth]{img/test1.png}}
+\subfloat[\label{fig:test01}]{\includegraphics[width=.33\textwidth]{img/test01.png}}
+\subfloat[\label{fig:test001}]{\includegraphics[width=.33\textwidth]{img/test001.png}}
+\caption{Erro quadrático médio x Número de neurônios na camada intermediária para (a) Taxa de aprendizado = 0.1, (b)Taxa de aprendizado = 0.01, (c) Taxa de aprendizado = 0.001}
+\label{fig:test_NN}
 \end{figure}
 
 Nota-se que, à medida em que a taxa de aprendizado diminui, a variação do erro quadrático médio diminui para um mesmo número de neurônios. Dessa forma, determinou-se o valor ideal para a taxa de aprendizado, 0.001.
@@ -682,11 +641,57 @@ Pode-se constatar que para poucos neurônios a função perda se estabiliza com 
 Considerando a taxa de aprendizado escolhida, nota-se que o erro quadrático médio estabiliza a partir de cinco neurônios e que 100 iterações são o suficiente para se obter uma perda adequada. Dessa forma, foi estabelecido que o ponto ótimo seria de seis neurônios e 100 iterações, considerando também o tempo computacional.
 
 Para confirmar se esses parâmetros eram adequados, foram analisados os valores preditos versus esperados variando o número de neurônios. As Figuras ?? a seguir mostram esse comportamento para um, seis e doze neurônios.
-%ARRUMAR: INSERIR GRÁFICOS PREDITO X ESPERADO
+%ARRUMAR: INSERIR GRÁFICOS PREDITO X ESPERADO, PRECISA PLOTAR NOVOS COM OS EIXOS CERTOS
 
-Nota-se que as predições para seis e doze neurônios são próximas e, considerando o tempo computacional, a primeira opção é, de fato, o ponto ótimo. Definindo todos os parâmetros, foram plotadas isopletas variando um dos elementos e fixando os demais, com o intuito de se comparar os valores obtidos pelo Thermo-Calc\textregistered{} com as predições do modelo.
+Nota-se que as predições para seis e doze neurônios são próximas e, considerando o tempo computacional, a primeira opção é, de fato, o ponto ótimo.
 
+\subsection{Isopletas da Rede Neural}
 
+Definindo todos os parâmetros, as predições do modelo escolhido foram usadas para plotar isopletas variando um dos elementos e fixando os demais, com o intuito de se comparar os valores obtidos pelo Thermo-Calc\textregistered{} com essas predições. Como mostram as Figuras \ref{fig:C_NN_isop}, \ref{fig:Mn_NN_isop}, \ref{fig:Si_NN_isop}, \ref{fig:Cr_NN_isop} e \ref{fig:Ni_NN_isop} os elementos variáveis foram plotados nas composições de nível zero e nível dois, que correspondem às composições mínimas e intermediárias, respectivamente.
+
+\begin{figure}
+\subfloat[\label{fig:C0}]{\includegraphics[width=.5\textwidth]{img/C0.png}}
+\subfloat[\label{fig:C2}]{\includegraphics[width=.5\textwidth]{img/C2.png}}
+\caption{Isopletas de Carbono geradas pelas predições da rede neural para (a) Nível 0; (b) Nível 2 }
+\label{fig:C_NN_isop}
+\end{figure}
+
+\begin{figure}
+\subfloat[\label{fig:Mn0}]{\includegraphics[width=.5\textwidth]{img/Mn0.png}}
+\subfloat[\label{fig:Mn2}]{\includegraphics[width=.5\textwidth]{img/Mn2.png}}
+\caption{Isopletas de Manganês geradas pelas predições da rede neural para (a) Nível 0; (b) Nível 2 }
+\label{fig:Mn_NN_isop}
+\end{figure}
+
+\begin{figure}
+\subfloat[\label{fig:Si0}]{\includegraphics[width=.5\textwidth]{img/Si0.png}}
+\subfloat[\label{fig:Si2}]{\includegraphics[width=.5\textwidth]{img/Si2.png}}
+\caption{Isopletas de Silício geradas pelas predições da rede neural para (a) Nível 0; (b) Nível 2 }
+\label{fig:Si_NN_isop}
+\end{figure}
+
+\begin{figure}
+\subfloat[\label{fig:Cr0}]{\includegraphics[width=.5\textwidth]{img/Cr0.png}}
+\subfloat[\label{fig:Cr2}]{\includegraphics[width=.5\textwidth]{img/Cr2.png}}
+\caption{Isopletas de Cromo geradas pelas predições da rede neural para (a) Nível 0; (b) Nível 2 }
+\label{fig:Cr_NN_isop}
+\end{figure}
+
+\begin{figure}
+\subfloat[\label{fig:Ni0}]{\includegraphics[width=.5\textwidth]{img/Ni0.png}}
+\subfloat[\label{fig:Ni2}]{\includegraphics[width=.5\textwidth]{img/Ni2.png}}
+\caption{Isopletas de Níquel geradas pelas predições da rede neural para (a) Nível 0; (b) Nível 2 }
+\label{fig:Ni_NN_isop}
+\end{figure}
+
+Nota-se que, para a maioria dos casos, os valores preditos (linha cheia) são satisfatórios em relação ao esperado (pontos em forma de "x") .
+
+Para o Carbono, a dificuldade está no ajuste do ponto de inversão da curva, ponto mais suscetível a erros, como foi observado na Figura \ref{fig:LR_A3} da regressão linear e na Figura ? da predição da rede neural, na qual possivelmente os dados que destoam da reta estão próximos a esse ponto. Um conjunto de dados de treino com mais pontos corretos dessa região poderia contribuir para uma melhor predição.
+% ARRUMAR: inserir \ref do gráfico de predito x esperado da NN
+
+Para baixas concentrações de Silício o modelo também foi destoante.
+
+% PAREI AQUI
 
 \chapter{Conclusões parciais}
 
@@ -705,27 +710,27 @@ Nas próximas etapas do trabalho serão implementados os algoritmos de aprendiza
 \label{an:diag_bin}
 
 \begin{figure}
-  \includegraphics[width=1.1\textwidth]{img/Fe-Cr.jpg}
-  \caption{Diagrama binário Fe-Cr}
-  \label{fig:bin_fe-cr}
-\end{figure}
-
-\begin{figure}
   \includegraphics[width=1.1\textwidth]{img/Fe-Mn.jpg}
   \caption{Diagrama binário Fe-Mn}
   \label{fig:bin_fe-mn}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=1.1\textwidth]{img/Fe-Ni.jpg}
-  \caption{Diagrama binário Fe-Ni}
-  \label{fig:bin_fe-ni}
-\end{figure}
-
-\begin{figure}
   \includegraphics[width=1.1\textwidth]{img/Fe-Si.jpg}
   \caption{Diagrama binário Fe-Si}
   \label{fig:bin_fe-si}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.1\textwidth]{img/Fe-Cr.jpg}
+  \caption{Diagrama binário Fe-Cr}
+  \label{fig:bin_fe-cr}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.1\textwidth]{img/Fe-Ni.jpg}
+  \caption{Diagrama binário Fe-Ni}
+  \label{fig:bin_fe-ni}
 \end{figure}
 
 \end{document}
