@@ -452,7 +452,8 @@ A temperatura A1' é representada pela mudança de inclinação na curva da porc
 
 É importante destacar que nem sempre um aço terá as três temperaturas críticas. Elementos muito alfagênicos podem não ter A3, como no caso de um $\gamma$ loop, e gamagênicos podem não ter A1, por terem austenita estável à temperatura ambiente.
 
-Mesmo considerando que algumas temperaturas críticas podem não existir para certas composições, ainda está em estudo os erros que ocorreram nessa extração. Por exemplo, algumas composições com baixo carbono ficaram com valores em branco, enquanto outras tiveram valores de temperatura crítica muito acima do esperado, embora os gráficos plotados para sua respectiva composição estivessem dentro do esperado. Pretende-se corrigir esses erros antes dos resultados serem utilizados em um algoritmo de aprendizado de máquina.
+Mesmo considerando que algumas temperaturas críticas podem não existir para certas composições, ainda não se sabe as causas dos erros que ocorreram nessa extração. Por exemplo, algumas composições com baixo carbono ficaram com valores em branco, enquanto outras tiveram valores de temperatura crítica muito acima do esperado, embora os gráficos plotados para sua respectiva composição estivessem dentro do esperado. Assim, foi feito um script que faz essa correção, fazendo apenas uma chamada do Thermo-Calc\textregistered{} por vez.
+
 Também foi realizada uma comparação dos valores de temperatura crítica com a equação empírica de Andrews, plotando o gráfico da Figura \ref{fig:tcrit_andrews}. A linha em azul representa os valores esperados ($T_{empirical} = T_{database}$).
 
 \begin{figure}
@@ -689,9 +690,12 @@ Nota-se que, para a maioria dos casos, os valores preditos (linha cheia) são sa
 Para o Carbono, a dificuldade está no ajuste do ponto de inversão da curva, ponto mais suscetível a erros, como foi observado na Figura \ref{fig:LR_A3} da regressão linear e na Figura ? da predição da rede neural, na qual possivelmente os dados que destoam da reta estão próximos a esse ponto. Um conjunto de dados de treino com mais pontos corretos dessa região poderia contribuir para uma melhor predição.
 % ARRUMAR: inserir \ref do gráfico de predito x esperado da NN
 
-Para baixas concentrações de Silício o modelo também foi destoante.
+Para baixas concentrações dos elementos, o modelo para o silício foi destoante, como mostra a Figura \ref{fig:Si0}. Uma possível explicação está no diagrama binário Fe-Si, da Figura \ref{fig:bin_fe-si}, que mostra o campo $\gamma$ fechado a baixas concentrações de Si. O mesmo vale para o cromo, que além de ser do grupo de domínio-$\gamma$ fechado, tem um $\gamma$-\textit{loop}. Isso pode ter contribuído para uma má predição do modelo nesses casos.
+% ARRUMAR: não sei muito bem o que dizer aqui
 
-% PAREI AQUI
+\subsection{Métricas da Rede Neural}
+
+Apesar de o modelo não ter predito tão bem a influência de alguns elementos em A3, suas métricas foram consideradas satisfatórias. Para o ponto ótimo discutido anteriormente, de taxa de aprendizado 0.001, seis neurônios na camada intermediária e 100 iterações, o erro quadrático médio final foi de 0.0051 e o coeficiente de determinação ($R^{2}$), 0.9734. Esses valores tornam menos provável a hipótese de a regressão linear estar com overfit devido a parâmetros em excesso.
 
 \chapter{Conclusões parciais}
 
