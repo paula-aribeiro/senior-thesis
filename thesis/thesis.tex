@@ -394,7 +394,7 @@ A seguir, os dados de treino foram utilizados para gerar modelos de regressão l
 Para cada temperatura crítica, foi gerado um modelo para composições hipoeutetóides, um para hipereutetóides e um para todas as composições, totalizando nove modelos. Para cada modelo obteve-se os coeficientes de regressão de cada variável independente e calculou-se o coeficiente de determinação ($R^{2}$) da predição do modelo.
 
 Para cada modelo, foram plotados gráficos de valores preditos versus valores esperados para o conjunto de dados de teste, além de isopletas comparando os dados de treino com os de teste.
-% ARRUMAR isopleta aqui quando estiver terminada
+% ARRUMAR descrever isopleta aqui quando estiver terminada
 
 Uma vez que os valores de $R^{2}$ foram muito satisfatórios, realizou-se um novo teste, a fim de verificar a possibilidade de \textit{overfit}. Para isso, gerou-se um novo banco de dados de teste, de tamanho equivalente a 20\% ao do banco original, utilizando o algoritmo \textit{rand} do \textit{Numpy}, que retorna números aleatórios distribuídos uniformemente de 0 a 1. Em seguida esses números foram multiplicados pelas composições máximas do elemento químico correspondente, a fim de se obter ligas dentro das faixas de composição estudadas. Por fim, foram rodados os scripts para determinar a temperatura dada pelo Thermo-Calc\textregistered{}, descritos na secção \ref{sec:banco_dados}. Novos cálculos de $R^{2}$ foram feitos e comparados com os originais.
 
@@ -633,16 +633,32 @@ gráficos da Figura \ref{fig:test_NN} a seguir.
 \end{figure}
 
 Nota-se que, à medida em que a taxa de aprendizado diminui, a variação do erro quadrático médio diminui para um mesmo número de neurônios. Dessa forma, determinou-se o valor ideal para a taxa de aprendizado, 0.001.
-Em seguida, foi avaliado o efeito do número de iterações e do número de neurônios na função perda. As Figuras ?? a seguir mostram o comportamento da função perda com o número de iterações para um, seis e doze neurônios.
+Em seguida, foi avaliado o efeito do número de iterações e do número de neurônios na função perda. A Figura \ref{fig:loss_NN} a seguir mostra o comportamento da função perda com o número de iterações para um, seis e doze neurônios.
 
-%ARRUMAR: INSERIR GRÁFICOS PERDA X ITERAÇÕES
+\begin{figure}[!h]
+\subfloat[\label{fig:loss1}]{\includegraphics[width=.5\textwidth]{img/loss_1.png}}
+
+\subfloat[\label{fig:loss6}]{\includegraphics[width=.5\textwidth]{img/loss_6.png}}
+\subfloat[\label{fig:loss12}]{\includegraphics[width=.5\textwidth]{img/loss_12.png}}
+\caption{Perda (erro quadrático médio) x Número de iterações para (a) 1, (b) 6, (c) 12 neurônios na camada intermediária}
+\label{fig:loss_NN}
+\end{figure}
 
 Pode-se constatar que para poucos neurônios a função perda se estabiliza com menos iterações, porém a um valor maior. Aumentando-se número de neurônios, as 100 iterações se tornam cada vez mais necessárias para se obter um valor adequado de perda.
 
 Considerando a taxa de aprendizado escolhida, nota-se que o erro quadrático médio estabiliza a partir de cinco neurônios e que 100 iterações são o suficiente para se obter uma perda adequada. Dessa forma, foi estabelecido que o ponto ótimo seria de seis neurônios e 100 iterações, considerando também o tempo computacional.
 
-Para confirmar se esses parâmetros eram adequados, foram analisados os valores preditos versus esperados variando o número de neurônios. As Figuras ?? a seguir mostram esse comportamento para um, seis e doze neurônios.
-%ARRUMAR: INSERIR GRÁFICOS PREDITO X ESPERADO, PRECISA PLOTAR NOVOS COM OS EIXOS CERTOS
+Para confirmar se esses parâmetros eram adequados, foram analisados os valores preditos versus esperados variando o número de neurônios. A Figura \ref{fig:predict_NN} a seguir mostra esse comportamento para um, seis e doze neurônios, onde os círculos preenchidos mostram os dados de treino e os triângulos, os de teste.
+
+%ARRUMAR: FIGURA NO LUGAR ERRADO
+\begin{figure}[!h]
+\subfloat[\label{fig:predict1}]{\includegraphics[width=.5\textwidth]{img/predict_1.png}}
+\subfloat[\label{fig:predict6}]{\includegraphics[width=.5\textwidth]{img/predict_6.png}}
+
+\subfloat[\label{fig:predict12}]{\includegraphics[width=.5\textwidth]{img/predict_12.png}}
+\caption{Valores Preditos x Valores Esperados para (a) 1, (b) 6, (c) 12 neurônios na camada intermediária. $\bullet$ : valores de treino, $\bigtriangleup$ : valores de teste}
+\label{fig:predict_NN}
+\end{figure}
 
 Nota-se que as predições para seis e doze neurônios são próximas e, considerando o tempo computacional, a primeira opção é, de fato, o ponto ótimo.
 
@@ -687,8 +703,7 @@ Definindo todos os parâmetros, as predições do modelo escolhido foram usadas 
 
 Nota-se que, para a maioria dos casos, os valores preditos (linha cheia) são satisfatórios em relação ao esperado (pontos em forma de "x") .
 
-Para o Carbono, a dificuldade está no ajuste do ponto de inversão da curva, ponto mais suscetível a erros, como foi observado na Figura \ref{fig:LR_A3} da regressão linear e na Figura ? da predição da rede neural, na qual possivelmente os dados que destoam da reta estão próximos a esse ponto. Um conjunto de dados de treino com mais pontos corretos dessa região poderia contribuir para uma melhor predição.
-% ARRUMAR: inserir \ref do gráfico de predito x esperado da NN
+Para o Carbono, a dificuldade está no ajuste do ponto de inversão da curva, ponto mais suscetível a erros, como foi observado na Figura \ref{fig:LR_A3} da regressão linear e na Figura \ref{fig:predict6} da predição da rede neural, na qual possivelmente os dados que destoam da reta estão próximos a esse ponto. Um conjunto de dados de treino com mais pontos corretos dessa região poderia contribuir para uma melhor predição.
 
 Para baixas concentrações dos elementos, o modelo para o silício foi destoante, como mostra a Figura \ref{fig:Si0}. Uma possível explicação está no diagrama binário Fe-Si, da Figura \ref{fig:bin_fe-si}, que mostra o campo $\gamma$ fechado a baixas concentrações de Si. O mesmo vale para o cromo, que além de ser do grupo de domínio-$\gamma$ fechado, tem um $\gamma$-\textit{loop}. Isso pode ter contribuído para uma má predição do modelo nesses casos.
 % ARRUMAR: não sei muito bem o que dizer aqui
