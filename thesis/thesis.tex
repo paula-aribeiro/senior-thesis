@@ -393,8 +393,7 @@ A seguir, os dados de treino foram utilizados para gerar modelos de regressão l
 
 Para cada temperatura crítica, foi gerado um modelo para composições hipoeutetóides, um para hipereutetóides e um para todas as composições, totalizando nove modelos. Para cada modelo obteve-se os coeficientes de regressão de cada variável independente e calculou-se o coeficiente de determinação ($R^{2}$) da predição do modelo.
 
-Para cada modelo, foram plotados gráficos de valores preditos versus valores esperados para o conjunto de dados de teste, além de isopletas comparando os dados de treino com os de teste.
-% ARRUMAR descrever isopleta aqui quando estiver terminada
+Para cada modelo, foram plotados gráficos de valores preditos versus valores esperados para o conjunto de dados de teste, além de isopletas de A3 com os dados de treino e de teste, para posterior comparação com as isopletas da rede neural. Para a isopleta do carbono, utilizou-se tanto o modelo hipoeutetóide quanto hipereutetóide para prever o valor de A3 para os demais elementos no nível zero. Já para as demais isopletas, utilizou-se apenas o modelo hipoeutetóide, pois para nível zero de carbono não há aços hipereutetóides.
 
 Uma vez que os valores de $R^{2}$ foram muito satisfatórios, realizou-se um novo teste, a fim de verificar a possibilidade de \textit{overfit}. Para isso, gerou-se um novo banco de dados de teste, de tamanho equivalente a 20\% ao do banco original, utilizando o algoritmo \textit{rand} do \textit{Numpy}, que retorna números aleatórios distribuídos uniformemente de 0 a 1. Em seguida esses números foram multiplicados pelas composições máximas do elemento químico correspondente, a fim de se obter ligas dentro das faixas de composição estudadas. Por fim, foram rodados os scripts para determinar a temperatura dada pelo Thermo-Calc\textregistered{}, descritos na secção \ref{sec:banco_dados}. Novos cálculos de $R^{2}$ foram feitos e comparados com os originais.
 
@@ -416,7 +415,7 @@ Estabelecendo o ponto ótimo de número de neurônios, foram plotadas isopletas 
 
 \section{Comparação dos modelos}
 
-A fim de se comparar a assertividade dos modelos, foram comparadas as métricas de regressão linear e rede neural para predição da temperatura A3. Primeiramente, foi necessário utilizar os dados normalizados pelo \textit{MinMax Scaler} para treinar novamente o algoritmo de regressão linear, para que o valor de erro quadrático médio fosse comparável ao da rede neural.
+A fim de se comparar a assertividade dos modelos, foram comparados os coeficientes de determinação de regressão linear e rede neural para predição da temperatura A3.
 
 Também foram plotados gráficos de valores preditos pela regressão linear e pela rede neural versus valores calculados pela equação empírica, uma vez que os dados normalizados não podem ser usados para essas equações e a comparação das métricas não teria sentido. Para isso, as predições da rede neural foram desnormalizadas utilizando o método \textit{inverse\_transform} do \textit{Scikit-learn}.
 
@@ -616,6 +615,26 @@ Os resultados obtidos dos dados aleatórios possibilitou uma comparação de mé
 
 \subsection{Isopletas das Regressões Lineares}
 
+As predições dos modelos de A3 foram utilizadas para gerar isopletas variando-se um dos elementos e fixando os demais a nível zero. Na figura \ref{fig:LR_isopleths} a seguir, a linha azul corresponde às predições do modelo hipoeutetóide e a vermelha ao hipereutetóide, enquanto os pontos em ``x'' são os valores obtidos pelo Thermo-Calc\textregistered{}.
+
+% ARRUMAR: gráfico na página errada
+\begin{figure}[!h]
+\subfloat[\label{fig:LR_isop_C}]{\includegraphics[width=.7\textwidth]{img/LR_C0.png}}
+
+\subfloat[\label{fig:LR_isop_Mn}]{\includegraphics[width=.5\textwidth]{img/LR_Mn0.png}}
+\subfloat[\label{fig:LR_isop_Si}]{\includegraphics[width=.5\textwidth]{img/LR_Si0.png}}
+
+\subfloat[\label{fig:LR_isop_Cr}]{\includegraphics[width=.5\textwidth]{img/LR_Cr0.png}}
+\subfloat[\label{fig:LR_isop_Ni}]{\includegraphics[width=.5\textwidth]{img/LR_Ni0.png}}
+\caption{Isopletas de A3 geradas pelas predições da regressão linear para (a) Carbono; (b) Manganês; (c) Silício; (d) Cromo; (e) Níquel, a nível zero dos demais elementos}
+\label{fig:LR_isopleths}
+\end{figure}
+
+Para o Carbono, a predição é próxima do esperado, principalmente para hipereutetóides. Já para hipoeutetóides, quanto menor a composição de carbono, maior a diferença entre o predito e o esperado, chegando a \SI{50}{\celsius}. Como discutido anteriormente, há uma mudança de inclinação na curva do diagrama binário Fe-C que contribui para uma má predição do modelo.
+
+Já para o Manganês, Cromo e Níquel, as predições mantém a mesma inclinação do esperado, porém com uma diferença que chega a \SI{50}{\celsius}. O Silício, por sua vez, não teve uma boa predição, possivelmente devido ao seu domínio-$\gamma$ fechado que gera um $\gamma$-\textit{loop}.
+% ARRUMAR: não sei mais o que escrever aqui.
+
 \section{Rede Neural}
 Após o tratamento do banco, foram obtidos 6845 dados normalizados, que foram separados entre 5476 para treino e 1369 de teste. Os parâmetros da rede neural foram variados para se definir o melhor modelo.
 
@@ -701,16 +720,41 @@ Definindo todos os parâmetros, as predições do modelo escolhido foram usadas 
 \label{fig:Ni_NN_isop}
 \end{figure}
 
-Nota-se que, para a maioria dos casos, os valores preditos (linha cheia) são satisfatórios em relação ao esperado (pontos em forma de "x") .
+Nota-se que, para a maioria dos casos, os valores preditos (linha cheia) são satisfatórios em relação ao esperado (pontos em forma de ``x'') .
 
 Para o Carbono, a dificuldade está no ajuste do ponto de inversão da curva, ponto mais suscetível a erros, como foi observado na Figura \ref{fig:LR_A3} da regressão linear e na Figura \ref{fig:predict6} da predição da rede neural, na qual possivelmente os dados que destoam da reta estão próximos a esse ponto. Um conjunto de dados de treino com mais pontos corretos dessa região poderia contribuir para uma melhor predição.
 
 Para baixas concentrações dos elementos, o modelo para o silício foi destoante, como mostra a Figura \ref{fig:Si0}. Uma possível explicação está no diagrama binário Fe-Si, da Figura \ref{fig:bin_fe-si}, que mostra o campo $\gamma$ fechado a baixas concentrações de Si. O mesmo vale para o cromo, que além de ser do grupo de domínio-$\gamma$ fechado, tem um $\gamma$-\textit{loop}. Isso pode ter contribuído para uma má predição do modelo nesses casos.
 % ARRUMAR: não sei muito bem o que dizer aqui
 
-\subsection{Métricas da Rede Neural}
+Apesar de o modelo não ter predito tão bem a influência de alguns elementos em A3, suas métricas foram consideradas satisfatórias. Para o ponto ótimo discutido anteriormente, de taxa de aprendizado 0.001, seis neurônios na camada intermediária e 100 iterações, o erro quadrático médio final foi de 0.0051 e o coeficiente de determinação ($R^{2}$), 0.9734.
 
-Apesar de o modelo não ter predito tão bem a influência de alguns elementos em A3, suas métricas foram consideradas satisfatórias. Para o ponto ótimo discutido anteriormente, de taxa de aprendizado 0.001, seis neurônios na camada intermediária e 100 iterações, o erro quadrático médio final foi de 0.0051 e o coeficiente de determinação ($R^{2}$), 0.9734. Esses valores tornam menos provável a hipótese de a regressão linear estar com overfit devido a parâmetros em excesso.
+\section{Comparação dos Modelos}
+
+Com o propósito de comparar os modelos de regressão linear com o de rede neural para predição de A3, foi calculado o Coeficiente de Determinação de cada um deles, que pode ser visto na Tabela \ref{tab:r2_comparacao} a seguir.
+
+\begin{table}
+  \caption{Valores de $R^{2}$ para regressão linear e rede neural de A3}
+
+  \begin{tabular}{ll}
+  \hline
+  Modelo                          & $R^{2}$ \\
+  \hline
+  Regressão Linear Hipoeutetóide  & 0.9607  \\
+  Regressão Linear Hipereutetóide & 0.9971  \\
+  Regressão Linear Total          & 0.8774  \\
+  Rede Neural Artificial          & 0.9734  \\
+  \hline
+  \end{tabular}
+
+  \label{tab:r2_comparacao}
+\end{table}
+
+É possível constatar que a regressão linear para os hipereutetóides foi o modelo com melhor ajuste, seguido pela rede neural e pela regressão linear hipoeutetóide. A regressão linear total foi a de menor ajuste, pois como discutido anteriormente, o ponto de inversão da curva não é bem predito.
+
+O valor alto de $R^{2}$ para a rede neural torna menos provável a hipótese de a regressão linear apresentar overfit devido a parâmetros em excesso.
+
+(\textit{A melhorar: inserir gráficos de valores preditos para Regressão Linear x Equação Empírica e Rede Neural x Equação Empírica})
 
 \chapter{Conclusões parciais}
 
@@ -724,6 +768,8 @@ Nas próximas etapas do trabalho serão implementados os algoritmos de aprendiza
 
 % \anexo{Composição química de aços de engenharia}
 % \label{an:composicao}
+% ARRUMAR: se der, adicionar tabelas
+
 
 \anexo{Diagramas binários}
 \label{an:diag_bin}
