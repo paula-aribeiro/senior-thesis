@@ -51,12 +51,14 @@ Trabalho de formatura apresentado \`a Escola Polit\'ecnica da Universidade de
 S\~ao Paulo para obtenção do t\'itulo de Engenheira}
 
 % Agradecimentos do trabalho
-% \agradecimentos{}
+%\agradecimentos{}
+% ARRUMAR: escrever agradecimentos; folha errada.
 
 % \textregistered{} não pode estar em resumo. Isso gera um erro na hora de compilar o texto
 \resumo{
 \setlength\parindent{0pt}
-A proposta deste trabalho é avaliar diferentes algoritmos de aprendizado de máquina para prever temperaturas críticas de transformações de fases. O banco de dados utilizado neste estudo foi gerado a partir de cálculos de termodinâmica computacional utilizando o software Thermo-Calc. Até o momento, a etapa de criação de um banco de dados que represente as composições químicas de aços de engenharia foi realizada com sucesso. A comparação dos dados das temperaturas com equações empíricas para predição das temperaturas A1 e A3 mostra que, embora qualitativamente tanto os dados obtidos no presente trabalho quanto as equações da literatura apresentem tendências semelhantes, quantitativamente a correlação não é precisa.
+A proposta deste trabalho é avaliar diferentes algoritmos de aprendizado de máquina para prever temperaturas críticas de transformações de fases. Cálculos de termodinâmica computacional utilizando o software Thermo-Calc foram usados para gerar um banco de dados que representasse as composições químicas de aços de engenharia.
+A partir dele, foram elaborados modelos de regressão linear multivariável e uma rede neural, cujas métricas e predições foram analisadas e comparadas entre si.
 }
 \palavrachave{Aço}
 \palavrachave{Termodinâmica}
@@ -90,7 +92,7 @@ A proposta deste trabalho é avaliar diferentes algoritmos de aprendizado de má
 
 \chapter{Introdução}
 
-Aços têm diversas aplicações industriais e sua versatilidade está relacionada à variedade de propriedades que ele pode assumir. Além de sua composição química, processos de tratamento térmico controlam essas propriedades, que, por sua vez, estão relacionadas às temperaturas em que ocorrem as transformações de fases. Essas temperaturas também são chamadas de temperaturas críticas e ao longo do tempo foram desenvolvidos diversos métodos para determiná-las. Pode-se utilizar métodos experimentais, como a dilatometria, ou softwares de cálculos termodinâmicos, como o Thermo-Calc\textregistered{}, ou ainda equações empíricas.
+Aços têm diversas aplicações industriais e sua versatilidade está relacionada à variedade de propriedades que ele pode assumir. Além de sua composição química, processos de tratamento térmico controlam essas propriedades, que, por sua vez, estão relacionadas às temperaturas em que ocorrem as transformações de fases. Essas temperaturas também são chamadas de temperaturas críticas e, ao longo do tempo, foram desenvolvidos diversos métodos para determiná-las. Pode-se utilizar métodos experimentais, como a dilatometria, ou softwares de cálculos termodinâmicos, como o Thermo-Calc\textregistered{}, ou ainda equações empíricas.
 
 Novos modelos estão em desenvolvimento e entre eles estão os algoritmos de aprendizado de máquina, cujo desempenho aumenta quanto maior for sua experiência em realizar alguma atividade. Apesar de os métodos atuais serem razoavelmente precisos e eficientes, eles demandam certo custo de equipamento, software ou capacitação humana. Assim, uma ferramenta de cálculo de fácil acesso e utilização permitiria melhor compreensão das temperaturas críticas para o tratamento térmico de aços.
 
@@ -117,7 +119,7 @@ A porção de uma liga com estrutura e propriedades homogêneas é denominada fa
   \label{fig:diagrama_fe-c}
 \end{figure}
 
-Entretanto a condição de equilíbrio não é verificada para a maioria dos processos e, em vez de grafita, forma-se o carboneto de ferro \ch{Fe3C}, também chamado de cementita. A cementita é uma fase metaestável, mas sua formação é favorecida cineticamente em relação à grafita devido às elevadas taxas de resfriamento aplicadas ao aço durante seu processamento.
+Entretanto, a condição de equilíbrio não é verificada para a maioria dos processos e, em vez de grafita, forma-se o carboneto de ferro \ch{Fe3C}, também chamado de cementita. A cementita é uma fase metaestável, mas sua formação é favorecida cineticamente em relação à grafita devido às elevadas taxas de resfriamento aplicadas ao aço durante seu processamento.
 % uma vez que a solidificação e resfriamento do aço são muito rápidos.
 % , que apesar de ser uma fase metaestável pode ser considerada estável, pois o coeficiente de difusão do carbono no ferro é muito baixo (\SI{2,9e-19}{cm^2/s}).
 Para essas condições, o diagrama de fase, que é então chamado de diagrama de equilíbrio metaestável, é dado pela Figura \ref{fig:diagrama_fe-c_meta}.
@@ -142,6 +144,9 @@ Para um aço de composição eutetóide, o resfriamento lento produz perlita, um
 Já um aço carbono resfriado bruscamente produz a martensita, uma estrutura que mantém o carbono em solução sólida da austenita. Diferente da formação de ferrita e perlita, esse processo não é controlado pela difusão devido à sua condição de resfriamento, mas sim por uma distorção na rede. Dessa forma, é um constituinte de mesma composição da austenita. Ela é característica pela sua microestrutura em ripas e alta dureza \cite{Honeycombe1982}.
 
 Já a bainita é um constituinte intermediário, pois reúne o rearranjo de rede da martensita à redistribuição de carbono e precipitação de carboneto da perlita \cite{Totten2006}. Sua natureza se modifica com a diminuição da temperatura de transformação, sendo classificada em bainita superior e inferior. A morfologia da bainita superior contem ferrita na forma de ripas, de concentração de carbono muito inferior à da austenita mãe; já a cementita depende do teor de carbono, podendo assumir a forma de partículas isoladas ou mesmo não precipitar, permanecendo na forma de austenita retida. Já a bainita inferior é mais acicular e tem lamelas mais individualizadas \cite{Honeycombe1982}.
+
+\section{O software Thermo-Calc\textregistered{}}
+\textit{(Ainda será escrito)}
 
 \section{Temperaturas cr\'iticas de aços}
 
@@ -251,6 +256,8 @@ Uma terceira maneira é a utilização de equações empíricas que se baseiam n
      & + 11.0 Cr + 20.0 Cu - 700 P - 400 Al - 120 As - 400 Ti \label{eq:andrewsA3}
 \end{align}
 
+\textit{(A melhorar: detalhar melhor os métodos; inserir outras equações empíricas)}
+
 \section{Aprendizado de m\'aquina e a determinação de Temperaturas Cr\'iticas}
 
 Dada a complexidade e o custo de desenvolvimento de um novo material, estudos recentes têm se voltado para a tecnologia como primeira forma de avaliar hipóteses \cite{Belisle2015}. Uma vez que muitas variáveis estão envolvidas na determinação de uma propriedade, tornaram-se populares algoritmos capazes de aprender com alguma experiência vinda de um conjunto de tarefas, cujo desempenho melhora quanto maior sua experiência, também chamados de \textit{machine learning} ou aprendizado de máquina.
@@ -269,6 +276,8 @@ O primeiro e mais simples é a interpolação polinomial. Este pode se comportar
 \end{align}
 
 Ambos são métodos muito utilizados devido ao baixo custo computacional. Entretanto, têm a necessidade de estabelecer alguma relação (linear ou quadrática) entre os termos estudados, utilizando termos fixos \cite{Bhadeshia1999}.
+
+\textit{(A melhorar: detalhar variáveis dependentes e independentes, regressão multivariável, métricas, overfit)}
 
 \subsection{Rede Neural Artificial}
 Um segundo método é a rede neural. Inspirada no cérebro humano, baseia-se em associações para fazer previsões, sendo muito utilizada para reconhecimento de padrões. É indicada para funções não lineares e pode identificar relações complexas entre variáveis independentes. A desvantagem é o maior tempo computacional necessário \cite{Belisle2015}.
@@ -296,6 +305,11 @@ Como mostra a Figura \ref{fig:single-neuron}, o resultado desse cálculo passa p
 \end{figure}
 
 \citaremsentenca{Gavard1996} elaborou uma rede neural para prever A1 e A3 a partir de dados experimentais de composição química, temperatura e wtaxa de aquecimento. O modelo foi capaz de estimar temperaturas críticas com precisão de $\pm 40$K ou $95\%$ de confiança.
+
+\textit{(A melhorar: detalhar função de ativação; falar sobre taxa de aprendizado, retropropagação, função perda, métricas de avaliação)}
+
+\subsection{Preparação dos Dados}
+\textit{(Ainda será escrito. Falar sobre separação de dados entre treino e teste e como auxilia no overfit, normalização)}
 
 \chapter{Metodologia}
 
@@ -326,7 +340,7 @@ Inicialmente, discutiu-se os elementos de liga e suas respectivas faixas de comp
   \label{tab:faixas_composicao}
 \end{table}
 
-Também discutiu-se a faixa de temperatura a ser estudada. Para isso, analisou-se os diagramas binários para cada elemento de liga, que podem ser encontrados no Anexo \ref{an:diag_bin} e observou-se suas temperaturas críticas. Considerando a temperatura em que pode ser observada austenita, utilizou-se o intervalo de 673 a 1473K.
+Também discutiu-se a faixa de temperatura a ser estudada. Para isso, analisou-se os diagramas binários para cada elemento de liga, que podem ser encontrados no Anexo \ref{an:diag_bin}, e observou-se suas temperaturas críticas. Considerando a temperatura em que pode ser observada austenita, utilizou-se o intervalo de 673 a 1473K.
 
 Definidas as faixas de composição química e temperatura, foram definidos os níveis para cada elemento, ou seja, quantas variações (ou steps) cada elemento tem. O valor do step é dado pela equação a seguir:
 
@@ -389,16 +403,16 @@ Primeiramente, o banco de dados gerado conforme a secção \ref{sec:banco_dados}
 
 Em seguida, o banco de dados foi separado entre dados de treino e dados de teste para o algoritmo. Utilizou-se a proporção 80\% treino e 20\% teste, selecionando dados com um algoritmo pseudoaleatório, ou seja, para uma mesma semente são selecionados os mesmos dados.
 
-A seguir, os dados de treino foram utilizados para gerar modelos de regressão linear multivariável, utilizando o \textit{Scikit-learn}. Essa biblioteca do \textit{Python} contém funções eficientes de aprendizado de máquina, incluindo o módulo \textit{linear\_model}, no qual se espera que o valor alvo seja uma combinação linear dos dados de entrada.
+Na sequência, os dados de treino foram utilizados para gerar modelos de regressão linear multivariável, utilizando o \textit{Scikit-learn}. Essa biblioteca do \textit{Python} contém funções eficientes de aprendizado de máquina, incluindo o módulo \textit{linear\_model}, no qual se espera que o valor alvo seja uma combinação linear dos dados de entrada.
 
 Para cada temperatura crítica, foi gerado um modelo para composições hipoeutetóides, um para hipereutetóides e um para todas as composições, totalizando nove modelos. Para cada modelo obteve-se os coeficientes de regressão de cada variável independente e calculou-se o coeficiente de determinação ($R^{2}$) da predição do modelo.
 
 Para cada modelo, foram plotados gráficos de valores preditos versus valores esperados para o conjunto de dados de teste, além de isopletas de A3 com os dados de treino e de teste, para posterior comparação com as isopletas da rede neural. Para a isopleta do carbono, utilizou-se tanto o modelo hipoeutetóide quanto hipereutetóide para prever o valor de A3 para os demais elementos no nível zero. Já para as demais isopletas, utilizou-se apenas o modelo hipoeutetóide, pois para nível zero de carbono não há aços hipereutetóides.
 
-Uma vez que os valores de $R^{2}$ foram muito satisfatórios, realizou-se um novo teste, a fim de verificar a possibilidade de \textit{overfit}. Para isso, gerou-se um novo banco de dados de teste, de tamanho equivalente a 20\% ao do banco original, utilizando o algoritmo \textit{rand} do \textit{Numpy}, que retorna números aleatórios distribuídos uniformemente de 0 a 1. Em seguida esses números foram multiplicados pelas composições máximas do elemento químico correspondente, a fim de se obter ligas dentro das faixas de composição estudadas. Por fim, foram rodados os scripts para determinar a temperatura dada pelo Thermo-Calc\textregistered{}, descritos na secção \ref{sec:banco_dados}. Novos cálculos de $R^{2}$ foram feitos e comparados com os originais.
+Visto que os valores de $R^{2}$ foram muito satisfatórios, realizou-se um novo teste, a fim de verificar a possibilidade de \textit{overfit}. Para isso, gerou-se um novo banco de dados de teste, de tamanho equivalente a 20\% ao do banco original, utilizando o algoritmo \textit{rand} do \textit{Numpy}, que retorna números aleatórios distribuídos uniformemente de 0 a 1. Em seguida esses números foram multiplicados pelas composições máximas do elemento químico correspondente, a fim de se obter ligas dentro das faixas de composição estudadas. Por fim, foram rodados os scripts para determinar a temperatura dada pelo Thermo-Calc\textregistered{}, descritos na secção \ref{sec:banco_dados}. Novos cálculos de $R^{2}$ foram feitos e comparados com os originais.
 
 \section{Rede Neural}
-Uma vez que a temperatura A3 é a mais complexa de se determinar, devido à inversão da curva no ponto eutetóide, para essa temperatura crítica foi elaborada uma rede neural, de arquitetura semelhante à mostrada na Figura \ref{fig:rede-neural-arquitetura}.
+Dado que a temperatura A3 é a mais complexa de se determinar, devido à inversão da curva no ponto eutetóide, para essa temperatura crítica foi elaborada uma rede neural, de arquitetura semelhante à mostrada na Figura \ref{fig:rede-neural-arquitetura}.
 
 Para isso, houve o mesmo tratamento de dados descrito na secção \ref{sec:metodo_RL}, transformando as composições para porcentagem em peso, as temperaturas para graus Celsius, e removendo os dados cujas temperaturas críticas não existissem. Também foi feita a mesma separação entre dados de treino e teste, utilizando a mesma proporção de 80/20\%, respectivamente.
 
@@ -407,7 +421,7 @@ Além desses procedimentos, a rede neural exige que os dados sejam normalizados 
 Para construção da rede neural, foi utilizado o Keras, uma API de alto nível escrita em \textit{Python} e cujo
 \textit{backend} pode ser rodado em \textit{TensorFlow}, \textit{CNTK} ou \textit{Theano}. Para esse caso, foi utilizado o \textit{TensorFlow}. Essa biblioteca tem como maior vantagem a agilidade para criar modelos complexos, facilitando a elaboração de testes \cite{Skalski2017}.
 
-Como valor de saída foi estabelecido A3, enquanto as porcentagens em peso de C, Mn, Si, Cr, Ni foram definidas como valores de entrada. Foram variados o número de neurônios na camada intermediária, de 1 a 12, bem como a taxa de aprendizado (ou \textit{learning rate}) de 0.1, 0.01 e 0.001. Foram plotados gráficos de Erro quadrático médio versus número de neurônios na camada intermediária, a fim de estipular um ponto ótimo desses parâmetros, como realizado no trabalho de \citaremsentenca{Capdevila2004}. Para um mesmo número de neurônios, foram testados 5 modelos, uma vez que os pesos e vieses iniciais são aleatórios e podem influenciar no resultado final.
+Como valor de saída foi estabelecido A3, enquanto as porcentagens em peso de C, Mn, Si, Cr, Ni foram definidas como valores de entrada. Foram variados o número de neurônios na camada intermediária, de 1 a 12, bem como a taxa de aprendizado (ou \textit{learning rate}) de 0.1, 0.01 e 0.001. Foram plotados gráficos de Erro quadrático médio versus número de neurônios na camada intermediária, com o intuito de estipular um ponto ótimo desses parâmetros, como realizado no trabalho de \citaremsentenca{Capdevila2004}. Para um mesmo número de neurônios, foram testados 5 modelos, uma vez que os pesos e vieses iniciais são aleatórios e podem influenciar no resultado final.
 
 Definida a taxa de aprendizado que apresentava melhor estabilidade do erro quadrático médio, avaliou-se o efeito do número de neurônios na camada interna na função perda e nos valores preditos. Foram plotados gráficos de função perda versus número de iterações, bem como de valores preditos versus valores esperados, para número de neurônios na camada intermediária de 1 a 12.
 
@@ -415,7 +429,7 @@ Estabelecendo o ponto ótimo de número de neurônios, foram plotadas isopletas 
 
 \section{Comparação dos modelos}
 
-A fim de se comparar a assertividade dos modelos, foram comparados os coeficientes de determinação de regressão linear e rede neural para predição da temperatura A3.
+Para se comparar a assertividade dos modelos, foram comparados os coeficientes de determinação de regressão linear e rede neural para predição da temperatura A3.
 
 Também foram plotados gráficos de valores preditos pela regressão linear e pela rede neural versus valores calculados pela equação empírica, uma vez que os dados normalizados não podem ser usados para essas equações e a comparação das métricas não teria sentido. Para isso, as predições da rede neural foram desnormalizadas utilizando o método \textit{inverse\_transform} do \textit{Scikit-learn}.
 
@@ -461,7 +475,7 @@ Também foi realizada uma comparação dos valores de temperatura crítica com a
   \label{fig:tcrit_andrews}
 \end{figure}
 
-Nota-se que, para as temperaturas A3, existe uma correlação maior com os valores calculados pela equação empírica, enquanto para A1 existe uma divergência maior. Isso pode estar relacionado a erros no script que extrai a temperatura A1, que ainda está em revisão. Outro fator que influencia na divergência é o fato de a equação de Andrews não ter membros interdependentes entre os elementos químicos, o que na prática não se aplica.
+Nota-se que, para as temperaturas A3, existe uma correlação maior com os valores calculados pela equação empírica, enquanto para A1 existe uma divergência maior. Isso pode estar relacionado com o fato de a equação de Andrews não ter membros interdependentes entre os elementos químicos, o que na prática não se aplica.
 
 Para averiguar essa interdependência, plotou-se as isopletas de temperatura para cada elemento, variando a composição de carbono. Para cada elemento de liga, plotou-se cinco curvas, correspondentes aos cinco níveis de composição escolhidos.
 
@@ -470,6 +484,8 @@ Para o manganês e níquel, nota-se que a baixas concentrações de carbono a co
 Já para elementos alfagênicos, como o cromo, a relação se inverte. Para baixas concentrações de carbono, os valores de temperatura ficam próximos, e a partir de 0,4\% de carbono a concentração do cromo já contribui para sua divergência.
 
 Um caso intermediário é o do silício, que apesar de alfagênico, tem influência na temperatura tanto a baixas quanto a mais altas concentrações de carbono, embora a influência a baixas concentrações seja maior.
+
+\textit{(A melhorar: inserir isopletas do banco de dados)}
 
 \section{Regressão Linear}
 
@@ -527,7 +543,7 @@ A Figura \ref{fig:LR_A1} a seguir mostra os gráficos de valores preditos versus
 \label{fig:LR_A1}
 \end{figure}
 
-Nota-se que, mesmo com a quantidade de dados reduzida, os dados tiveram um bom \textit{fit} com a reta $y = x$. Os problemas estão localizados no extremo inferior, onde a curva de A1 no diagrama binário Fe-C não se assemelha a uma reta. Essa faixa corresponde às temperaturas mais baixas dos hipoeutetóides, onde há poucos pontos devido à proximidade do campo $\alpha$, no qual A1 não existe.
+Nota-se que, mesmo com a quantidade de dados reduzida, esses tiveram um bom \textit{fit} com a reta $y = x$. Os problemas estão localizados no extremo inferior, onde a curva de A1 no diagrama binário Fe-C não se assemelha a uma reta. Essa faixa corresponde às temperaturas mais baixas dos hipoeutetóides, onde há poucos pontos devido à proximidade do campo $\alpha$, no qual A1 não existe.
 
 \subsection{Regressão Linear de A1'}
 
@@ -641,7 +657,7 @@ Após o tratamento do banco, foram obtidos 6845 dados normalizados, que foram se
 \subsection{Testes para obtenção do modelo}
 
 Avaliando-se o efeito da taxa de aprendizado e do número de neurônios da camada intermediária no erro quadrático médio, obteve-se os
-gráficos da Figura \ref{fig:test_NN} a seguir.
+gráficos da Figura \ref{fig:test_NN} abaixo.
 
 \begin{figure}[!h]
 \subfloat[\label{fig:test1}]{\includegraphics[width=.33\textwidth]{img/test1.png}}
@@ -756,13 +772,26 @@ O valor alto de $R^{2}$ para a rede neural torna menos provável a hipótese de 
 
 (\textit{A melhorar: inserir gráficos de valores preditos para Regressão Linear x Equação Empírica e Rede Neural x Equação Empírica})
 
-\chapter{Conclusões parciais}
+\chapter{Conclusões}
 
-Até o momento o foram realizadas as etapas de simulações termodinâmicas e as rotinas para extração das temperaturas críticas foram implementadas com sucesso, de modo que o banco de dados que alimentará os algoritmos de aprendizado de máquina já foi construído. A comparação dos dados das temperaturas com equações empíricas para predição das temperaturas A1 e A3 mostra que, embora qualitativamente tanto os dados obtidos no presente trabalho quanto as equações da literatura apresentem tendências semelhantes, quantitativamente a correlação não é precisa.
+Foi estudada a implementação de dois algoritmos de aprendizado de máquina para prever temperaturas críticas de transformações de fase em aços comuns de engenharia. Para isso, foi criado um banco de dados a partir de simulações termodinâmicas e algoritmos para extração dessas temperaturas críticas. Os dados foram analisados mediante comparação com equações empíricas e foram tratados antes de serem usados para o treino.
 
-\chapter{Próximas etapas}
+O modelo de regressão linear mostrou métricas bastante satisfatórias para a maior parte dos casos estudados, mesmo quando testado por um banco de dados aleatório. Sua desvantagem foi a necessidade de separação dos dados entre hipo e hipereutetóide para que o modelo tivesse melhor qualidade de predição. Ainda não foi descartada a hipótese de overfit e para tal deveriam ser estudadas outras métricas e realizar novos testes com outros bancos de dados.
 
-Nas próximas etapas do trabalho serão implementados os algoritmos de aprendizado de máquina para predição das temperaturas críticas, a citar, redes neurais e regressão multivariável. O efeito dos elementos de liga nas temperaturas críticas serão avaliados com base nos parâmetros de ajuste dos algoritmos, como, por exemplo, os coeficientes de regressão.
+A rede neural, por sua vez, foi capaz de prever a temperatura A3 sem a necessidade de separação pelo ponto eutetóide, apesar de não conseguir calcular tão bem as temperaturas próximas a esse ponto de inversão. Seu alto coeficiente de determinação diminui a probabilidade de o modelo de regressão estar com overfit causado por número de parâmetros em excesso.
+
+\textit{(A melhorar: fazer comparação com métricas do trabalho de Gavard)}
+
+\chapter{Sugestões para trabalhos futuros}
+
+\textit{(Ainda será escrito. Envolverá os seguintes tópicos:)}
+
+\begin{itemize}
+\item Variar mais parâmetros da rede neural
+\item Determinar carbono eutetóide: através de coeficientes das regressões lineares ou regressão logística
+\item Criar uma ferramenta de visualização e interação com o usuário
+\item Extrapolar o modelo para outras faixas de composição
+\end{itemize}
 
 \bibliography{tcc}
 
