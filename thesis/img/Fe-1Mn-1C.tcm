@@ -1,0 +1,33 @@
+go data
+sw tcfe
+
+def-sy fe c mn
+
+rej ph *
+rest ph bcc fcc cem
+
+get
+
+go p-3
+
+s-c t=1000 n=1 p=101325 w(mn)=1e-2
+s-c w(c)=1e-2
+
+c-e
+c-e
+c-e
+
+s-a-v 1 T 900 1200
+
+step ,,,
+
+ent-sy tab blab
+t np(*);
+
+tab blab Fe-1Mn-1C.TXT
+
+post
+
+plot
+
+s-i
