@@ -1,0 +1,21 @@
+go data
+def-el fe c mn si cr ni
+rej ph *
+rest ph fcc bcc cem
+get
+go p-3
+
+ent-sy tab blab
+t np(*);
+
+s-a-v 1 t 673.15 1473.15 10
+
+s-c n=1 p=101325 t=1173
+s-c w(c)=0 w(mn)=0.0075 w(si)=0.0225
+s-c w(cr)=0.0225 w(ni)=0.0225
+c-e
+c-e
+step,,
+tab,
+blab,
+alloy_nocem.dat
