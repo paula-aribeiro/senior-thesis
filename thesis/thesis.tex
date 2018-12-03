@@ -2,16 +2,17 @@
 \usepackage[T1]{fontenc}  %Orienta a saída do texto a reproduzir caracteres especiais
 \usepackage[utf8]{inputenc} %Permite que o usuário redija o documento utilizando caracteres especiais UTF-8
 
-\usepackage{graphicx}  %Pacote de gerenciamento de figuras. Padrão para qualquer documento em LaTeX
+\usepackage{graphicx}  %Pacote de gerenciamento de Figuras. Padrão para qualquer documento em LaTeX
 \usepackage{helvet}  %Define Helvetica como fonte Sans Serif padrão
 \usepackage{fancyvrb}  %Serve, por exemplo para aplicar estilos de texto individuais em trechos do texto
 \usepackage{babel}  %Pacote de idioma
 \usepackage{textcomp}  %Graças a esse pacote eu não preciso me preocupar com o símbolo °
 %\usepackage{textgreek} %Define comandos para chamar letras gregas. Passei a usar o modo matemático pra isso.
 %\usepackage{fixltx2e}  %Define \textsubscript{}, por exemplo.
-\usepackage[font=normalsize]{subfig}  %Habilita utilização de subfiguras nos campos de figuras.
+\usepackage[font=normalsize]{subfig}  %Habilita utilização de subFiguras nos campos de Figuras.
 \usepackage{indentfirst}  %Faz a primeira linha após o chapter head ser indentada (vide definição de \thickline abaixo)
 \usepackage{array}  %Graças a ele eu consigo editar elementos de tabela.
+\usepackage{amssymb}  %Pacote com complementos do modo matemático.
 \usepackage{amsmath}  %Pacote com complementos do modo matemático.
 \usepackage[symbolgreek]{mathastext}  %Equações ficam na mesma fonte do texto graças a isso. http://jf.burnol.free.fr/v13/mathastext.pdf
 %\usepackage{paralist}  %Possibilita a criação de listas (ambiente enumerate) "inline".
@@ -24,6 +25,10 @@
 \usepackage{multirow}  %Multi colunas e multi linhas em tabelas
 
 \usepackage{chemformula}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\DeclareUnicodeCharacter{0177}{\^y}
 
 \makeatletter
 %%%Define linhas horizontais (\thickline) e verticais (') para tabelas
@@ -51,8 +56,16 @@ Trabalho de formatura apresentado \`a Escola Polit\'ecnica da Universidade de
 S\~ao Paulo para obtenção do t\'itulo de Engenheira}
 
 % Agradecimentos do trabalho
-%\agradecimentos{}
-% ARRUMAR: escrever agradecimentos; folha errada.
+\agradecimentos{
+
+Primeiramente, agradeço à minha família por ter apoiado, entre tantas decisões, a minha vida de estudante. Em especial meu pai, minha primeira inspiração para seguir a carreira em tecnologia. Aos meus professores, desde os do ensino fundamental, por terem instigado em mim o apreço pelos estudos, os do ensino médio, por motivarem a escolha da minha carreira, aos do ensino superior, pelos aprendizados que levarei para toda a vida.
+
+A todos os amigos que fiz ao longo dessa jornada, pelo apoio nos piores momentos e pelas boas memórias. Ao Acappolli, que, por meio da música, trouxe mais alegria à nossa Escola e aos meus dias. Às mulheres incríveis do USP Red Pandas e aos amigos do Politécnica Rats, por terem me passado, com o esporte, a garra para seguir em frente, por serem a minha força dentro e fora de campo. A todos do Centro Moraes Rêgo, por criarem um espaço seguro e acolhedor, por todas as lembranças emocionantes. Ao Artur Vilas Boas, por ter me incentivado a seguir a carreira em tecnologia, por todos os conselhos de vida e pelo amparo quando mais precisei.
+
+Às empresas que depositaram em mim sua confiança e me ajudaram a crescer pessoal e profissionalmente. Aos amigos da Cognitivo.AI, por acreditarem no meu potencial como desenvolvedora e despertarem em mim o amor pela ciência de dados. Ao pessoal da Iguanafix, por não terem medo de me dar responsabilidades e assim possibilitar tamanho crescimento. À Creditas pela oportunidade, em especial ao Bruno Belluomini por todo o apoio e por me passar seus conhecimentos em ciência de dados.
+
+Por fim, agradeço aos meus professores orientadores, Prof. Dr. Hélio Goldenstein, pelos ensinamentos, e Dr. Arthur Seiji Nishikawa, sua companhia tornou menos complicada a tarefa de se escrever um trabalho de tamanha importância.
+}
 
 % \textregistered{} não pode estar em resumo. Isso gera um erro na hora de compilar o texto
 \resumo{
@@ -67,13 +80,18 @@ A partir dele, foram elaborados modelos de regressão linear multivariável e um
 \palavrachave{Regressão}
 \palavrachave{Redes neurais}
 
-% \resumole{}
-% \palavrachavele{Steel}
-% \palavrachavele{Thermodynamics}
-% \palavrachavele{Critical temperatures}
-% \palavrachavele{Machine learning}
-% \palavrachavele{Regression}
-% \palavrachavele{Neural Networks}
+\resumole{
+
+The purpose of this work is to evaluate distinct machine learning algorithms to predict critical phase transformations temperatures. Computational thermodynamics calculations using Thermo-Calc software were used to generate a database representing the chemical compositions of engineering steels.
+This database was used to elaborate multivariate linear regression models and a neural network, whose metrics and predictions were analyzed and compared.
+
+}
+\palavrachavele{Steel}
+\palavrachavele{Thermodynamics}
+\palavrachavele{Critical temperatures}
+\palavrachavele{Machine learning}
+\palavrachavele{Regression}
+\palavrachavele{Neural Networks}
 
 % Palavras chave na ficha catalográfica. 5 no máximo
 \assunto{Aço}
@@ -98,7 +116,7 @@ Novos modelos estão em desenvolvimento e entre eles estão os algoritmos de apr
 
 \chapter{Objetivos}
 
-O presente trabalho tem como objetivo a criação de um algoritmo de aprendizado de máquina para determinar as temperaturas críticas de transformação em aços de engenharia, utilizando a base de dados do software Thermo-Calc\textregistered{}, a fim de disponibilizar uma ferramenta de cálculo simples de se utilizar e aberta à comunidade científica.
+O presente trabalho tem como objetivo a determinação das temperaturas críticas de transformação de fases em aços de engenharia através de algoritmos de aprendizado de máquina, utilizando a base de dados do software Thermo-Calc\textregistered{}, a fim de futuramente disponibilizar uma ferramenta de cálculo simples de se utilizar e aberta à comunidade científica. Além disso, o trabalho compara a acurácia dos métodos para a predição das temperaturas desejadas.
 
 \chapter{Revisão bibliográfica}
 
@@ -106,9 +124,9 @@ O presente trabalho tem como objetivo a criação de um algoritmo de aprendizado
 
 Aços podem ser vistos como uma liga ferrosa com adições de carbono e outros elementos de liga, dentre os quais destacam-se o manganês, silício, cromo, níquel, entre outros \cite{Dossett2006}. São conhecidas inúmeras combinações de ligas de ferro e carbono que fornecem diferentes combinações de propriedades mecânicas, podendo apresentar altíssimas dureza e resistência (e.g., as novas gerações de aços avançados de alta resistência), ou serem maleáveis, como em aços de baixa liga. Tal mudança de propriedades está relacionada com as diferentes estruturas do ferro (fases) e combinações de morfologias que o aço pode assumir.
 
-O ferro em estado sólido tem duas formas alotrópicas, ou seja, diferentes estruturas cristalinas que dependem da temperatura e pressão. A baixas temperaturas, o ferro assume a estrutura cúbica de corpo centrado (CCC) e é denominado $\alpha$-Fe, ou ferrita. Acima de 910°C, os cristais transformam sua estrutura para cúbica de faces centradas (CFC), também chamada de $\gamma$-Fe, ou austenita, de caráter paramagnético. A estabilidade da austenita permanece até 1400°C, quando volta a assumir uma estrutura CCC de caráter paramagnético. Esta ferrita de alta temperatura é comummente chamada de $\delta$-Fe para diferenciar a faixa de temperatura de ocorrência. Alguns autores também diferenciam a fase $\beta$-Fe da fase $\alpha$-Fe, ambas de estrutura CCC, pelo fato de que para temperaturas superiores a 770°C (temperatura de Curie) o $\alpha$-Fe perde suas propriedades ferromagnéticas e passa a ser paramagnético \cite{Totten2006}.
+O ferro puro em estado sólido tem duas formas alotrópicas, ou seja, diferentes estruturas cristalinas que dependem da temperatura e pressão. A baixas temperaturas, o ferro assume a estrutura cúbica de corpo centrado (CCC) e é denominado $\alpha$-Fe, ou ferrita. Acima de 910~°C, a disposição atômica do ferro muda de CCC para cúbica de faces centradas (CFC), também chamada de $\gamma$-Fe, ou austenita. A estabilidade da austenita permanece até 1400~°C, quando volta a assumir uma estrutura CCC. Esta ferrita de alta temperatura é comumente chamada de $\delta$-Fe devido à diferente faixa de temperatura de ocorrência da fase $\alpha-Fe$. Alguns autores também diferenciam a fase $\beta$-Fe da fase $\alpha$-Fe, ambas de estrutura CCC, pelo fato de que para temperaturas superiores a 770~°C (temperatura de Curie) o $\alpha$-Fe perde suas propriedades ferromagnéticas e passa a ser paramagnético \cite{Totten2006}.
 
-A partir da combinação dessas possíveis estruturas do ferro com outros elementos formam-se as ligas. Como o ferro é a base do aço e tem estruturas cristalinas limitadas, é a sua combinação com outros átomos que resulta em diferentes propriedades. O carbono possui baixa solubilidade na fase $\alpha$ (0,02\% em massa a 738°C), mas é bastante solúvel na fase $\gamma$, pois a estrutura CFC permite a alocação dos átomos de carbono em seus interstícios.
+A partir da combinação dessas possíveis estruturas do ferro com outros elementos formam-se as ligas. Como o ferro é a base do aço e tem estruturas cristalinas limitadas, é a sua combinação com outros átomos que resulta em diferentes propriedades. O carbono possui baixa solubilidade na fase $\alpha$ (0,02\% em massa a 738~°C), mas é bastante solúvel na fase $\gamma$, pois a estrutura CFC permite a alocação de uma maior fração de átomos de carbono em seus interstícios.
 % A presença do carbono diminui as temperaturas necessárias para que a liga de ferro sofra transformações de fases.
 
 A porção de uma liga com estrutura e propriedades homogêneas é denominada fase. Em equilíbrio termodinâmico, as combinações entre o carbono e o ferro podem resultar em ferrita, austenita ou grafita, cujas relações com a temperatura e composição são mostradas no diagrama de equilíbrio da Figura \ref{fig:diagrama_fe-c}. Nessas condições, os constituintes do sistema Fe-C à temperatura ambiente seriam ferrita $\alpha$ e grafita.
@@ -130,29 +148,19 @@ Para essas condições, o diagrama de fase, que é então chamado de diagrama de
   \label{fig:diagrama_fe-c_meta}
 \end{figure}
 
-Um ponto importante do diagrama é o ponto eutetóide, no qual as três fases coexistem. Para um sistema apenas ferro e carbono, ele corresponde a aproximadamente 0,8\% C em massa. Assim, aços de composição abaixo desse ponto são denominados hipoeutetóides e, acima, hipereutetóides.
+Um ponto importante do diagrama mostrado na Figura \ref{fig:diagrama_fe-c_meta} é o ponto eutetóide, no qual coexistem em equilíbrio as fases $\alpha$, $\gamma$ e \ch{Fe3C}. Para um sistema apenas ferro e carbono, o teor de carbono correspondente a esta fase é aproximadamente 0,8\% C em massa. Ligas com teores de carbono inferiores a esta composição são denominadas hipoeutetóides e, ligas com teores de carbono superiores à do ponto eutetóide são chamadas de hipereutetóides.
 
-\section{Decomposição da Austenita}
+\section{O Thermo-Calc\textregistered{}}
 
-Para um aço resfriado lentamente à temperatura ambiente, o teor de carbono controla as fases formadas. Entretanto, a taxa de resfriamento controla a formação de constituintes metaestáveis. Essa formação de constituintes a partir da austenita pode ocorrer por difusão, cisalhamento ou uma mistura dos dois mecanismos \cite{Honeycombe1982}.
+O Thermo-Calc\textregistered{} é um software vinculado a diversos bancos de dados, com o objetivo de tornar os cálculos termodinâmicos mais rápidos e eficientes, ajudando no planejamento e redução de experimentos. Isso é possível devido ao método CALPHAD, que inicialmente era a abreviação de ``\textit{Calculation of Phase Diagrams}'' e depois foi expandido para ``\textit{Coupling of Phase Diagrams and Thermochemistry}''. Este método utiliza todas as informações experimentais e teóricas sobre um sistema, aplicando sobre elas um modelo matemático, cujos parâmetros são otimizados de acordo com a minimização da energia livre de Gibbs. Os modelos matemáticos são desenvolvidos considerando as propriedades químicas e físicas do sistema, como a cristalografia, tipo de ligação e propriedades magnéticas.
 
-No caso da ferrita, o resfriamento lento resulta em grãos equiaxiais preferencialmente no contorno de grão austenítico, enquanto um resfriamento rápido gera grãos em forma de agulhas, também conhecidos como ferrita acicular, nucleados no contorno e no interior do grão austenítico  \cite{Silva2010} %{Krauss1997}apud{Silva2010} ARRUMAR.
-A cementita segue o mesmo comportamento morfológico e ambas ocorrem sob mecanismo exclusivo de difusão \cite{Honeycombe1982}.
-
-Para um aço de composição eutetóide, o resfriamento lento produz perlita, uma microestrutura característica que na realidade é uma mistura de austenita e cementita, na forma de lamelas. A ferrita é menos compacta por ter estrutura CCC e, consequentemente, apresenta insterstícios tetraédricos menores. Assim, à medida que o resfriamento ocorre, o carbono da austenita é rejeitado pela ferrita em formação, dando origem à cementita, fase rica em carbono \cite{Silva2010}.
-
-Já um aço carbono resfriado bruscamente produz a martensita, uma estrutura que mantém o carbono em solução sólida da austenita. Diferente da formação de ferrita e perlita, esse processo não é controlado pela difusão devido à sua condição de resfriamento, mas sim por uma distorção na rede. Dessa forma, é um constituinte de mesma composição da austenita. Ela é característica pela sua microestrutura em ripas e alta dureza \cite{Honeycombe1982}.
-
-Já a bainita é um constituinte intermediário, pois reúne o rearranjo de rede da martensita à redistribuição de carbono e precipitação de carboneto da perlita \cite{Totten2006}. Sua natureza se modifica com a diminuição da temperatura de transformação, sendo classificada em bainita superior e inferior. A morfologia da bainita superior contem ferrita na forma de ripas, de concentração de carbono muito inferior à da austenita mãe; já a cementita depende do teor de carbono, podendo assumir a forma de partículas isoladas ou mesmo não precipitar, permanecendo na forma de austenita retida. Já a bainita inferior é mais acicular e tem lamelas mais individualizadas \cite{Honeycombe1982}.
-
-\section{O software Thermo-Calc\textregistered{}}
-\textit{(Ainda será escrito)}
+O software trabalha com módulos, que realizam cálculos diferentes e mostram os resultados de diversas formas, sendo o principal deles o \textit{System-Utilities} ou SYS. Para este trabalho, foi utilizado o módulo POLY, que mediante dados de temperatura-pressão-composição realiza cáculos de diagramas de equilíbrio e de fases, em particular os multicomponentes \cite{TC2002}.
 
 \section{Temperaturas cr\'iticas de aços}
 
-O francês Le Chatelier foi o primeiro a atribuir a letra ``A'' para as temperaturas críticas de transformação, devido à palavra \textit{Arrêt}, que representa a parada na temperatura durante a transformação de fase \cite{Silva2010}.
+Le Chatelier foi o primeiro a atribuir a letra ``A'' para as temperaturas críticas de transformação, devido à palavra \textit{Arrêt}, que representa a parada na temperatura durante a transformação de fase \cite{Silva2010}. Para exemplificar essas temperaturas críticas em aços, são mostrados a seguir gráficos obtidos por simulações de termodinâmica computacional utilizando o software Thermo-Calc\textregistered{},  correspondentes a uma liga Fe-1\%Mn-C.
 
-Para exemplificar essas temperaturas críticas em aços, utilizou-se dados de chamadas do software Thermo-Calc\textregistered{} para traçar o diagrama Fe-C metaestável para um aço 1\% Mn, em massa, da Figura \ref{fig:fe-1mn-C_isopleth}, bem como os gráficos de fração molar de fase em função da temperatura para aços hipo, hiper e eutetóide, das Figuras \ref{fig:fe-01c-1mn}, \ref{fig:fe-0727c-1mn} e \ref{fig:fe-1c-1mn} a seguir.
+A Figura \ref{fig:fe-1mn-C_isopleth} corresponde à isopleta do carbono para o teor de 1\% em massa de Mn. As linhas tracejas na vertical representam três ligas com teores de carbono também fixos. A primeira linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} representa um aço hipoeutetóide e o gráfico da fração molar das fases em função da temperatura é apresentado na Figura \ref{fig:fe-1mn-c}a. Um aço com essa composição, mediante aquecimento, mantém as fases $\alpha$ e \ch{Fe3C} estáveis até a temperatura A1 ser atingida, na qual a fase $\alpha$ começa a se decompor em $\gamma$. No gráfico da Figura \ref{fig:fe-1mn-c}a, essa temperatura pode ser notada pela primeira mudança de inclinação da curva da austenita. O aço permanece no campo trifásico ($\alpha$ + $\gamma$ + \ch{Fe3C}) até a temperatura A1' ser atingida, quando toda a fase \ch{Fe3C} é consumida. Para temperaturas crescentes, a fase $\alpha$ se transforma em $\gamma$ até a temperatura A3 ser atingida, na qual tem-se 100\% de fase $\gamma$.
 
 \begin{figure}[ht!]
   \includegraphics[width=.9\textwidth]{img/Fe-1Mn-C_isopleth_edited.png}
@@ -160,41 +168,27 @@ Para exemplificar essas temperaturas críticas em aços, utilizou-se dados de ch
   \label{fig:fe-1mn-C_isopleth}
 \end{figure}
 
-A primeira linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} representa um aço hipoeutetóide e sua fração molar de fases pode ser vista na Figura \ref{fig:fe-01c-1mn}.
-
 \begin{figure}[ht!]
-  \includegraphics[width=1.1\textwidth]{img/Fe-Mn-01C_edited.png}
-  \caption{Fração molar de fase versus Temperatura para aço 0,1\%C 1\% Mn, em massa}
-  \label{fig:fe-01c-1mn}
-\end{figure}
-
-Um aço nessa composição, mediante aquecimento, mantém as fases $\alpha$ e \ch{Fe3C} até chegar ao ponto A1, no qual a fase $\alpha$ começa a se decompor em $\gamma$. No gráfico da Figura \ref{fig:fe-01c-1mn}, esse ponto pode ser notado pela primeira mudança de inclinação da curva da austenita. O aço permanece no campo trifásico até encontrar o ponto A1', quando toda a fase \ch{Fe3C} se transforma em $\gamma$, a segunda mudança de inclinação na curva da austenita. Caso o aquecimento permaneça, a fase $\alpha$ começa a se transformar em $\gamma$, até atingir o ponto A3, onde tem-se 100\% de fase $\gamma$, a última mudança de inclinação na curva da austenita.
-
-Um aço eutetóide, correspondente à segunda linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} e ao gráfico da Figura \ref{fig:fe-0727c-1mn}, segue o mesmo raciocínio. A diferença é que não há um campo trifásico, por isso a temperatura A1' equivale à temperatura A3.
-
-\begin{figure}[ht!]
-  \includegraphics[width=1.1\textwidth]{img/Fe-Mn-0727C_edited.png}
-  \caption{Fração molar de fase versus Temperatura para aço 0,727\%C 1\% Mn, em massa}
-  \label{fig:fe-0727c-1mn}
-\end{figure}
-
-Já para um aço hipereutetóide, terceira linha vertical tracejada da Figura \ref{fig:fe-1mn-C_isopleth} e gráfico da Figura \ref{fig:fe-1c-1mn}, a diferença é que o segundo campo bifásico é constituído por $\gamma$ e \ch{Fe3C}, até atingir o ponto em que toda a \ch{Fe3C} se transforma em $\gamma$. Certas literaturas, como \citaremsentenca{Digges1960}, fazem distinção para a temperatura A3 de aços hipereutetóides, chamando-a de Acm, devido à diferença de campos bifásicos. No presente trabalho, ambas serão chamadas de A3, por corresponderem à mínima temperatura em que a fração de austenita é igual a 1.
-
-\begin{figure}[ht!]
-  \includegraphics[width=1.1\textwidth]{img/Fe-Mn-1C_edited.png}
+  \subfloat[]{\includegraphics[width=.5\textwidth]{img/FE-1MN-04C.png}}\hfill
+  \subfloat[]{\includegraphics[width=.5\textwidth]{img/FE-1MN-0727C.png}}\\
+  \subfloat[]{\includegraphics[width=.5\textwidth]{img/FE-1MN-1C.png}}
   \caption{Fração molar de fase versus Temperatura para aço 1\%C 1\% Mn, em massa}
-  \label{fig:fe-1c-1mn}
+  \label{fig:fe-1mn-c}
 \end{figure}
 
-Em resumo, pode-se dizer que a temperatura A1 corresponde à máxima temperatura em que a fração de austenita é zero, enquanto a A3 é a mínima temperatura cuja fração de austenita é um e A1' é o limite superior do campo intercrítico de três fases \cite{Honeycombe1982}.
+Um aço eutetóide, correspondente à segunda linha vertical da Figura \ref{fig:fe-1mn-C_isopleth} e ao gráfico da Figura \ref{fig:fe-1mn-c}b, segue o mesmo raciocínio. A diferença é que não há um campo trifásico e, portanto, não há mais uma temperatura A1' definida.
 
-É possível ainda diferenciar a temperatura crítica no resfriamento da de aquecimento, utilizando respectivamente as letras ``r'' e ``e''. Em teoria, elas deveriam ser iguais, mas na prática a taxa de resfriamento ou aquecimento diferencia Ae1 de Ar1 e Ae3 de Ar3. A faixa de temperatura entre A1 e A3 é chamada de intervalo crítico ou de transformação \cite{Digges1960}.
+Já para um aço hipereutetóide, terceira linha vertical na Figura \ref{fig:fe-1mn-C_isopleth} e gráfico da Figura \ref{fig:fe-1mn-c}c, a diferença é que o segundo campo bifásico é constituído por $\gamma$ e \ch{Fe3C}, até atingir o ponto em que toda a fase \ch{Fe3C} se transforma em $\gamma$. Algumas referências, como \citaremsentenca{Digges1960}, fazem distinção para a temperatura A3 de aços hipereutetóides, chamando-a de Acm, devido à diferença de campos bifásicos. No presente trabalho, ambas serão chamadas de A3, por corresponderem à menor temperatura em que a fração de austenita é 100\%.
+
+Em resumo, pode-se dizer que a temperatura A1 corresponde à máxima temperatura em que a fração de austenita é zero, enquanto a A3 é a mínima temperatura cuja fração de austenita é 100\% e A1' é o limite superior do campo intercrítico de três fases \cite{Honeycombe1982}.
+
+É possível ainda diferenciar a temperatura crítica no resfriamento da de aquecimento, utilizando respectivamente as letras ``r'' e ``e''. Sob aquecimento e resfriamento lentos (ou seja, sob condições de equilíbrio) elas devem ser iguais. Na prática, as taxas de resfriamento ou aquecimento aplicadas deslocam as temperaturas Ae1 de Ar1 e Ae3 de Ar3 do equilíbrio, devido às cinéticas de formação e dissolução das fases. A faixa de temperatura entre A1 e A3 é chamada de intervalo crítico ou de transformação \cite{Digges1960}.
 
 \section{Tratamento térmico de aços}
 
-A obtenção das propriedades ideais de um aço está relacionada tanto com sua composição química quanto com os processos de tratamento térmico aos quais ele é submetido \cite{Totten2006}. Tratamentos térmicos podem ser utilizados para aumentar ou diminuir a ductilidade, dureza, tensão de escoamento ou tenacidade, otimizando essas propriedades para a finalidade do material \cite{Silva2010}.
+A importância da determinação das temperaturas críticas está diretamente relacionada à aplicação de tratamentos térmicos a aços. A obtenção das propriedades ideais de um aço está relacionada tanto com sua composição química quanto com os processos de tratamento térmico aos quais ele é submetido \cite{Totten2006}. Tratamentos térmicos podem ser utilizados para aumentar ou diminuir a ductilidade, dureza, tensão de escoamento ou tenacidade, otimizando essas propriedades para a finalidade do material \cite{Silva2010}.
 
-A austenitização é a etapa que precede um tratamento térmico e consiste em aquecer o aço a uma temperatura em que haja formação da austenita. Esta pode ser parcial, quando se encontra na faixa de transformação, ou total, quando está acima do intervalo de transformação \cite{ASM1991}.
+A austenitização é a etapa que precede um tratamento térmico e consiste em aquecer o aço a uma temperatura em que haja formação da austenita. Esta pode ser parcial, quando se encontra na faixa de transformação (ou seja, entre as temperaturas A1 e A3), ou total, quando está acima do intervalo de transformação (acima da temperatura A3) \cite{ASM1991}.
 
 %RECOZIMENTO
 A partir do aço na forma de austenita, é possível fazer o recozimento, ou seja, o resfriamento lento para reduzir tensões, diminuir dureza, melhorar a usinabilidade ou ajustar o tamanho do grão, reduzindo assim influências de tratamentos térmicos ou mecânicos anteriores. Para aços hipoeutetóides a temperatura é de aproximadamente \SI{50}{\celsius} acima de A3, enquanto para hipereutetóides é de \SI{50}{\celsius} acima de A1, não podendo ultrapassar A3 pois em um resfriamento posterior formaria cementita nos contornos de grão da austenita, fragilizando a peça tratada. Quando se deseja uma estrutura perlítica, prefere-se temperaturas de austenitização mais altas, e mais baixas para estrutura esferoidizada. Para ambos os casos, quanto mais próxima de A1 for a temperatura de transformação da austenita, mais grosseira será a estrutura .
@@ -212,32 +206,34 @@ A formação de martensita aumenta a dureza do aço, entretanto o torna mais fr�
 %INSERIR DIAGRAMAS BINÁRIOS
 Os elementos de liga são adicionados ao aço para modificar as fases ou constituintes em equilíbrio, bem como alterar a maneira como essas fases se formam \cite{Silva2010}.
 
-Quanto maior o teor de carbono, maior a temperabilidade do aço. Entretanto, esse também fica mais suscetível a trincas durante a têmpera. Assim, a adição de elementos de liga tem como um de seus objetivos manter a alta temperabilidade do aço com baixa suscetibilidade a trincas, através da transformação da austenita em menor velocidade \cite{Souza1989}.
+% Quanto maior o teor de carbono, maior a temperabilidade do aço. Entretanto, esse também fica mais suscetível a trincas durante a têmpera. Assim, a adição de elementos de liga tem como um de seus objetivos manter a alta temperabilidade do aço com baixa suscetibilidade a trincas, através da transformação da austenita em menor velocidade \cite{Souza1989}.
 
 Os elementos de liga podem ser classificados de acordo com sua influência no campo austenítico, que por sua vez está relacionada à estrutura eletrônica dos elementos. São eles:
+
 \begin{itemize}
-\item Classe 1: elementos de domínio-$\gamma$ aberto, podendo até mesmo eliminar completamente a fase $\alpha$ em concentrações suficientemente altas. Assim, as transformações $\gamma \rightarrow  \alpha$ ocorrem a temperaturas menores, ou seja, A3 diminui e pode haver casos em que não há a temperatura A1. Fazem parte desse grupo: Níquel, Manganês, Cobalto, Rutênio, Ródio, Paládio, Ósmio, Irídio e Platina.
+  \item Classe 1: elementos de domínio $\gamma$ aberto (Figura \ref{fig:elem-liga}a), podendo até mesmo eliminar completamente a fase $\alpha$ em concentrações suficientemente altas. Assim, as transformações $\gamma \rightarrow  \alpha$ ocorrem a temperaturas menores, ou seja, A3 diminui e pode haver casos em que não há a temperatura A1. Fazem parte desse grupo: Níquel, Manganês, Cobalto, Rutênio, Ródio, Paládio, Ósmio, Irídio e Platina.
 
-\item Classe 2: domínio-$\gamma$ é expandido até a formação de um composto de ferro. Essa expansão é responsável por formar solução sólida homogênea, sendo muito importante para o tratamento térmico dos aços. Pertencem a esse grupo o Carbono e o Nitrogênio, que diminuem o valor de A3.
+  \item Classe 2: elementos de domínio $\gamma$ expandido (Figura \ref{fig:elem-liga}b) até a formação de um composto de ferro. Essa expansão é responsável por formar solução sólida homogênea, sendo muito importante para o tratamento térmico dos aços. Pertencem a esse grupo o Carbono e o Nitrogênio, que diminuem o valor de A3.
 
-\item Classe 3: domínio-$\gamma$ fechado, elementos que favorecem a expansão do domínio-$\alpha$, que circunda o campo austenítico, formando uma região chamada de ilha gama ou $\gamma$-loop. Estes aumentam A1 e pode haver casos em que A3 não existe. Essas ligas não podem passar por tratamento térmico de arrefecimento através da transformação $\gamma \rightarrow \alpha$. Fazem parte desse grupo: Silício, Alumínio, Berílio, Fósforo e elementos fortemente formadores de carboneto, como Titânio, Vanádio, Molibdênio e Cromo.
+  \item Classe 3: domínio $\gamma$ fechado (Figura \ref{fig:elem-liga}c), elementos que favorecem a expansão do domínio $\alpha$, que circunda o campo austenítico, formando uma região chamada de ilha gama ou $\gamma$-loop. Estes aumentam A1 e pode haver casos em que A3 não existe. Essas ligas não podem passar por tratamento térmico de arrefecimento através da transformação $\gamma \rightarrow \alpha$. Fazem parte desse grupo: Silício, Alumínio, Berílio, Fósforo e elementos fortemente formadores de carboneto, como Titânio, Vanádio, Molibdênio e Cromo.
 
-\item Classe 4: domínio-$\gamma$ contraído mas há formação de compostos de ferro. Os elementos Boro, Enxofre, Tântalo, Nióbio, Zircônio estão nessa categoria \cite{Honeycombe1982} \cite{Silva2010}.
+  \item Classe 4: domínio $\gamma$ contraído mas há formação de compostos de ferro (Figura \ref{fig:elem-liga}d). Os elementos Boro, Enxofre, Tântalo, Nióbio, Zircônio estão nessa categoria \cite{Honeycombe1982} \cite{Silva2010}.
 \end{itemize}
 
-A Figura \ref{fig:elem-liga} mostra a influência dos elementos de liga no campo austenítico em diagramas binários de ferro.
+% A Figura \ref{fig:elem-liga} mostra a influência dos elementos de liga no campo austenítico em diagramas binários de ferro.
 
 \begin{figure}[ht!]
   \includegraphics[width=.7\textwidth]{img/elementos-liga.png}
-  \caption{Classificação dos domínios-$\gamma$ sob influência dos elementos de liga: a) aberto; b) expandido; c) fechado; d) contraído. \cite{Honeycombe1982}}
+  \caption{Classificação dos domínios $\gamma$ sob influência dos elementos de liga: a) aberto; b) expandido; c) fechado; d) contraído. \cite{Honeycombe1982}}
   \label{fig:elem-liga}
 \end{figure}
 
 \section{Determinação das Temperaturas Críticas}
 
-Dada a importância de conhecer as temperaturas críticas de aços para obtenção das propriedades desejadas, foram desenvolvidas diversas formas para determiná-las.
+% Dada a importância de conhecer as temperaturas críticas de aços para obtenção das propriedades desejadas, foram desenvolvidas diversas formas para determiná-las.
+São reportadas na literatura diversas formas de determinação de temperaturas críticas de aços, sejam de forma experimental ou computacional.
 
-Como as transformações de fase do aço também causam contração ou expansão, um método de determinação experimental é através da dilatometria sob aquecimento contínuo. O dilatômetro coleta sinais de mudança nas dimensões do corpo de prova bem como sua temperatura, para traçar a curva de derivada da dimensão relativa em função da temperatura, como as do exemplo na Figura \ref{fig:dilatometer}. Na literatura utilizada por \citaremsentenca{Pawlowski2012}, A1 equivale a A\textsubscript{c1p}, A1' a A\textsubscript{c1k}, e A3 a Ac\textsubscript{3} ou Acm. Apesar de muito preciso, o equipamento tem custo elevado e necessita de pessoas capacitadas para operá-lo.
+Transformações de fase do aço causam contração ou expansão do material, devido às diferentes densidades das fases que se formam ou dissolvem. A dilatometria é um método de determinação experimental de detecção de transformações de fases através da coleta de sinais de mudança nas dimensões do corpo de prova bem como sua temperatura. As temperaturas críticas de transformação podem então ser determinadas graficamente pelas inflexões nas curvas da dilatação em função da temperatura, como as mostradas na Figura \ref{fig:dilatometer}. Na Figura \ref{fig:dilatometer}, na nomenclatura utilizada pelo autor, a temperatura A1 equivale a A\textsubscript{c1p}, A1' corresponde a A\textsubscript{c1k}, e a temperatura A3 é a temperatura Ac\textsubscript{3} ou Acm. Apesar de preciso, o equipamento tem custo elevado e necessita de pessoas capacitadas para operá-lo.
 
 \begin{figure}[ht!]
   \includegraphics[width=.9\textwidth]{img/dilatometer.png}
@@ -245,10 +241,9 @@ Como as transformações de fase do aço também causam contração ou expansão
   \label{fig:dilatometer}
 \end{figure}
 
-Outro método de determinar as temperaturas críticas de transformação é através do Thermo-Calc\textregistered{}, software utilizado para diversos cálculos termodinâmicos baseado na minimização da energia de Gibbs. Ele tem acesso a diversos bancos de dados termodinâmicos, em especial os desenvolvidos pelo \textit{Scientific Group Thermodata Europe} (SGTE). Sendo um resultado de mais de 30 anos de coleta de dados, sua precisão é inquestionável \cite{TC2002}. Entretanto, trata-se de um software pago e requer certo aprendizado para sua manipulação.
+Outro método de determinar as temperaturas críticas de transformação é através de softwares de termodinâmica computacional, como o Thermo-Calc\textregistered{}, que calculam as variáveis de estado (e.g., fração de fases, composição das fases) baseados nos princípios termodinâmicos (minimização da energia livre de Gibbs). Estes softwares acessam bases de dados termodinâmicos que fornecem informações dos parâmetros de interação dos elementos químicos para determinadas fases, que então são utilizados para o cálculo da energia livre de Gibbs. A precisão dos cálculos computacionais é precisa e tem sido constantemente avaliada na literatura. Entretanto, tanto software quanto o acesso aos bancos de dados é normalmente pago, e requer-se certo aprendizado para sua manipulação.
 
-Uma terceira maneira é a utilização de equações empíricas que se baseiam na concentração em massa dos elementos presentes no aço. A elaboração dessas equações envolve um método numérico de regressão múltipla.
-\citaremsentenca{ANDREWS1965} \enfase{apud} \citaremsentenca{Gorni2012} publicou fórmulas para o cálculo das temperaturas de transformação para austenita A1 e A3, descritas nas equações \ref{eq:andrewsA1} e \ref{eq:andrewsA3} a seguir.
+Uma terceira maneira é a utilização de equações empíricas que se baseiam na concentração em massa dos elementos presentes no aço. A elaboração dessas equações envolve um método de regressão múltipla. \citaremsentenca{Gorni2012} compilou diversas fórmulas para o cálculo das temperaturas de transformação para austenita A1 e A3. Abaixos são mostradas duas equações para o cálculo das temperaturas A1 e A3, conforme propostas por \citaremsentenca{ANDREWS1965}:
 
 \begin{align}
   A1 &= 723 - 16.9 Ni + 29.1 Si + 6.38 W - 10.7 Mn + 16.9 Cr + 290 As \label{eq:andrewsA1}\\
@@ -256,11 +251,11 @@ Uma terceira maneira é a utilização de equações empíricas que se baseiam n
      & + 11.0 Cr + 20.0 Cu - 700 P - 400 Al - 120 As - 400 Ti \label{eq:andrewsA3}
 \end{align}
 
-\textit{(A melhorar: detalhar melhor os métodos; inserir outras equações empíricas)}
+É importante ressaltar que essas equações são válidas apenas para teores de carbono abaixo de 0.6\% \cite{ANDREWS1965}.
 
 \section{Aprendizado de m\'aquina e a determinação de Temperaturas Cr\'iticas}
 
-Dada a complexidade e o custo de desenvolvimento de um novo material, estudos recentes têm se voltado para a tecnologia como primeira forma de avaliar hipóteses \cite{Belisle2015}. Uma vez que muitas variáveis estão envolvidas na determinação de uma propriedade, tornaram-se populares algoritmos capazes de aprender com alguma experiência vinda de um conjunto de tarefas, cujo desempenho melhora quanto maior sua experiência, também chamados de \textit{machine learning} ou aprendizado de máquina.
+Dada a complexidade e o custo de desenvolvimento de um novo material, estudos recentes têm se voltado para a tecnologia como primeira forma de avaliar hipóteses \cite{Belisle2015}. Uma vez que muitas variáveis estão envolvidas na determinação de uma propriedade, tornaram-se populares algoritmos capazes de aprender com alguma experiência vinda de um conjunto de tarefas, cujo desempenho melhora quanto maior sua experiência, também chamados de \textit{machine learning}, ou aprendizado de máquina.
 
 Esses algoritmos podem ser classificados entre supervisionados e não supervisionados. Ele é dito supervisionado quando recebe um banco de dados com as respostas certas e a partir delas prevê um valor para dada situação (regressão) ou faz uma classificação binária. Já o algoritmo não supervisionado não sabe quais são as respostas certas; ele é alimentado com dados para que se encontre um padrão (clusterização) \footnote{Informações extraídas das vídeo aulas do curso de Machine Learning ministrado por Andrew Ng, disponível em <https://pt.coursera.org/learn/machine-learning>}.
 
@@ -268,16 +263,67 @@ No campo da engenharia de materiais, os algoritmos mais utilizados são os super
 
 Dentre os métodos supervisionados, destacam-se os algoritmos que foram explorados nesse trabalho.
 
-\subsection{Regressão Polinomial}
-O primeiro e mais simples é a interpolação polinomial. Este pode se comportar de forma linear, como descrito na equação \ref{eq:interpolacao_linear}, ou quadrática, como na equação \ref{eq:interpolacao_quadratica}.
+\subsection{Modelos de regress\~ao}
+% USE O CAPÍTULO 10 DO MONTGOMERY COMO REFERÊNCIA BASE
+Uma das formas mais simples de aprendizado de máquina são modelos de regressão. Uma análise de regressão procura descrever as relações entre uma variável dependente (também chamada de variável de resposta) e variáveis independentes.
+
+Em particular, modelos de regressão linear são aqueles em que a relação entre as variáveis dependente e independentes pode ser descrita por uma relação linear do tipo:
+
 \begin{align}
-  f(x) &= b x + c \label{eq:interpolacao_linear} \\
-  f(x) &= \frac{1}{2} a x^T + b x + c \label{eq:interpolacao_quadratica}
+  y &= \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_k x_k + \epsilon \nonumber \\
+    &= \beta_0 + \sum_{i=1}^k \beta_i x_i + \epsilon
+  \label{eq:regressao_linear}
+\end{align}
+%
+em que $y$ representa a variável dependente e $x_j$ e $\beta_j$ correspondem às variáveis dependentes e aos coeficientes de regressão.
+
+O modelo de regressão também pode ser descrito por uma equação polinomial. A equação \ref{eq:regressao_polinomial_2a_ordem} abaixo representa um modelo de regressão em que a relação entre as variáveis é descrita por um polinômio de segunda ordem. Esse tipo de modelo de regressão é também chamado de modelo de superfície de reposta de segunda ordem.
+
+\begin{equation}
+  y = \beta_0 + \sum_{i=1}^k \beta_i x_i + \sum_{i=1}^{k} \sum_{j=i}^k \beta_{ij} x_i x_j + \epsilon
+  \label{eq:regressao_polinomial_2a_ordem}
+\end{equation}
+
+Note-se que o modelo descrito pela equação \ref{eq:regressao_polinomial_2a_ordem} também se trata de um modelo de regressão linear, uma vez que os termos de segunda ordem podem ser redefinidos como novas variáveis independentes de primeira ordem. De forma a ilustrar melhor esta situação, tome-se como exemplo o seguinte modelo de segunda ordem com duas variáveis $x_1$ e $x_2$:
+
+\begin{equation}
+  y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_{11} {x_1}^2 + \beta_{22} {x_2}^2 + \beta_{12} x_1 x_2 + \epsilon
+  \label{eq:regressao_polinomial_2a_ordem_2_var}
+\end{equation}
+
+Definindo $x_3 = {x_1}^2$, $x_4 = {x_2}^2$, $x_5 = x_1 x_2$, $\beta_3 = {\beta_1}^2$, $\beta_4 = {\beta_2}^2$ e $\beta_5 = \beta_1 \beta_2$, então a equação \ref{eq:regressao_polinomial_2a_ordem_2_var} se torna:
+
+\begin{equation}
+  y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + \beta_4 x_4 + \beta_5 x_5 + \epsilon
+\end{equation}
+%
+que possui a mesma forma que a equação \ref{eq:regressao_linear} do modelo de regressão linear.
+
+Os coeficientes de regressões multivariáveis geralmente são estimados pelo método dos mínimos quadrados, que consiste em minimizar a soma dos quadrados dos desvios, representada pela equação \ref{eq:sum_quadrados_desvios} a seguir. Os mínimos são encontrados nos pontos em que a derivada em relação a cada $\beta$ é zero \cite{Montgomery2013}.
+
+\begin{align}
+  L &=  \sum_{i=1}^k(y_i - \beta_0 - \sum_{j=1}^k  \beta_j x_{ij})^2
+  \label{eq:sum_quadrados_desvios}
 \end{align}
 
-Ambos são métodos muito utilizados devido ao baixo custo computacional. Entretanto, têm a necessidade de estabelecer alguma relação (linear ou quadrática) entre os termos estudados, utilizando termos fixos \cite{Bhadeshia1999}.
+Uma vez determinado o modelo de regressão, certas métricas podem ser aplicadas a fim de se averiguar sua qualidade de predição. A primeira e mais simples de todas é o Erro Quadrático Médio (MSE, sigla em inglês), que calcula a média das diferenças entre o valor esperado (y) e o valor predito ($y_p$) elevadas ao quadrado, como mostra a equação \ref{eq:MSE_model}. Quanto maior seu valor, menos preciso é o modelo.
 
-\textit{(A melhorar: detalhar variáveis dependentes e independentes, regressão multivariável, métricas, overfit)}
+\begin{align}
+  MSE &= \frac{1}{N} \sum_{i=1}^k(y_i - y_{pi})^2
+  \label{eq:MSE_model}
+\end{align}
+% ARRUMAR ŷ
+
+A vantagem de utilizar essa métrica é identificar com facilidade valores preditos inesperados. Por outro lado, o fato de o erro estar ao quadrado pode subestimar ou superestimar a previsibilidade do modelo, principalmente se o banco de dados contiver ruídos.
+
+A segunda métrica é o Coeficiente de Determinação, ou $R^{2}$. Está relacionado com o MSE, porém seus valores vão de $-\infty$ a 1, o que simplifica sua comparação. Um valor negativo significa que o modelo é pior do que a previsão da média, enquanto um valor próximo de um significa que o erro está próximo de zero. O cálculo é feito a partir do MSE do modelo, descrito na equação \ref{eq:MSE_model}, e do MSE da previsão da média, mostrado na equação \ref{eq:MSE_media} abaixo, onde $\mu$ é a média dos valores esperados. Em resumo, o $R^{2}$ mede o quão bom o modelo é em relação ao modelo da média \cite{Drakos2018}.
+
+\begin{align}
+  MSE &= \frac{1}{N} \sum_{i=1}^k(y_i - \mu)^2
+  \label{eq:MSE_media}
+\end{align}
+
+Existem outras métricas para avaliação das predições, mas no presente trabalho serão utilizadas apenas as citadas acima.
 
 \subsection{Rede Neural Artificial}
 Um segundo método é a rede neural. Inspirada no cérebro humano, baseia-se em associações para fazer previsões, sendo muito utilizada para reconhecimento de padrões. É indicada para funções não lineares e pode identificar relações complexas entre variáveis independentes. A desvantagem é o maior tempo computacional necessário \cite{Belisle2015}.
@@ -290,13 +336,13 @@ A rede neural artificial é um conjunto de neurônios de software organizados em
   \label{fig:rede-neural-arquitetura}
 \end{figure}
 
-Para o exemplo da Figura \ref{fig:rede-neural-arquitetura}, a primeira camada recebe uma entrada X de cinco dados n vezes, sendo n o tamanho do banco de dados utilizado no treinamento. Os neurônios da camada intermediária recebem o vetor X com as 5 entradas para calcular o valor predito Ŷ. Para cada neurônio existem os vetores de peso e os viéses (ou \textit{bias}), que a princípio são randômicos. O vetor X é multiplicado pelo vetor de peso e depois adicionado ao viés, como mostra a Equação \ref{eq:single-neuron}. Como os valores dos pesos e viéses são aleatórios, o valor da saída inicialmente é bem diferente do esperado. A cada iteração, os pesos são alterados até atingir um resultado satisfatório, etapa chamada de treinamento da rede neural \cite{Bhadeshia1999}.
+Para o exemplo da Figura \ref{fig:rede-neural-arquitetura}, a primeira camada recebe uma entrada X de cinco dados n vezes, sendo n o tamanho do banco de dados utilizado no treinamento. Os neurônios da camada intermediária recebem o vetor X com as 5 entradas para calcular o valor predito Ŷ. Para cada neurônio existem os vetores de peso e os viéses (ou \textit{bias}), que a princípio são randômicos. O vetor X é multiplicado pelo vetor de peso e depois adicionado ao viés, como mostra a Equação \ref{eq:single-neuron}. Como os valores dos pesos e viéses são aleatórios, o valor da saída inicialmente é bem diferente do esperado. A cada iteração, os pesos são alterados até atingir um resultado satisfatório, etapa chamada de treinamento da rede neural \cite{Bhadeshia1999}. Uma função de perda calcula o quão longe o modelo está da solução ideal e seu valor diminui conforme a precisão aumenta.
 
 \begin{align}
-  z &= {w}_1 {x}_1 + {w}_2 {x}_2 + {w}_3 {x}_3 + ... + {w}_n {x}_n \label{eq:single-neuron}
+  z &= b + {w}_1 {x}_1 + {w}_2 {x}_2 + {w}_3 {x}_3 + ... + {w}_n {x}_n \label{eq:single-neuron}
 \end{align}
 
-Como mostra a Figura \ref{fig:single-neuron}, o resultado desse cálculo passa por uma função de ativação para que se defina a próxima conexão \cite{Skalski2017}.
+Como mostra a Figura \ref{fig:single-neuron}, o resultado de cada iteração passa por uma função de ativação e, de acordo com o resultado, se define a próxima conexão. Entre as funções mais utilizadas, estão a sigmóide, que por gerar valores entre 0 e 1 é utilizada em algoritmos de classificação, a ReLU, sigla para \textit{``Rectified Linear Unit''}, e a tangente hiperbólica, descrita na equação \ref{eq:tanh} \cite{Skalski2017}. Essa última foi a escolhida no presente trabalho por ser usada anteriormente por \citaremsentenca{Capdevila2004} e \citaremsentenca{Gavard1996}.
 
 \begin{figure}[ht!]
   \includegraphics[width=.7\textwidth]{img/single-neuron.png}
@@ -304,12 +350,38 @@ Como mostra a Figura \ref{fig:single-neuron}, o resultado desse cálculo passa p
   \label{fig:single-neuron}
 \end{figure}
 
-\citaremsentenca{Gavard1996} elaborou uma rede neural para prever A1 e A3 a partir de dados experimentais de composição química, temperatura e wtaxa de aquecimento. O modelo foi capaz de estimar temperaturas críticas com precisão de $\pm 40$K ou $95\%$ de confiança.
+\begin{align}
+  tanh (x) &= \frac{2}{1 + e^{-2x}} - 1
+  \label{eq:tanh}
+\end{align}
 
-\textit{(A melhorar: detalhar função de ativação; falar sobre taxa de aprendizado, retropropagação, função perda, métricas de avaliação)}
+O processo de aprendizado da rede neural envolve a otimização dos pesos e viéses para minimizar o valor da função perda, o que é calculado a partir do método de gradiente descendente, ou seja, a minimização das derivadas da função perda em relação a cada parâmetro da rede. O algoritmo de retropropagação compara os valores obtidos com os esperados e reajusta os parâmetros da rede.
+
+Esse ajuste é controlado pela taxa de aprendizado, uma váriável de extrema importância, posto que um valor muito baixo torna a convergência muito lenta e um valor muito alto pode não convergir \cite{Skalski2017}.
+
+As métricas de avaliação da predição são as mesmas utilizadas na regressão linear, somadas à avaliação do valor final da função perda.
 
 \subsection{Preparação dos Dados}
-\textit{(Ainda será escrito. Falar sobre separação de dados entre treino e teste e como auxilia no overfit, normalização)}
+
+Sabendo como funcionam os modelos de aprendizado de máquina, é importante realizar um bom preparo dos dados, dada sua influência na previsibilidade do modelo.
+
+Uma das maiores preocupações em relação aos algoritmos de aprendizado de máquina é o \textit{overfit}. Esse termo é utilizado quando um modelo foi muito bem treinado para um certo conjunto de dados, porém tem uma previsibilidade ruim para dados novos. Esse problema é mais provável de ocorrer quando se elabora um modelo mais complexo do que o necessário. Por outro lado, o termo \textit{underfit} é usado quando o modelo não se ajusta aos dados de treinamento e também não pode ser usado para prever novos dados.
+
+Assim sendo, é importante dividir o banco de dados disponível entre dados de treino, com o qual o modelo aprende, e dados de teste, para avaliar a predição do modelo para novos dados. A proporção do tamanho dos conjuntos de dados depende do tamanho do banco original. A proporção 80\% treino e 20\% teste é considerada segura por estudos mais recentes \cite{Bronshtein2017}, embora o trabalho de \citaremsentenca{Gavard1996} utilize 50\%.
+
+Outra forma de preparação é a padronização dos dados, que consiste em deixá-los entre -1 e 1. Isso pode ser feito pela normalização, que utiliza a média ($\mu$) e o desvio padrão ($\sigma$), como mosta a equação \ref{eq:padronizacao}, ou pela padronização \textit{MinMax}, utilizando os valores máximos e mínimos, como mostra a equação \ref{eq:minmax}.
+
+\begin{align}
+  z &= \frac{X - \mu}{\sigma}
+  \label{eq:padronizacao}
+\end{align}
+
+\begin{align}
+  z &= \frac{X - min(X)}{max(X) - min(X)}
+  \label{eq:minmax}
+\end{align}
+
+A padronização é importante para tornar o treinamento menos sensível à magnitude dos dados, o que pode influenciar na convergência do modelo \cite{Raschka2014}.
 
 \chapter{Metodologia}
 
@@ -318,7 +390,8 @@ Como mostra a Figura \ref{fig:single-neuron}, o resultado desse cálculo passa p
 \label{sec:banco_dados}
 
 \subsection{Escolha das vari\'aveis}
-A primeira etapa para elaboração de um algoritmo de machine learning é a construção do banco de dados utilizado em seu treinamento. Para este trabalho, utilizou-se dados extraídos do software Thermo-Calc\textregistered{}.
+
+A primeira etapa para elaboração de um algoritmo de aprendizado de máquina é a construção do banco de dados utilizado em seu treinamento. Para este trabalho, utilizou-se dados extraídos do software Thermo-Calc\textregistered{}, devido à sua acessibilidade.
 
 Inicialmente, discutiu-se os elementos de liga e suas respectivas faixas de composição química nos aços estudados. Foram considerados apenas os mais comuns aços de engenharia, cujas composições foram consultados em um handbook SAE \cite{SAE1983}. Não foram consideradas as composições relativas aos aços inoxidáveis. A Tabela \ref{tab:faixas_composicao} mostra as faixas de composições escolhidas para criação do banco de dados de temperaturas críticas.
 
@@ -342,20 +415,20 @@ Inicialmente, discutiu-se os elementos de liga e suas respectivas faixas de comp
 
 Também discutiu-se a faixa de temperatura a ser estudada. Para isso, analisou-se os diagramas binários para cada elemento de liga, que podem ser encontrados no Anexo \ref{an:diag_bin}, e observou-se suas temperaturas críticas. Considerando a temperatura em que pode ser observada austenita, utilizou-se o intervalo de 673 a 1473K.
 
-Definidas as faixas de composição química e temperatura, foram definidos os níveis para cada elemento, ou seja, quantas variações (ou steps) cada elemento tem. O valor do step é dado pela equação a seguir:
+Definidas as faixas de composição química e temperatura, foram definidos os níveis para cada elemento, ou seja, quantas variações (ou passos) cada elemento tem. O valor do passo é dado pela equação a seguir:
 
 \begin{equation}
-  step = \frac{\Delta c}{n - 1}
+  passo = \frac{\Delta c}{n - 1}
 \end{equation}
 
-Assim, os níveis e steps utilizados para cada elemento são dados na Tabela \ref{tab:niveis_e_steps}.
+Assim, os níveis e passos utilizados para cada elemento são dados na Tabela \ref{tab:niveis_e_passos}.
 
 \begin{table}
-  \caption{Níveis e steps para cada elemento de liga}
+  \caption{Níveis e passos para cada elemento de liga}
 
   \begin{tabular}{c c c}
   \hline
-  \textbf{Elemento de liga} & \textbf{Níveis} & \textbf{Valor do step} \\
+  \textbf{Elemento de liga} & \textbf{Níveis} & \textbf{Valor do passo} \\
   \hline
   Carbono & 11 & 0,15 \\
   Manganês & 5 & 0,75 \\
@@ -365,24 +438,20 @@ Assim, os níveis e steps utilizados para cada elemento são dados na Tabela \re
   \hline
   \end{tabular}
 
-  \label{tab:niveis_e_steps}
+  \label{tab:niveis_e_passos}
 \end{table}
 
-Já para a temperatura, estabeleceu-se um step de 10K. A partir da combinação desses valores de composição, um script faz a chamada do Thermo-Calc\textregistered{}. Dessa forma, para dada composição química, são retornadas as porcentagens de cada fase (ferrita, austenita e cementita) para cada temperatura dentro da faixa estabelecida.
-
-O resultado da chamada do Thermo-Calc\textregistered{} é salvo em um arquivo de texto de extensão .DAT. No total, foram gerados 6874 arquivos.
+Já para a temperatura, estabeleceu-se um passo de 10K. A partir da combinação desses valores de composição, um script faz a chamada do Thermo-Calc\textregistered{}. Dessa forma, para dada composição química, são retornadas as porcentagens de cada fase (ferrita, austenita e cementita) para cada temperatura dentro da faixa estabelecida. O resultado da chamada do Thermo-Calc\textregistered{} é salvo em um arquivo de texto de extensão ``.DAT''. No total, foram gerados 6875 arquivos.
 
 \subsection{Extra\c{c}\~ao de temperaturas cr\'iticas}
 
-Para cada arquivo gerado pela chamada do Thermo-Calc\textregistered{}, calculou-se as temperaturas críticas através de outro script. Este faz a leitura do arquivo .DAT, que contém as porcentagens de cada fase para cada temperatura entre 673 e 1473K, variando em 10K.
+Para cada arquivo gerado pela chamada do Thermo-Calc\textregistered{}, as temperaturas críticas foram calculadas por meio de outro script. Este faz a leitura do arquivo .DAT, que contém as porcentagens de cada fase para cada temperatura entre 673 e 1473K, variando em 10K.
 
-Para determinar a A1, identifica-se a maior temperatura em que a porcentagem de austenita é zero, enquanto para o A3, identifica-se a menor temperatura em que a porcentagem de austenita é um.
-
-Também identificou-se a temperatura crítica intermediária, A1', e consequentemente se o aço do respectivo arquivo é hipo ou hipereutetóide. Para isso, comparou-se a temperatura em que a porcentagem de ferrita é zero ($T_{ferr}$) com a que a porcentagem de cementita é zero ($T_{cem}$). Caso $T_{ferr}$ seja maior que $T_{cem}$, A1' é igual a $T_{cem}$ e o aço é hipoeutetóide; caso contrário, A1' é igual a $T_{ferr}$ e o aço é hipereutetóide. A terceira hipótese é que não houvesse cementita para a composição dada, assim não haveria campo trifásico e A1' seria igual a A1.
+Para determinar a A1, identifica-se a maior temperatura em que a porcentagem de austenita é zero, enquanto que para a temperatura A3, identifica-se a menor temperatura em que a porcentagem de austenita é 100\%. Também identificou-se a temperatura crítica intermediária, A1', e se o aço da respectiva simulação é hipo ou hipereutetóide. Para isso, comparou-se a temperatura em que a porcentagem de ferrita é zero ($T_{ferr}$) com a que a porcentagem de cementita é zero ($T_{cem}$). Caso $T_{ferr}$ seja maior que $T_{cem}$, A1' é igual a $T_{cem}$ e o aço é hipoeutetóide; caso contrário, A1' é igual a $T_{ferr}$ e o aço é hipereutetóide. Uma terceira situação é a aquela em que não há cementita para a composição dada e assim não há campo trifásico e A1' seria igual a A1.
 
 Os dados do nome do arquivo, o número da macro que fez sua chamada, composição química, temperaturas críticas e classificação em hipo ou hiper eutetóide foram salvos em um arquivo CSV.
 
-\subsection{Avaliação do Banco de Dados}
+\subsection{Avaliação do banco de dados}
 
 Foram realizados testes para averiguar a qualidade dos dados extraídos do Thermo-Calc\textregistered{}.
 
@@ -429,45 +498,33 @@ Estabelecendo o ponto ótimo de número de neurônios, foram plotadas isopletas 
 
 \section{Comparação dos modelos}
 
-Para se comparar a assertividade dos modelos, foram comparados os coeficientes de determinação de regressão linear e rede neural para predição da temperatura A3.
-
-Também foram plotados gráficos de valores preditos pela regressão linear e pela rede neural versus valores calculados pela equação empírica, uma vez que os dados normalizados não podem ser usados para essas equações e a comparação das métricas não teria sentido. Para isso, as predições da rede neural foram desnormalizadas utilizando o método \textit{inverse\_transform} do \textit{Scikit-learn}.
-
- %ARRUMAR: falar quais equações usou
+Para se comparar a assertividade dos modelos, foram comparados os coeficientes de determinação de regressão linear, rede neural e Equação Empírica de Andrews para predição da temperatura A3.
 
 \chapter{Resultados e discussão}
+
 \section{O Banco de Dados}
-O resultado da variação de composição química para aços carbono gerou um total de 6874 combinações e, para cada, fez-se a chamada do Thermo-Calc\textregistered{} que retorna a porcentagem de cada fase para temperaturas de 673 a 1473K, variando de 10K. Para cada composição, os dados são salvos em um arquivo .DAT.
+
+O resultado da variação de composição química para aços carbono gerou um total de 6875 combinações e, para cada, fez-se a chamada do Thermo-Calc\textregistered{} que retorna a porcentagem de cada fase para temperaturas de 673 a 1473K, variando de 10K. Para cada composição, os dados são salvos em um arquivo .DAT.
 
 Inicialmente, sete macros faziam a chamada do Thermo-Calc\textregistered{} com 1000 composições cada. Isso trouxe resultados muito inconsistentes, como valores em branco ou ou incoerentes com a literatura, e podem estar relacionados à sobrecarga de memória do computador. Notou-se que, quanto menos chamadas cada macro fazia, menor o número de erros nos resultados e, assim, chegou-se ao número de 69 macros com 100 chamadas cada.
 
-Em seguida, para cada arquivo, extraiu-se as temperaturas críticas A1, A1' e A3. As imagens a seguir ilustram a lógica dessa extração.
+Em seguida, para cada arquivo, extraiu-se as temperaturas críticas A1, A1' e A3. A Figura \ref{fig:Tcrit_exemplos} ilustra a lógica dessa extração. A temperatura A1' é representada pela mudança de inclinação na curva da porcentagem de austenita. Para aços hipoeutetóides, essa temperatura corresponde ao ponto em que a porcentagem de cementita é zero, como mostra a Figura \ref{fig:Tcrit_exemplos}a. Já para hipereutetóides, ao ponto em que a porcentagem de ferrita é zero, como na Figura \ref{fig:Tcrit_exemplos}b. Enquanto isso, para aços em que a porcentagem de cementita é sempre zero, considera-se que a temperatura A1' é igual à A1 (vide Figura \ref{fig:Tcrit_exemplos}c).
 
 \begin{figure}
-  \includegraphics[width=.9\textwidth]{img/714editado.png}
-  \caption{Extração de temperaturas críticas para aço hipoeutetóide}
-  \label{fig:Tcrit_liga_hipo}
+  \subfloat[]{\includegraphics[width=.5\textwidth]{img/alloy_hipo.png}}\hfill
+  \subfloat[]{\includegraphics[width=.5\textwidth]{img/alloy_hiper.png}}\\
+  \subfloat[]{\includegraphics[width=.5\textwidth]{img/alloy_nocem.png}}
+  \caption{Exemplos de extração de temperaturas críticas para a) liga hipoeutetóide, b) liga hipereutetóide e c) liga hipoeutetóide sem cementita}
+  \label{fig:Tcrit_exemplos}
 \end{figure}
-
-\begin{figure}
-  \includegraphics[width=.9\textwidth]{img/4321editado.png}
-  \caption{Extração de temperaturas críticas para aço hipereutetóide}
-  \label{fig:Tcrit_liga_hiper}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=.9\textwidth]{img/418editado.png}
-  \caption{Extração de temperaturas críticas para aço hipoeutetóide sem cementita}
-  \label{fig:Tcrit_liga_sem_cementita}
-\end{figure}
-
-A temperatura A1' é representada pela mudança de inclinação na curva da porcentagem de austenita. Para aços hipoeutetóides, essa temperatura corresponde ao ponto em que a porcentagem de cementita é zero, como mostra a Figura \ref{fig:Tcrit_liga_hipo}. Já para hipereutetóides, ao ponto em que a porcentagem de ferrita é zero, como na Figura \ref{fig:Tcrit_liga_hiper}. Enquanto isso, para aços em que a porcentagem de cementita é sempre zero, considera-se que a temperatura A1' é igual à A1 (vide Figura \ref{fig:Tcrit_liga_sem_cementita}).
 
 É importante destacar que nem sempre um aço terá as três temperaturas críticas. Elementos muito alfagênicos podem não ter A3, como no caso de um $\gamma$ loop, e gamagênicos podem não ter A1, por terem austenita estável à temperatura ambiente.
 
 Mesmo considerando que algumas temperaturas críticas podem não existir para certas composições, ainda não se sabe as causas dos erros que ocorreram nessa extração. Por exemplo, algumas composições com baixo carbono ficaram com valores em branco, enquanto outras tiveram valores de temperatura crítica muito acima do esperado, embora os gráficos plotados para sua respectiva composição estivessem dentro do esperado. Assim, foi feito um script que faz essa correção, fazendo apenas uma chamada do Thermo-Calc\textregistered{} por vez.
 
-Também foi realizada uma comparação dos valores de temperatura crítica com a equação empírica de Andrews, plotando o gráfico da Figura \ref{fig:tcrit_andrews}. A linha em azul representa os valores esperados ($T_{empirical} = T_{database}$).
+% \subsection{Comparação com equações empíricas}
+
+Foi realizada uma comparação dos valores de temperatura crítica com a equação empírica de Andrews, plotando o gráfico da Figura \ref{fig:tcrit_andrews}. A linha em azul representa os valores esperados ($T_{empirical} = T_{database}$).
 
 \begin{figure}
   \includegraphics[width=1.1\textwidth]{img/andrews.pdf}
@@ -477,7 +534,16 @@ Também foi realizada uma comparação dos valores de temperatura crítica com a
 
 Nota-se que, para as temperaturas A3, existe uma correlação maior com os valores calculados pela equação empírica, enquanto para A1 existe uma divergência maior. Isso pode estar relacionado com o fato de a equação de Andrews não ter membros interdependentes entre os elementos químicos, o que na prática não se aplica.
 
-Para averiguar essa interdependência, plotou-se as isopletas de temperatura para cada elemento, variando a composição de carbono. Para cada elemento de liga, plotou-se cinco curvas, correspondentes aos cinco níveis de composição escolhidos.
+Para averiguar essa interdependência, plotou-se as isopletas de temperatura para cada elemento, variando a composição de carbono. Para cada elemento de liga, plotou-se cinco curvas, correspondentes aos cinco níveis de composição escolhidos, mostradas na Figura \ref{fig:db_isop}.
+
+\begin{figure}[!h]
+\subfloat[\label{fig:db_isop_Mn}]{\includegraphics[width=.5\textwidth]{img/Mn_db_isop.png}}\hfill
+\subfloat[\label{fig:db_isop_Si}]{\includegraphics[width=.5\textwidth]{img/Si_db_isop.png}}\\
+\subfloat[\label{fig:db_isop_Cr}]{\includegraphics[width=.5\textwidth]{img/Cr_db_isop.png}}
+\subfloat[\label{fig:db_isop_Ni}]{\includegraphics[width=.5\textwidth]{img/Ni_db_isop.png}}
+\caption{Isopletas de temperatura variando Carbono para composições do banco de dados de: (a) Manganês, (b) Silício, (c) Cromo, (d) Níquel}
+\label{fig:db_isop}
+\end{figure}
 
 Para o manganês e níquel, nota-se que a baixas concentrações de carbono a concentração do elemento de liga tem muita interferência no valor das temperaturas de transformação. A partir de 0,8\% C, as temperaturas são mais próximas para todos os níveis. Uma possível explicação é que os três elementos são gamagênicos.
 
@@ -485,7 +551,6 @@ Já para elementos alfagênicos, como o cromo, a relação se inverte. Para baix
 
 Um caso intermediário é o do silício, que apesar de alfagênico, tem influência na temperatura tanto a baixas quanto a mais altas concentrações de carbono, embora a influência a baixas concentrações seja maior.
 
-\textit{(A melhorar: inserir isopletas do banco de dados)}
 
 \section{Regressão Linear}
 
@@ -536,24 +601,24 @@ Os valores de $R^{2}$ obtidos foram satisfatórios porém muito altos, por isso 
 A Figura \ref{fig:LR_A1} a seguir mostra os gráficos de valores preditos versus esperados para a temperatura A1.
 
 \begin{figure}[!h]
-\subfloat[\label{fig:LR_A1_hipo}]{\includegraphics[width=.33\textwidth]{img/A1_hipo.png}}
-\subfloat[\label{fig:LR_A1_hiper}]{\includegraphics[width=.33\textwidth]{img/A1_hiper.png}}
-\subfloat[\label{fig:LR_A1_total}]{\includegraphics[width=.33\textwidth]{img/A1_total.png}}
-\caption{Valores preditos x Valores esperados da regressão linear de A1, para (a) Hipoeutetóides, (b) Hipereutetóides, (c) Todos os valores}
+\subfloat[\label{fig:LR_A1_hipo}]{\includegraphics[width=.5\textwidth]{img/A1_hipo.png}}\hfill
+\subfloat[\label{fig:LR_A1_hiper}]{\includegraphics[width=.5\textwidth]{img/A1_hiper.png}}\\
+\subfloat[\label{fig:LR_A1_total}]{\includegraphics[width=.5\textwidth]{img/A1_total.png}}
+\caption{Valores preditos vs. Valores esperados da regressão linear de A1, para (a) Hipoeutetóides, (b) Hipereutetóides, (c) Todos os valores}
 \label{fig:LR_A1}
 \end{figure}
 
-Nota-se que, mesmo com a quantidade de dados reduzida, esses tiveram um bom \textit{fit} com a reta $y = x$. Os problemas estão localizados no extremo inferior, onde a curva de A1 no diagrama binário Fe-C não se assemelha a uma reta. Essa faixa corresponde às temperaturas mais baixas dos hipoeutetóides, onde há poucos pontos devido à proximidade do campo $\alpha$, no qual A1 não existe.
+Nota-se que, mesmo com a quantidade de dados reduzida, esses tiveram um bom ajuste com a reta $y = x$. Os problemas estão localizados no extremo inferior, onde a curva de A1 no diagrama binário Fe-C não se assemelha a uma reta. Essa faixa corresponde às temperaturas mais baixas dos hipoeutetóides, onde há poucos pontos devido à proximidade do campo $\alpha$, no qual A1 não existe.
 
 \subsection{Regressão Linear de A1'}
 
 A Figura \ref{fig:LR_A1prime} a seguir mostra os gráficos de valores preditos versus esperados para a temperatura A1'.
 
 \begin{figure}[!h]
-\subfloat[\label{fig:LR_A1prime_hipo}]{\includegraphics[width=.33\textwidth]{img/A1prime_hipo.png}}
-\subfloat[\label{fig:LR_A1prime_hiper}]{\includegraphics[width=.33\textwidth]{img/A1prime_hiper.png}}
-\subfloat[\label{fig:LR_A1prime_total}]{\includegraphics[width=.33\textwidth]{img/A1prime_total.png}}
-\caption{Valores preditos x Valores esperados da regressão linear de A1', para (a) Hipoeutetóides, (b) Hipereutetóides, (c) Todos os valores}
+\subfloat[\label{fig:LR_A1prime_hipo}]{\includegraphics[width=.5\textwidth]{img/A1prime_hipo.png}}\hfill
+\subfloat[\label{fig:LR_A1prime_hiper}]{\includegraphics[width=.5\textwidth]{img/A1prime_hiper.png}}\\
+\subfloat[\label{fig:LR_A1prime_total}]{\includegraphics[width=.5\textwidth]{img/A1prime_total.png}}
+\caption{Valores preditos vs. Valores esperados da regressão linear de A1', para (a) Hipoeutetóides, (b) Hipereutetóides, (c) Todos os valores}
 \label{fig:LR_A1prime}
 \end{figure}
 % ARRUMAR: GRÁFICO NO LUGAR ERRADO
@@ -565,10 +630,10 @@ A temperatura A1', assim como A1, é mais difícil de ser determinada na proximi
 A Figura \ref{fig:LR_A3} a seguir mostra os gráficos de valores preditos versus esperados para a temperatura A3.
 
 \begin{figure}[!h]
-\subfloat[\label{fig:LR_A3_hipo}]{\includegraphics[width=.33\textwidth]{img/A3_hipo.png}}
-\subfloat[\label{fig:LR_A3_hiper}]{\includegraphics[width=.33\textwidth]{img/A3_hiper.png}}
-\subfloat[\label{fig:LR_A3_total}]{\includegraphics[width=.33\textwidth]{img/A3_total.png}}
-\caption{Valores preditos x Valores esperados da regressão linear de A3, para (a) Hipoeutetóides, (b) Hipereutetóides, (c) Todos os valores}
+\subfloat[\label{fig:LR_A3_hipo}]{\includegraphics[width=.5\textwidth]{img/A3_hipo.png}}\hfill
+\subfloat[\label{fig:LR_A3_hiper}]{\includegraphics[width=.5\textwidth]{img/A3_hiper.png}}\\
+\subfloat[\label{fig:LR_A3_total}]{\includegraphics[width=.5\textwidth]{img/A3_total.png}}
+\caption{Valores preditos vs. Valores esperados da regressão linear de A3, para (a) Hipoeutetóides, (b) Hipereutetóides, (c) Todos os valores}
 \label{fig:LR_A3}
 \end{figure}
 
@@ -631,7 +696,7 @@ Os resultados obtidos dos dados aleatórios possibilitou uma comparação de mé
 
 \subsection{Isopletas das Regressões Lineares}
 
-As predições dos modelos de A3 foram utilizadas para gerar isopletas variando-se um dos elementos e fixando os demais a nível zero. Na figura \ref{fig:LR_isopleths} a seguir, a linha azul corresponde às predições do modelo hipoeutetóide e a vermelha ao hipereutetóide, enquanto os pontos em ``x'' são os valores obtidos pelo Thermo-Calc\textregistered{}.
+As predições dos modelos de A3 foram utilizadas para gerar isopletas variando-se um dos elementos e fixando os demais a nível zero. Na Figura \ref{fig:LR_isopleths} a seguir, a linha azul corresponde às predições do modelo hipoeutetóide e a vermelha ao hipereutetóide, enquanto os pontos em ``x'' são os valores obtidos pelo Thermo-Calc\textregistered{}.
 
 % ARRUMAR: gráfico na página errada
 \begin{figure}[!h]
@@ -648,8 +713,7 @@ As predições dos modelos de A3 foram utilizadas para gerar isopletas variando-
 
 Para o Carbono, a predição é próxima do esperado, principalmente para hipereutetóides. Já para hipoeutetóides, quanto menor a composição de carbono, maior a diferença entre o predito e o esperado, chegando a \SI{50}{\celsius}. Como discutido anteriormente, há uma mudança de inclinação na curva do diagrama binário Fe-C que contribui para uma má predição do modelo.
 
-Já para o Manganês, Cromo e Níquel, as predições mantém a mesma inclinação do esperado, porém com uma diferença que chega a \SI{50}{\celsius}. O Silício, por sua vez, não teve uma boa predição, possivelmente devido ao seu domínio-$\gamma$ fechado que gera um $\gamma$-\textit{loop}.
-% ARRUMAR: não sei mais o que escrever aqui.
+Já para o Manganês, Cromo e Níquel, as predições mantém a mesma inclinação do esperado, porém com uma diferença que chega a \SI{50}{\celsius}. O Silício, por sua vez, não teve uma boa predição, possivelmente devido ao seu domínio $\gamma$ fechado que gera um $\gamma$-\textit{loop}.
 
 \section{Rede Neural}
 Após o tratamento do banco, foram obtidos 6845 dados normalizados, que foram separados entre 5476 para treino e 1369 de teste. Os parâmetros da rede neural foram variados para se definir o melhor modelo.
@@ -660,10 +724,10 @@ Avaliando-se o efeito da taxa de aprendizado e do número de neurônios da camad
 gráficos da Figura \ref{fig:test_NN} abaixo.
 
 \begin{figure}[!h]
-\subfloat[\label{fig:test1}]{\includegraphics[width=.33\textwidth]{img/test1.png}}
-\subfloat[\label{fig:test01}]{\includegraphics[width=.33\textwidth]{img/test01.png}}
-\subfloat[\label{fig:test001}]{\includegraphics[width=.33\textwidth]{img/test001.png}}
-\caption{Erro quadrático médio x Número de neurônios na camada intermediária para (a) Taxa de aprendizado = 0.1, (b)Taxa de aprendizado = 0.01, (c) Taxa de aprendizado = 0.001}
+\subfloat[\label{fig:test1}]{\includegraphics[width=.5\textwidth]{img/test1.png}}\hfill
+\subfloat[\label{fig:test01}]{\includegraphics[width=.5\textwidth]{img/test01.png}}\\
+\subfloat[\label{fig:test001}]{\includegraphics[width=.5\textwidth]{img/test001.png}}
+\caption{Erro quadrático médio vs. Número de neurônios na camada intermediária para (a) Taxa de aprendizado = 0.1, (b)Taxa de aprendizado = 0.01, (c) Taxa de aprendizado = 0.001}
 \label{fig:test_NN}
 \end{figure}
 
@@ -671,11 +735,10 @@ Nota-se que, à medida em que a taxa de aprendizado diminui, a variação do err
 Em seguida, foi avaliado o efeito do número de iterações e do número de neurônios na função perda. A Figura \ref{fig:loss_NN} a seguir mostra o comportamento da função perda com o número de iterações para um, seis e doze neurônios.
 
 \begin{figure}[!h]
-\subfloat[\label{fig:loss1}]{\includegraphics[width=.5\textwidth]{img/loss_1.png}}
-
-\subfloat[\label{fig:loss6}]{\includegraphics[width=.5\textwidth]{img/loss_6.png}}
+\subfloat[\label{fig:loss1}]{\includegraphics[width=.5\textwidth]{img/loss_1.png}}\hfill
+\subfloat[\label{fig:loss6}]{\includegraphics[width=.5\textwidth]{img/loss_6.png}}\\
 \subfloat[\label{fig:loss12}]{\includegraphics[width=.5\textwidth]{img/loss_12.png}}
-\caption{Perda (erro quadrático médio) x Número de iterações para (a) 1, (b) 6, (c) 12 neurônios na camada intermediária}
+\caption{Perda (erro quadrático médio) vs. Número de iterações para (a) 1, (b) 6, (c) 12 neurônios na camada intermediária}
 \label{fig:loss_NN}
 \end{figure}
 
@@ -685,13 +748,13 @@ Considerando a taxa de aprendizado escolhida, nota-se que o erro quadrático mé
 
 Para confirmar se esses parâmetros eram adequados, foram analisados os valores preditos versus esperados variando o número de neurônios. A Figura \ref{fig:predict_NN} a seguir mostra esse comportamento para um, seis e doze neurônios, onde os círculos preenchidos mostram os dados de treino e os triângulos, os de teste.
 
-%ARRUMAR: FIGURA NO LUGAR ERRADO
+%ARRUMAR: Figura NO LUGAR ERRADO
 \begin{figure}[!h]
 \subfloat[\label{fig:predict1}]{\includegraphics[width=.5\textwidth]{img/predict_1.png}}
 \subfloat[\label{fig:predict6}]{\includegraphics[width=.5\textwidth]{img/predict_6.png}}
 
 \subfloat[\label{fig:predict12}]{\includegraphics[width=.5\textwidth]{img/predict_12.png}}
-\caption{Valores Preditos x Valores Esperados para (a) 1, (b) 6, (c) 12 neurônios na camada intermediária. $\bullet$ : valores de treino, $\bigtriangleup$ : valores de teste}
+\caption{Valores Preditos vs. Valores Esperados para (a) 1, (b) 6, (c) 12 neurônios na camada intermediária. $\bullet$ : valores de treino, $\triangledown$ : valores de teste}
 \label{fig:predict_NN}
 \end{figure}
 
@@ -740,14 +803,13 @@ Nota-se que, para a maioria dos casos, os valores preditos (linha cheia) são sa
 
 Para o Carbono, a dificuldade está no ajuste do ponto de inversão da curva, ponto mais suscetível a erros, como foi observado na Figura \ref{fig:LR_A3} da regressão linear e na Figura \ref{fig:predict6} da predição da rede neural, na qual possivelmente os dados que destoam da reta estão próximos a esse ponto. Um conjunto de dados de treino com mais pontos corretos dessa região poderia contribuir para uma melhor predição.
 
-Para baixas concentrações dos elementos, o modelo para o silício foi destoante, como mostra a Figura \ref{fig:Si0}. Uma possível explicação está no diagrama binário Fe-Si, da Figura \ref{fig:bin_fe-si}, que mostra o campo $\gamma$ fechado a baixas concentrações de Si. O mesmo vale para o cromo, que além de ser do grupo de domínio-$\gamma$ fechado, tem um $\gamma$-\textit{loop}. Isso pode ter contribuído para uma má predição do modelo nesses casos.
-% ARRUMAR: não sei muito bem o que dizer aqui
+Para baixas concentrações dos elementos, o modelo para o silício foi destoante, como mostra a Figura \ref{fig:Si0}. Uma possível explicação está no diagrama binário Fe-Si, da Figura \ref{fig:bin_fe-si}, que mostra o campo $\gamma$ fechado a baixas concentrações de Si. O mesmo vale para o cromo, que além de ser do grupo de domínio $\gamma$ fechado, tem um $\gamma$-\textit{loop}. Isso pode ter contribuído para uma má predição do modelo nesses casos.
 
 Apesar de o modelo não ter predito tão bem a influência de alguns elementos em A3, suas métricas foram consideradas satisfatórias. Para o ponto ótimo discutido anteriormente, de taxa de aprendizado 0.001, seis neurônios na camada intermediária e 100 iterações, o erro quadrático médio final foi de 0.0051 e o coeficiente de determinação ($R^{2}$), 0.9734.
 
 \section{Comparação dos Modelos}
 
-Com o propósito de comparar os modelos de regressão linear com o de rede neural para predição de A3, foi calculado o Coeficiente de Determinação de cada um deles, que pode ser visto na Tabela \ref{tab:r2_comparacao} a seguir.
+Com o propósito de comparar os modelos de regressão linear com o de rede neural e Equação de Andrews para predição de A3, foi calculado o Coeficiente de Determinação de cada um deles, que pode ser visto na Tabela \ref{tab:r2_comparacao} a seguir.
 
 \begin{table}
   \caption{Valores de $R^{2}$ para regressão linear e rede neural de A3}
@@ -760,70 +822,195 @@ Com o propósito de comparar os modelos de regressão linear com o de rede neura
   Regressão Linear Hipereutetóide & 0.9971  \\
   Regressão Linear Total          & 0.8774  \\
   Rede Neural Artificial          & 0.9734  \\
+  Equação de Andrews              & 0.2217  \\
   \hline
   \end{tabular}
 
   \label{tab:r2_comparacao}
 \end{table}
 
-É possível constatar que a regressão linear para os hipereutetóides foi o modelo com melhor ajuste, seguido pela rede neural e pela regressão linear hipoeutetóide. A regressão linear total foi a de menor ajuste, pois como discutido anteriormente, o ponto de inversão da curva não é bem predito.
+É possível constatar que a regressão linear para os hipereutetóides foi o modelo com melhor ajuste, seguido pela rede neural e pela regressão linear hipoeutetóide. Já a regressão linear total teve ajuste menor, pois como discutido anteriormente, o ponto de inversão da curva não é bem predito. A Equação de Andrews, por sua vez, não tem um bom ajuste com os dados do Thermo-Calc\textregistered{}.
 
-O valor alto de $R^{2}$ para a rede neural torna menos provável a hipótese de a regressão linear apresentar overfit devido a parâmetros em excesso.
-
-(\textit{A melhorar: inserir gráficos de valores preditos para Regressão Linear x Equação Empírica e Rede Neural x Equação Empírica})
+O valor alto de $R^{2}$ para a rede neural torna menos provável a hipótese de a regressão linear apresentar \textit{overfit} devido a parâmetros em excesso.
 
 \chapter{Conclusões}
 
 Foi estudada a implementação de dois algoritmos de aprendizado de máquina para prever temperaturas críticas de transformações de fase em aços comuns de engenharia. Para isso, foi criado um banco de dados a partir de simulações termodinâmicas e algoritmos para extração dessas temperaturas críticas. Os dados foram analisados mediante comparação com equações empíricas e foram tratados antes de serem usados para o treino.
 
-O modelo de regressão linear mostrou métricas bastante satisfatórias para a maior parte dos casos estudados, mesmo quando testado por um banco de dados aleatório. Sua desvantagem foi a necessidade de separação dos dados entre hipo e hipereutetóide para que o modelo tivesse melhor qualidade de predição. Ainda não foi descartada a hipótese de overfit e para tal deveriam ser estudadas outras métricas e realizar novos testes com outros bancos de dados.
+O modelo de regressão linear mostrou um coeficiente de determinação alto para a maior parte dos casos estudados, mesmo quando testado por um banco de dados aleatório. Sua desvantagem foi a necessidade de separação dos dados entre hipo e hipereutetóide para que o modelo tivesse melhor qualidade de predição.
 
-A rede neural, por sua vez, foi capaz de prever a temperatura A3 sem a necessidade de separação pelo ponto eutetóide, apesar de não conseguir calcular tão bem as temperaturas próximas a esse ponto de inversão. Seu alto coeficiente de determinação diminui a probabilidade de o modelo de regressão estar com overfit causado por número de parâmetros em excesso.
+A rede neural, por sua vez, foi capaz de prever a temperatura A3 sem a necessidade de separação pelo ponto eutetóide, apesar de não conseguir calcular tão bem as temperaturas próximas a esse ponto de inversão. Seu alto coeficiente de determinação diminui a probabilidade de o modelo de regressão estar com \textit{overfit} causado por número de parâmetros em excesso. Entretanto, não foi totalmente descartada a hipótese de \textit{overfit} e para tal deveriam ser estudadas outras métricas e realizar novos testes com outros bancos de dados. Até então, os valores altos dos coeficientes de determinação sugerem que os modelos estudados são capazes de descrever bem as temperaturas críticas.
 
-\textit{(A melhorar: fazer comparação com métricas do trabalho de Gavard)}
+Por fim, conclui-se que os modelos de aprendizado de máquina utilizando a linguagem \textit{Python} têm implementação razoavelmente simples e podem ser aplicados a conjuntos de dados similares, como temperaturas críticas determinadas experimentalmente.
 
 \chapter{Sugestões para trabalhos futuros}
 
-\textit{(Ainda será escrito. Envolverá os seguintes tópicos:)}
+Dado o tempo limitado para elaboração do trabalho, certas ideias surgiram ao longo do processo e não puderam ser executadas. Assim sendo, elas podem ser utilizadas por outros alunos em trabalhos futuros.
 
-\begin{itemize}
-\item Variar mais parâmetros da rede neural
-\item Determinar carbono eutetóide: através de coeficientes das regressões lineares ou regressão logística
-\item Criar uma ferramenta de visualização e interação com o usuário
-\item Extrapolar o modelo para outras faixas de composição
-\end{itemize}
+A primeira delas é um estudo com mais profundidade da rede neural. O número de camadas intermediárias poderia ser estudado para prever com melhor precisão os valores de A3. O modelo também poderia ser aplicado às outras temperaturas críticas para avaliar sua predição.
+
+Além disso, uma análise sobre como os modelos se comportam mediante extrapolação das composições químicas poderia ser relevante. Até mesmo a inserção de novos parâmetros, como a taxa de aquecimento e outros elementos químicos, como Fósforo, Enxofre e Molibdênio, que podem influenciar nas temperaturas críticas e não foram considerados.
+
+Um terceiro projeto está relacionado com a visualização dos resultados do modelo. Poderia ser elaborado um \textit{site} ou aplicativo, no qual o usuário inseriria os parâmetros e esse retornaria os valores das temperaturas críticas, de forma a tornar a ferramenta mais acessível à comunidade científica.
+
+Por fim, uma última ideia seria o cálculo da porcentagem de carbono no ponto eutetóide, o que poderia ser feito utilizando os coeficientes da regressão linear de A3 para hipo e hipereutetóides. Sabe-se que esses modelos são de segunda ordem, tal qual a equação \ref{eq:regressao_polinomial_2a_ordem}. Assim, as equações para A3 são:
+\begin{align}
+	A_3^{hipo} &= \beta_0^{hipo} + \sum_{i=1}^k \beta_i^{hipo} x_i + \sum_{i=1}^{k} \sum_{j=i}^k \beta_{ij}^{hipo} x_i x_j + \epsilon \\
+	A_3^{hiper} &= \beta_0^{hiper} + \sum_{i=1}^k \beta_i^{hiper} x_i + \sum_{i=1}^{k} \sum_{j=i}^k \beta_{ij}^{hipo} x_i x_j + \epsilon
+\end{align}
+
+No ponto eutetóide:
+
+\begin{equation}
+	A_3^{hipo} = A_3^{hiper} \Rightarrow A_3^{hipo} - A_3^{hiper} = 0
+\end{equation}
+
+Logo:
+
+\begin{equation}
+	\beta_0^{hipo} - \beta_0^{hiper}
+	+ \sum_{i=1}^k \left(\beta_i^{hipo} - \beta_i^{hiper}\right) x_i
+	+ \sum_{i=1}^{k} \sum_{j=i}^k \left(\beta_{ij}^{hipo} - \beta_{ij}^{hiper}\right) x_i x_j = 0
+	\label{eq:eutetoide_1}
+\end{equation}
+
+Definindo:
+
+\begin{align}
+	\beta_i^{eut} &= \beta_i^{hipo} - \beta_i^{hiper} \\
+	\beta_{ij}^{eut} &= \beta_{ij}^{hipo} - \beta_{ij}^{hiper}
+\end{align}
+
+Substituindo as definições acima na equação \ref{eq:eutetoide_1}, temos:
+
+\begin{equation}
+	\beta_0^{eut} + \sum_{i=1}^k \beta_i^{eut} x_i
+	+ \sum_{i=1}^{k} \sum_{j=i}^k \beta_{ij}^{eut} x_i x_j = 0
+	\label{eq:eutetoide_2}
+\end{equation}
+
+Reescrevendo \ref{eq:eutetoide_2} de modo a separar $x_1$ (fração de carbono):
+
+\begin{align}
+	&\beta_0^{eut}
+	+ \beta_1^{eut} x_ 1
+	+ \sum_{i=2}^k \beta_i^{eut} x_i
+	+ \beta_{11}^{eut} {x_1}^2
+	+ \sum_{j=2}^k \beta_{1j}^{eut} x_1 x_j
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \beta_{ij}^{eut} x_i x_j = 0 \nonumber \\
+	&\beta_{11}^{eut} {x_1}^2
+	+ \left(\beta_1^{eut} + \sum_{j=2}^k \beta_{1j}^{eut} x_j \right) x_1
+	+ \left(\beta_0^{eut}
+	+ \sum_{i=2}^k \beta_i^{eut} x_i
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \beta_{ij}^{eut} x_i x_j\right) = 0 \label{eq:eutetoide_3}
+\end{align}
+
+Dividindo todos os termos em \ref{eq:eutetoide_3} por $2 \beta_{11}^{eut}$ e definindo:
+
+\begin{align}
+	\alpha_i
+	&= \frac{\beta_i^{hipo} - \beta_i^{hiper}}{2 \beta_{11}}
+	= \frac{1}{2} \frac{\beta_i^{hipo} - \beta_i^{hiper}}{\beta_{11}^{hipo} - \beta_{11}^{hiper}}\\
+	\alpha_{ij}
+	&= \frac{\beta_{ij}^{hipo} - \beta_{ij}^{hiper}}{2 \beta_{11}}
+	= \frac{1}{2} \frac{\beta_{ij}^{hipo} - \beta_{ij}^{hiper}}{\beta_{11}^{hipo} - \beta_{11}^{hiper}}
+\end{align}
+%
+então obtemos:
+
+\begin{equation}
+	\frac{{x_1}^2}{2}
+	+ \left(\alpha_1 + \sum_{j=2}^k \alpha_{1j} x_j \right) x_1
+	+ \left(\alpha_0
+	+ \sum_{i=2}^k \alpha_i x_i
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \alpha_{ij} x_i x_j\right) = 0 \label{eq:eutetoide_4}
+\end{equation}
+
+A equação \ref{eq:eutetoide_4} pode ser resolvida para $x_1$ utilizando a fórmula quadrática:
+
+\begin{equation}
+	x_1 = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}
+	\label{eq:quadratica}
+\end{equation}
+%
+em que $a = 1/2$ e $b$ e $c$ são:
+
+\begin{align}
+	b &= \alpha_1 + \sum_{j=2}^k \alpha_{1j} x_j \\
+	c &= \alpha_0
+	+ \sum_{i=2}^k \alpha_i x_i
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \alpha_{ij} x_i x_j
+\end{align}
+
+Usando a substituição $a = 1/2$, a equação \ref{eq:quadratica} torna-se:
+
+\begin{equation}
+	x_1 = -b \pm \sqrt{b^2 - 2 c}
+	\label{eq:quadratica_2}
+\end{equation}
+
+Em suma:
+
+\begin{align*}
+	\alpha_i &= \frac{1}{2} \frac{\beta_i^{hipo} - \beta_i^{hiper}}{\beta_{11}^{hipo} - \beta_{11}^{hiper}}\\
+	\alpha_{ij} &= \frac{1}{2} \frac{\beta_{ij}^{hipo} - \beta_{ij}^{hiper}}{\beta_{11}^{hipo} - \beta_{11}^{hiper}}\\
+	b &= \alpha_1 + \sum_{j=2}^k \alpha_{1j} x_j \\
+	c &= \alpha_0
+	+ \sum_{i=2}^k \alpha_i x_i
+	+ \sum_{i=2}^{k} \sum_{j=i}^k \alpha_{ij} x_i x_j \\
+	x_1 &= -b \pm \sqrt{b^2 - 2 c}
+\end{align*}
+
+\begin{align}
+	b =&\,\alpha_{C} + \alpha_{C Mn} Mn + \alpha_{C Si} Si + \alpha_{C Cr} Cr + \alpha_{C Ni} Ni\\
+	c =&\,\alpha_0 + \alpha_{Mn} Mn + \alpha_{Si} Si + \alpha_{Cr} Cr + \alpha_{Ni} Ni + \nonumber \\
+	   &\,\alpha_{Mn^2}\ Mn^2 + \alpha_{Mn Si}\ Mn\ Si + \alpha_{Mn Cr}\ Mn\ Cr + \alpha_{Mn Ni}\ Mn\ Ni + \nonumber \\
+	   &\,\alpha_{Si^2}\ Si^2 + \alpha_{Si Cr}\ Si\ Cr + \alpha_{Si Ni}\ Si\ Ni + \nonumber \\
+	   &\,\alpha_{Cr^2}\ Cr^2 + \alpha_{Cr Ni}\ Cr\ Ni + \nonumber \\
+	   &\,\alpha_{Ni^2}\ Ni^2
+\end{align}
+
+Tabela de correspondência:
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{c c c c c}
+	\hline
+	$x_1$ & $x_2$ & $x_3$ & $x_4$ & $x_5$ \\
+	\hline
+	C & Mn & Si & Cr & Ni \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Assim, os valores dos coeficientes da regressão linear seriam inseridos nessas equações para o cálculo da porcentagem de carbono eutetóide.
 
 \bibliography{tcc}
-
-% \anexo{Composição química de aços de engenharia}
-% \label{an:composicao}
-% ARRUMAR: se der, adicionar tabelas
-
 
 \anexo{Diagramas binários}
 \label{an:diag_bin}
 
 \begin{figure}
   \includegraphics[width=1.1\textwidth]{img/Fe-Mn.jpg}
-  \caption{Diagrama binário Fe-Mn}
+  \caption{Diagrama binário Fe-Mn \cite{Massalski1996v1}}
   \label{fig:bin_fe-mn}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=1.1\textwidth]{img/Fe-Si.jpg}
-  \caption{Diagrama binário Fe-Si}
+  \caption{Diagrama binário Fe-Si \cite{Massalski1996v1}}
   \label{fig:bin_fe-si}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=1.1\textwidth]{img/Fe-Cr.jpg}
-  \caption{Diagrama binário Fe-Cr}
+  \caption{Diagrama binário Fe-Cr \cite{Massalski1996v1}}
   \label{fig:bin_fe-cr}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=1.1\textwidth]{img/Fe-Ni.jpg}
-  \caption{Diagrama binário Fe-Ni}
+  \caption{Diagrama binário Fe-Ni \cite{Massalski1996v1}}
   \label{fig:bin_fe-ni}
 \end{figure}
 
