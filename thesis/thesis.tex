@@ -67,6 +67,8 @@ A todos os amigos que fiz ao longo dessa jornada, pelo apoio nos piores momentos
 Por fim, agradeço aos meus professores orientadores, Prof. Dr. Hélio Goldenstein, pelos ensinamentos, e Dr. Arthur Seiji Nishikawa, sua companhia tornou menos complicada a tarefa de se escrever um trabalho de tamanha importância.
 }
 
+\epigrafe{Now is better than never}{Tim Peters}
+
 % \textregistered{} não pode estar em resumo. Isso gera um erro na hora de compilar o texto
 \resumo{
 \setlength\parindent{0pt}
@@ -148,7 +150,7 @@ Para essas condições, o diagrama de fase, que é então chamado de diagrama de
   \label{fig:diagrama_fe-c_meta}
 \end{figure}
 
-Um ponto importante do diagrama mostrado na Figura \ref{fig:diagrama_fe-c_meta} é o ponto eutetóide, no qual coexistem em equilíbrio as fases $\alpha$, $\gamma$ e \ch{Fe3C}. Para um sistema apenas ferro e carbono, o teor de carbono correspondente a esta fase é aproximadamente 0,8\% C em massa. Ligas com teores de carbono inferiores a esta composição são denominadas hipoeutetóides e, ligas com teores de carbono superiores à do ponto eutetóide são chamadas de hipereutetóides.
+Um ponto importante do diagrama mostrado na Figura \ref{fig:diagrama_fe-c_meta} é o ponto eutetóide, no qual coexistem em equilíbrio as fases $\alpha$, $\gamma$ e \ch{Fe3C}. Para um sistema apenas ferro e carbono, o teor de carbono correspondente a esta fase é aproximadamente 0,8\% C em massa. Ligas com teores de carbono inferiores a esta composição são denominadas hipoeutetóides e, ligas com teores de carbono superiores à do ponto eutetóide são chamadas de hipereutetóides \cite{Honeycombe1982}.
 
 \section{O Thermo-Calc\textregistered{}}
 
@@ -175,6 +177,8 @@ A Figura \ref{fig:fe-1mn-C_isopleth} corresponde à isopleta do carbono para o t
   \caption{Fração molar de fase versus Temperatura para aço 1\%C 1\% Mn, em massa}
   \label{fig:fe-1mn-c}
 \end{figure}
+
+% ARRUMAR: título na primeira figura deveria ser 0.4%C
 
 Um aço eutetóide, correspondente à segunda linha vertical da Figura \ref{fig:fe-1mn-C_isopleth} e ao gráfico da Figura \ref{fig:fe-1mn-c}b, segue o mesmo raciocínio. A diferença é que não há um campo trifásico e, portanto, não há mais uma temperatura A1' definida.
 
@@ -323,6 +327,8 @@ A segunda métrica é o Coeficiente de Determinação, ou $R^{2}$. Está relacio
   \label{eq:MSE_media}
 \end{align}
 
+% ARRUMAR: faltou a equação do r2
+
 Existem outras métricas para avaliação das predições, mas no presente trabalho serão utilizadas apenas as citadas acima.
 
 \subsection{Rede Neural Artificial}
@@ -336,7 +342,7 @@ A rede neural artificial é um conjunto de neurônios de software organizados em
   \label{fig:rede-neural-arquitetura}
 \end{figure}
 
-Para o exemplo da Figura \ref{fig:rede-neural-arquitetura}, a primeira camada recebe uma entrada X de cinco dados n vezes, sendo n o tamanho do banco de dados utilizado no treinamento. Os neurônios da camada intermediária recebem o vetor X com as 5 entradas para calcular o valor predito Ŷ. Para cada neurônio existem os vetores de peso e os viéses (ou \textit{bias}), que a princípio são randômicos. O vetor X é multiplicado pelo vetor de peso e depois adicionado ao viés, como mostra a Equação \ref{eq:single-neuron}. Como os valores dos pesos e viéses são aleatórios, o valor da saída inicialmente é bem diferente do esperado. A cada iteração, os pesos são alterados até atingir um resultado satisfatório, etapa chamada de treinamento da rede neural \cite{Bhadeshia1999}. Uma função de perda calcula o quão longe o modelo está da solução ideal e seu valor diminui conforme a precisão aumenta.
+Para o exemplo da Figura \ref{fig:rede-neural-arquitetura}, a primeira camada recebe uma entrada X de cinco dados n vezes, sendo n o tamanho do banco de dados utilizado no treinamento. Os neurônios da camada intermediária recebem o vetor X com as 5 entradas para calcular o valor predito Ŷ. Para cada neurônio existem os vetores de peso e os vieses (ou \textit{bias}), que a princípio são randômicos. O vetor X é multiplicado pelo vetor de peso e depois adicionado ao viés, como mostra a Equação \ref{eq:single-neuron}. Como os valores dos pesos e vieses são aleatórios, o valor da saída inicialmente é bem diferente do esperado. A cada iteração, os pesos são alterados até atingir um resultado satisfatório, etapa chamada de treinamento da rede neural \cite{Bhadeshia1999}. Uma função de perda calcula o quão longe o modelo está da solução ideal e seu valor diminui conforme a precisão aumenta.
 
 \begin{align}
   z &= b + {w}_1 {x}_1 + {w}_2 {x}_2 + {w}_3 {x}_3 + ... + {w}_n {x}_n \label{eq:single-neuron}
@@ -355,7 +361,7 @@ Como mostra a Figura \ref{fig:single-neuron}, o resultado de cada iteração pas
   \label{eq:tanh}
 \end{align}
 
-O processo de aprendizado da rede neural envolve a otimização dos pesos e viéses para minimizar o valor da função perda, o que é calculado a partir do método de gradiente descendente, ou seja, a minimização das derivadas da função perda em relação a cada parâmetro da rede. O algoritmo de retropropagação compara os valores obtidos com os esperados e reajusta os parâmetros da rede.
+O processo de aprendizado da rede neural envolve a otimização dos pesos e vieses para minimizar o valor da função perda, o que é calculado a partir do método de gradiente descendente, ou seja, a minimização das derivadas da função perda em relação a cada parâmetro da rede. O algoritmo de retropropagação compara os valores obtidos com os esperados e reajusta os parâmetros da rede.
 
 Esse ajuste é controlado pela taxa de aprendizado, uma váriável de extrema importância, posto que um valor muito baixo torna a convergência muito lenta e um valor muito alto pode não convergir \cite{Skalski2017}.
 
